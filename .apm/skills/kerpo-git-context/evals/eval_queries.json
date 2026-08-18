@@ -1,0 +1,14 @@
+[
+  {"query": "which git repo am I working in", "should_trigger": true},
+  {"query": "what worktree is this", "should_trigger": true},
+  {"query": "I'm in a linked worktree, can you detect which one", "should_trigger": true},
+  {"query": "my workspace has multiple repos, which one should we use", "should_trigger": true},
+  {"query": "resolve the git context for this session", "should_trigger": true},
+  {"query": "what branch is active in my worktree", "should_trigger": true},
+  {"query": "show me uncommitted files", "should_trigger": false},
+  {"query": "what changed since last commit", "should_trigger": false},
+  {"query": "list all my branches", "should_trigger": false},
+  {"query": "git log for this repo", "should_trigger": false},
+  {"query": "create a new git commit", "should_trigger": false},
+  {"query": "what files are in this directory", "should_trigger": false}
+]

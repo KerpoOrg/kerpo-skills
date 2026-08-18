@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-git-status",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Show me what files I've changed but not committed in my current checkout.",
+      "expected_output": "Agent resolves the correct checkout (not just workspace root), runs git status --short and ls-files --others, reports staged/unstaged/untracked separately with a summary line. If clean, says so.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "I'm working in a linked worktree at ~/proj/worktrees/fix-123. What's uncommitted there?",
+      "expected_output": "Agent runs git -C ~/proj/worktrees/fix-123 status --short (not from workspace root), detects linked worktree, reports dirty files for that specific checkout with branch and path context.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Are there any untracked files I might have forgotten to add?",
+      "expected_output": "Agent resolves context, runs git ls-files --others --exclude-standard on the correct checkout, lists untracked files. If over 20, gives a count summary instead of full list.",
+      "assertions": []
+    }
+  ]
+}

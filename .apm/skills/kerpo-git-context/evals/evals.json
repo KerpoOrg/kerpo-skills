@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-git-context",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm working in ~/projects/myapp/worktrees/feature-auth — which git repo and branch am I in?",
+      "expected_output": "Agent runs git commands against the given path, detects it's a linked worktree (git-dir != git-common-dir), identifies the branch, reports checkout path, worktree type, branch name, and reasoning.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "My workspace has three folders: frontend/, backend/, and infra/ — each is a separate git repo. I just edited backend/src/api.ts. Which repo should git operations target?",
+      "expected_output": "Agent finds multiple .git entries under workspace root, identifies backend/ as the relevant repo because the user mentioned a file there, reports all three repos found but prioritizes backend/.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Which branch am I on?",
+      "expected_output": "Agent resolves context from cwd/workspace, runs git rev-parse --abbrev-ref HEAD on the correct checkout, reports branch name and checkout path.",
+      "assertions": []
+    }
+  ]
+}

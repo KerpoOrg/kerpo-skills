@@ -223,6 +223,66 @@ deployments:
   content_hash: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
 - kind: project-relative
   target: agents
+  value: .agents/skills/kerpo-git-context/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:bb932b74c8f1381d02c4864e13eaec5f8bf7abccd975c88643794b198b44baa9
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-git-context/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:e186abf218131804a4d9ae83f52db35ecff7ec2e98388d4712cd10dcfc8247de
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-git-context/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:d1517862fb7f2041ac63ea6ed4ed0fed0d329409a44c562b94ad0aad1843158d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-git-status/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:19fcfeef434cf40706c43faf8279e15a9e440ca384c1da81de3a4beb449be733
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-git-status/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:05c8e1dc8fb1d41bc0704dc9f5d452dd748c08cb79d8a1c5051e15862f152b29
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-git-status/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:c056c5e5adc7fb87dede55eafe767f3c672aaebb2d643a9165e0eb9c19bc052a
+- kind: project-relative
+  target: agents
   value: .agents/skills/kerpo-grade-eval/SKILL.md
   runtime: null
   scope: project
@@ -781,6 +841,66 @@ deployments:
   content_hash: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
 - kind: project-relative
   target: claude
+  value: .claude/skills/kerpo-git-context/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:bb932b74c8f1381d02c4864e13eaec5f8bf7abccd975c88643794b198b44baa9
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-git-context/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:e186abf218131804a4d9ae83f52db35ecff7ec2e98388d4712cd10dcfc8247de
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-git-context/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:d1517862fb7f2041ac63ea6ed4ed0fed0d329409a44c562b94ad0aad1843158d
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-git-status/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:19fcfeef434cf40706c43faf8279e15a9e440ca384c1da81de3a4beb449be733
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-git-status/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:05c8e1dc8fb1d41bc0704dc9f5d452dd748c08cb79d8a1c5051e15862f152b29
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-git-status/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:c056c5e5adc7fb87dede55eafe767f3c672aaebb2d643a9165e0eb9c19bc052a
+- kind: project-relative
+  target: claude
   value: .claude/skills/kerpo-grade-eval/SKILL.md
   runtime: null
   scope: project
@@ -1141,6 +1261,12 @@ local_deployed_files:
 - .agents/skills/kerpo-example/SKILL.md
 - .agents/skills/kerpo-example/evals/eval_queries.json
 - .agents/skills/kerpo-example/evals/evals.json
+- .agents/skills/kerpo-git-context/SKILL.md
+- .agents/skills/kerpo-git-context/evals/eval_queries.json
+- .agents/skills/kerpo-git-context/evals/evals.json
+- .agents/skills/kerpo-git-status/SKILL.md
+- .agents/skills/kerpo-git-status/evals/eval_queries.json
+- .agents/skills/kerpo-git-status/evals/evals.json
 - .agents/skills/kerpo-grade-eval/SKILL.md
 - .agents/skills/kerpo-grade-eval/evals/eval_queries.json
 - .agents/skills/kerpo-grade-eval/evals/evals.json
@@ -1197,6 +1323,12 @@ local_deployed_files:
 - .claude/skills/kerpo-example/SKILL.md
 - .claude/skills/kerpo-example/evals/eval_queries.json
 - .claude/skills/kerpo-example/evals/evals.json
+- .claude/skills/kerpo-git-context/SKILL.md
+- .claude/skills/kerpo-git-context/evals/eval_queries.json
+- .claude/skills/kerpo-git-context/evals/evals.json
+- .claude/skills/kerpo-git-status/SKILL.md
+- .claude/skills/kerpo-git-status/evals/eval_queries.json
+- .claude/skills/kerpo-git-status/evals/evals.json
 - .claude/skills/kerpo-grade-eval/SKILL.md
 - .claude/skills/kerpo-grade-eval/evals/eval_queries.json
 - .claude/skills/kerpo-grade-eval/evals/evals.json
@@ -1253,6 +1385,12 @@ local_deployed_file_hashes:
   .agents/skills/kerpo-example/SKILL.md: sha256:227d5431e9e0075051eb64fb7e04964a91cecbdfbdec7841539a6057a1703d9d
   .agents/skills/kerpo-example/evals/eval_queries.json: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
   .agents/skills/kerpo-example/evals/evals.json: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
+  .agents/skills/kerpo-git-context/SKILL.md: sha256:bb932b74c8f1381d02c4864e13eaec5f8bf7abccd975c88643794b198b44baa9
+  .agents/skills/kerpo-git-context/evals/eval_queries.json: sha256:e186abf218131804a4d9ae83f52db35ecff7ec2e98388d4712cd10dcfc8247de
+  .agents/skills/kerpo-git-context/evals/evals.json: sha256:d1517862fb7f2041ac63ea6ed4ed0fed0d329409a44c562b94ad0aad1843158d
+  .agents/skills/kerpo-git-status/SKILL.md: sha256:19fcfeef434cf40706c43faf8279e15a9e440ca384c1da81de3a4beb449be733
+  .agents/skills/kerpo-git-status/evals/eval_queries.json: sha256:05c8e1dc8fb1d41bc0704dc9f5d452dd748c08cb79d8a1c5051e15862f152b29
+  .agents/skills/kerpo-git-status/evals/evals.json: sha256:c056c5e5adc7fb87dede55eafe767f3c672aaebb2d643a9165e0eb9c19bc052a
   .agents/skills/kerpo-grade-eval/SKILL.md: sha256:5eb6ee546905a6fbba4d41d60deb4beaf2bb08939c2a6f945f22c0961d9a7e6c
   .agents/skills/kerpo-grade-eval/evals/eval_queries.json: sha256:baf9baf2855389471ade50e88f0a54f06786273d75615f0edeb92a71fba1904e
   .agents/skills/kerpo-grade-eval/evals/evals.json: sha256:58e1cf21cd94b1b492b461af3dbe1ecf428e9db9343495dfe1410e0c89e00f84
@@ -1307,6 +1445,12 @@ local_deployed_file_hashes:
   .claude/skills/kerpo-example/SKILL.md: sha256:227d5431e9e0075051eb64fb7e04964a91cecbdfbdec7841539a6057a1703d9d
   .claude/skills/kerpo-example/evals/eval_queries.json: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
   .claude/skills/kerpo-example/evals/evals.json: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
+  .claude/skills/kerpo-git-context/SKILL.md: sha256:bb932b74c8f1381d02c4864e13eaec5f8bf7abccd975c88643794b198b44baa9
+  .claude/skills/kerpo-git-context/evals/eval_queries.json: sha256:e186abf218131804a4d9ae83f52db35ecff7ec2e98388d4712cd10dcfc8247de
+  .claude/skills/kerpo-git-context/evals/evals.json: sha256:d1517862fb7f2041ac63ea6ed4ed0fed0d329409a44c562b94ad0aad1843158d
+  .claude/skills/kerpo-git-status/SKILL.md: sha256:19fcfeef434cf40706c43faf8279e15a9e440ca384c1da81de3a4beb449be733
+  .claude/skills/kerpo-git-status/evals/eval_queries.json: sha256:05c8e1dc8fb1d41bc0704dc9f5d452dd748c08cb79d8a1c5051e15862f152b29
+  .claude/skills/kerpo-git-status/evals/evals.json: sha256:c056c5e5adc7fb87dede55eafe767f3c672aaebb2d643a9165e0eb9c19bc052a
   .claude/skills/kerpo-grade-eval/SKILL.md: sha256:5eb6ee546905a6fbba4d41d60deb4beaf2bb08939c2a6f945f22c0961d9a7e6c
   .claude/skills/kerpo-grade-eval/evals/eval_queries.json: sha256:baf9baf2855389471ade50e88f0a54f06786273d75615f0edeb92a71fba1904e
   .claude/skills/kerpo-grade-eval/evals/evals.json: sha256:58e1cf21cd94b1b492b461af3dbe1ecf428e9db9343495dfe1410e0c89e00f84

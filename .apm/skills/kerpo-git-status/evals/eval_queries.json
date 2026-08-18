@@ -1,0 +1,14 @@
+[
+  {"query": "show me uncommitted files", "should_trigger": true},
+  {"query": "what files have I changed", "should_trigger": true},
+  {"query": "are there untracked files in my checkout", "should_trigger": true},
+  {"query": "what's dirty in my worktree", "should_trigger": true},
+  {"query": "check if I have uncommitted changes before pushing", "should_trigger": true},
+  {"query": "list untracked files I might have forgotten to add", "should_trigger": true},
+  {"query": "git log for the last 10 commits", "should_trigger": false},
+  {"query": "show me the diff of this file", "should_trigger": false},
+  {"query": "create a new branch", "should_trigger": false},
+  {"query": "which git repo am I in", "should_trigger": false},
+  {"query": "list all files in this directory", "should_trigger": false},
+  {"query": "push my changes to origin", "should_trigger": false}
+]
