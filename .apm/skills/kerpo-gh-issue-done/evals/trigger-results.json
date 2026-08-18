@@ -1,0 +1,162 @@
+[
+  {
+    "query": "This issue is done — do the formal closeout",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Mark issue #12 done",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Issue #5 on valmis",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Sulje issue muodollisesti",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Do the final checks on this issue and close it",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "We're done with issue #8 — check format and as-built deviations",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Valmis, tee viimeiset tarkistukset issueen #3",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Finish issue #7 — formal closeout",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Close out issue #4 formally",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "Issue done, record implementation deviations and close",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "I'm starting work on issue #3",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Let's pick up issue #7",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Assign issue #3 to me",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Close issue #5",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Merge the PR for issue #5",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Review this pull request",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Create a new GitHub issue",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Show me open issues",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Check CI on the related PR",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "Write a failing test for this feature first",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  }
+]

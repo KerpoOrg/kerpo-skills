@@ -5,7 +5,8 @@ description: >-
   user says "I'm starting work on issue #N", "let's work on this issue", "pick
   up issue #N", or "take this issue". Ensures the issue is assigned to the
   current user before work begins. Does not activate for creating new issues,
-  reviewing issues, or closing issues.
+  reviewing issues, or closing issues — formal closeout is
+  kerpo-gh-issue-done.
 license: Proprietary
 compatibility: Designed for Claude Code and Cursor
 metadata:

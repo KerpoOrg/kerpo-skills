@@ -1,0 +1,22 @@
+[
+  {"query": "This issue is done — do the formal closeout", "should_trigger": true},
+  {"query": "Mark issue #12 done", "should_trigger": true},
+  {"query": "Issue #5 on valmis", "should_trigger": true},
+  {"query": "Sulje issue muodollisesti", "should_trigger": true},
+  {"query": "Do the final checks on this issue and close it", "should_trigger": true},
+  {"query": "We're done with issue #8 — check format and as-built deviations", "should_trigger": true},
+  {"query": "Valmis, tee viimeiset tarkistukset issueen #3", "should_trigger": true},
+  {"query": "Finish issue #7 — formal closeout", "should_trigger": true},
+  {"query": "Close out issue #4 formally", "should_trigger": true},
+  {"query": "Issue done, record implementation deviations and close", "should_trigger": true},
+  {"query": "I'm starting work on issue #3", "should_trigger": false},
+  {"query": "Let's pick up issue #7", "should_trigger": false},
+  {"query": "Assign issue #3 to me", "should_trigger": false},
+  {"query": "Close issue #5", "should_trigger": false},
+  {"query": "Merge the PR for issue #5", "should_trigger": false},
+  {"query": "Review this pull request", "should_trigger": false},
+  {"query": "Create a new GitHub issue", "should_trigger": false},
+  {"query": "Show me open issues", "should_trigger": false},
+  {"query": "Check CI on the related PR", "should_trigger": false},
+  {"query": "Write a failing test for this feature first", "should_trigger": false}
+]

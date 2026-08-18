@@ -4,8 +4,9 @@ description: >-
   Use when the user wants to assign a GitHub issue to themselves or someone else.
   Apply when the user says "assign this issue to me", "assign issue #N", or
   "add me as assignee". Defaults to the current authenticated GitHub user if no
-  assignee is specified. Does not activate for creating issues, closing issues,
-  or general GitHub project management unrelated to assignment.
+  assignee is specified. Does not activate for creating issues, closing issues
+  (that's kerpo-gh-issue-done), or general GitHub project management unrelated
+  to assignment.
 license: Proprietary
 compatibility: Designed for Claude Code and Cursor
 metadata:

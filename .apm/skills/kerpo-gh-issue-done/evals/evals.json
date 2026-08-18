@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-gh-issue-done",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Issue #12 is done. Do the formal closeout in this repo (agent rules define the issue body shape).",
+      "expected_output": "Agent discovers format from consuming-repo agent rules, tells the user Format source with that path, checks the issue body against it, records as-built deviations if any, updates the body if needed, closes the issue with reason completed, and includes Format source in the close comment. Does not require related PRs to be merged.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Mark issue #4 done. Use this template: docs/issue-shape.md (ignore the repo's GitHub issue templates).",
+      "expected_output": "User override wins over .github/ISSUE_TEMPLATE/. Agent reports Format source as the user-provided docs/issue-shape.md, checks against that file, then closes. Mentions the unused repo templates only as an alternate source if found.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "This issue is done. There is no issue template in the repo. Related PR is still open.",
+      "expected_output": "Agent reports Format source: none, does a minimal closeout without inventing house sections, lists the open PR as informational, and still closes the issue. Open PR does not block. If the issue is already CLOSED, agent reports the URL and stops without reopening.",
+      "assertions": []
+    }
+  ]
+}
