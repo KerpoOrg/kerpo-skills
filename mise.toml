@@ -22,3 +22,7 @@ run = "apm pack && apm install build/kerpo-skills-*"
 description = "Pack, install, and push"
 depends = ["install"]
 run = "git add .agents/skills/ .claude/skills/ apm.lock.yaml && git commit -m 'Deploy skills' && git push"
+
+[tasks.uninstall]
+description = "Remove deployed skills from .agents/skills/ and .claude/skills/"
+run = "rm -rf .agents/skills/ .claude/skills/ && echo 'Skills removed'"
