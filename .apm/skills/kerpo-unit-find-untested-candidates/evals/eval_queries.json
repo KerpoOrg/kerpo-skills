@@ -1,0 +1,22 @@
+[
+  {"query": "Pick a code unit that has no tests and propose what to cover.", "should_trigger": true},
+  {"query": "Rank untested public units worth adding coverage for.", "should_trigger": true},
+  {"query": "Find untested candidates after the coverage whitelist ratchet.", "should_trigger": true},
+  {"query": "What's untested that's worth covering? Don't write tests yet — just propose.", "should_trigger": true},
+  {"query": "Retrospective gap-fill: which working modules should we lock with tests?", "should_trigger": true},
+  {"query": "Propose seams for existing untested domain code.", "should_trigger": true},
+  {"query": "Pick 1–3 untested files worth characterization, skip the glue.", "should_trigger": true},
+  {"query": "Coverage include lists only a few files — find units worth adding.", "should_trigger": true},
+  {"query": "Which public units have no tests and are worth covering?", "should_trigger": true},
+  {"query": "Find untested candidates in lib/ and rank them, don't dump everything.", "should_trigger": true},
+  {"query": "Let's build this feature test-first, red-green-refactor style.", "should_trigger": false},
+  {"query": "Write a failing test for this function before we implement it.", "should_trigger": false},
+  {"query": "Can we do TDD for this bug fix?", "should_trigger": false},
+  {"query": "What seams should we test for this new checkout module?", "should_trigger": false},
+  {"query": "Review these existing tests for tautological assertions.", "should_trigger": false},
+  {"query": "Audit this legacy test suite before we trust it.", "should_trigger": false},
+  {"query": "Is this test mocking too much of the internals?", "should_trigger": false},
+  {"query": "Just write some unit tests for this utility function, no TDD needed.", "should_trigger": false},
+  {"query": "Run the coverage report and show the percentage.", "should_trigger": false},
+  {"query": "Refactor this class to remove duplication.", "should_trigger": false}
+]

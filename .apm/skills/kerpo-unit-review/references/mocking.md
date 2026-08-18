@@ -1,7 +1,7 @@
 # Mocking — reference
 
 Guidance on when to mock. Loaded on demand by `kerpo-tdd` and
-`kerpo-tdd-review`.
+`kerpo-unit-review`.
 
 ## The core rule
 
@@ -15,7 +15,7 @@ under test.
 Mocking an internal collaborator couples the test to today's internal
 structure. When you refactor that collaborator away, the test breaks even
 though the observable behavior of the system hasn't changed — this is the
-"implementation-coupled" anti-pattern (see `kerpo-tdd-review`).
+"implementation-coupled" anti-pattern (see `kerpo-unit-review`).
 
 ## Rule of thumb
 

@@ -6,12 +6,14 @@ description: >-
   when starting a new TDD cycle: confirming test seams, writing a failing
   test, then the minimal code to pass it. Does not activate for auditing or
   reviewing already-written/legacy tests for anti-patterns without doing new
-  work — that's kerpo-tdd-review.
+  work — that's kerpo-unit-review. Does not activate for finding untested
+  working units or retrospective gap-fill — that's
+  kerpo-unit-find-untested-candidates.
 license: Proprietary
 compatibility: Designed for Claude Code and Cursor
 metadata:
   author: kerpo
-  version: "1.0"
+  version: "1.1"
 ---
 # kerpo-tdd
 
@@ -65,8 +67,10 @@ Ask: "What's the public interface, and which seams should we test?"
   (see the `code-review` skill), not the red → green implementation cycle.
 
 For anti-pattern review of already-written tests (implementation-coupled
-tests, tautological assertions), use `kerpo-tdd-review` instead — this skill
-governs writing new tests test-first, not auditing existing ones.
+tests, tautological assertions), use `kerpo-unit-review` instead. For
+finding untested working units to lock later, use
+`kerpo-unit-find-untested-candidates`. This skill governs writing new tests
+test-first, not auditing existing ones or ranking coverage gaps.
 
 ## Gotchas
 

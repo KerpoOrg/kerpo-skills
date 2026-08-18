@@ -8,5 +8,7 @@
   {"query": "Audit this legacy test suite before we trust it.", "should_trigger": false},
   {"query": "Is this test mocking too much of the internals?", "should_trigger": false},
   {"query": "Just write some unit tests for this utility function, no TDD needed.", "should_trigger": false},
-  {"query": "Refactor this class to remove duplication.", "should_trigger": false}
+  {"query": "Refactor this class to remove duplication.", "should_trigger": false},
+  {"query": "Pick a code unit that has no tests and propose what to cover.", "should_trigger": false},
+  {"query": "Rank untested public units worth adding coverage for.", "should_trigger": false}
 ]

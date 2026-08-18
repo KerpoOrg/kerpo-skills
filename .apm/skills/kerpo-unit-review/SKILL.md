@@ -1,23 +1,26 @@
 ---
-name: kerpo-tdd-review
+name: kerpo-unit-review
 description: >-
-  Use when auditing or reviewing existing tests for TDD anti-patterns —
+  Use when auditing or reviewing existing tests for anti-patterns —
   implementation-coupled tests that mock internals or test private methods,
   or tautological assertions that recompute the expected value the way the
   code does. Apply during code review of a test suite, or before trusting
   legacy tests you didn't write test-first. Does not activate for writing new
-  tests test-first or running a red-green cycle — that's kerpo-tdd.
+  tests test-first or running a red-green cycle — that's kerpo-tdd. Does not
+  activate for finding untested working units or retrospective coverage —
+  that's kerpo-unit-find-untested-candidates.
 license: Proprietary
 compatibility: Designed for Claude Code and Cursor
 metadata:
   author: kerpo
   version: "1.0"
 ---
-# kerpo-tdd-review
+# kerpo-unit-review
 
 Audits existing tests against the TDD anti-pattern taxonomy — for tests
 already written, not for tests you're writing test-first (see `kerpo-tdd`
-for that loop).
+for that loop) and not for units that have no tests yet (see
+`kerpo-unit-find-untested-candidates`).
 
 ## Anti-patterns to check
 

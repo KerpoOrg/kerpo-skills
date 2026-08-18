@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-unit-find-untested-candidates",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "This repo uses colocated Vitest tests and a coverage.include whitelist of a few files. Untested: lib/tagged-id.ts (pure RF tag parsing, small public API), lib/store.ts (zustand orchestration), pages/index.tsx, generated/api-client.ts. Pick a code unit that has no tests and propose what to cover — don't write tests yet.",
+      "expected_output": "Agent ranks 1–3 candidates, proposes tagged-id.ts (domain, small public seam, little I/O), drops store/pages/generated as glue, does not write a test file, and asks which candidate and seam to lock.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Coverage include lists only a handful of files while most of lib/ is untested. Find untested candidates worth adding. Don't dump every file.",
+      "expected_output": "Agent detects the repo's real test/coverage convention, ranks 1–3 public units, explains why neighbors wait, and stops to ask which seam to lock rather than generating tests or listing everything.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Test everything in lib/ that has no colocated test.",
+      "expected_output": "Agent still returns 1–3 ranked proposals instead of a full dump, drops glue, and asks which candidate to lock — treating 'no colocated test' as insufficient reason to cover a unit.",
+      "assertions": []
+    }
+  ]
+}

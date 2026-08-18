@@ -1,7 +1,7 @@
 # Good tests — reference
 
 Detailed guidance on what makes a test worth keeping. Loaded on demand by
-`kerpo-tdd` and `kerpo-tdd-review`.
+`kerpo-tdd` and `kerpo-unit-review`.
 
 ## The core rule
 

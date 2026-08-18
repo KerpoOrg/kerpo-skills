@@ -8,5 +8,7 @@
   {"query": "Write a failing test for this new function before implementing it.", "should_trigger": false},
   {"query": "What seams should we test for this new module?", "should_trigger": false},
   {"query": "General code review: check this PR for style and naming issues.", "should_trigger": false},
-  {"query": "Refactor this function to be more readable.", "should_trigger": false}
+  {"query": "Refactor this function to be more readable.", "should_trigger": false},
+  {"query": "Pick a code unit that has no tests and propose what to cover.", "should_trigger": false},
+  {"query": "Rank untested public units worth adding coverage for.", "should_trigger": false}
 ]
