@@ -16,7 +16,7 @@ echo "mise.local.toml updated"
 
 [tasks.install]
 description = "Pack and install skills locally (claude + cursor)"
-run = "apm pack && apm install build/kerpo-skills-*"
+run = "rm -rf build/ && apm pack && apm install build/kerpo-skills-*"
 
 [tasks.deploy]
 description = "Pack, install, and push"
