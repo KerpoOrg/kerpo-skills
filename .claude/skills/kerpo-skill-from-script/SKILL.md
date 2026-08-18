@@ -40,7 +40,17 @@ boundaries — each skill should be a coherent unit of work (like a well-scoped 
 - Calling third-party binaries with fixed arguments
 - Precise timing-critical operations
 
-For each identified skill unit, propose a name (`kerpo-<name>`) and one-sentence purpose.
+**Naming convention — prevent namespace pollution:**
+
+| Type | Pattern | Example |
+|---|---|---|
+| Standalone feature | `kerpo-<feature>` | `kerpo-eval` |
+| Sub-skill | `kerpo-<feature>-<sub>` | `kerpo-eval-run`, `kerpo-eval-grade` |
+
+Rule: ask "is this sub-skill meaningful without its parent?" If no → use parent namespace.
+If unsure, ask the user before proposing names.
+
+For each identified skill unit, propose a namespaced name and one-sentence purpose.
 Ask the user to confirm the decomposition before proceeding if it's non-obvious.
 
 **Skill chains:** when skills depend on each other, note the chain order.
@@ -106,6 +116,6 @@ apm install
 
 - Don't translate commands 1:1 — think about what the agent *would do*, not what the code executes
 - `apm audit` catches hidden Unicode characters that silently break deployment
-- Skill names must be `kerpo-` prefixed, lowercase, hyphens only, no consecutive hyphens
+- Skill names: `kerpo-` prefix, lowercase, hyphens only — sub-skills use `kerpo-<parent>-<sub>` to prevent namespace pollution
 - Description is the only thing the agent sees before deciding to activate the skill — make it count
 - If the original script has many flags/options, the skill should handle the common case well and document edge cases in Gotchas, not enumerate every flag
