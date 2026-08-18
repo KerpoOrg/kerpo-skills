@@ -4,9 +4,9 @@ Kerpo Organization private APM skill package for Claude Code and Cursor. All ski
 
 ## Install in your project
 
-Requires [mise](https://mise.jdx.dev) and a GitHub token with access to KerpoOrg.
+Requires [mise](https://mise.jdx.dev) and [gh](https://cli.github.com) authenticated to a KerpoOrg account.
 
-**1. Add APM to your project's `mise.toml`:**
+**1. Add to your project's `mise.toml`:**
 
 ```toml
 [tools]
@@ -15,8 +15,20 @@ Requires [mise](https://mise.jdx.dev) and a GitHub token with access to KerpoOrg
 [env]
 GITHUB_APM_PAT_KERPOORG = "{{ env.GITHUB_APM_PAT_KERPOORG }}"
 
+[tasks.skills-auth]
+description = "Write GITHUB_APM_PAT_KERPOORG to mise.local.toml from gh keyring"
+run = """
+TOKEN=$(gh auth token 2>/dev/null)
+if [ -z "$TOKEN" ]; then
+  echo "Error: not logged in. Run: gh auth login" >&2
+  exit 1
+fi
+printf '[env]\nGITHUB_APM_PAT_KERPOORG = "%s"\n' "$TOKEN" > mise.local.toml
+echo "mise.local.toml updated"
+"""
+
 [tasks.skills-install]
-description = "Install or update kerpo-skills"
+description = "Install kerpo-skills"
 run = "apm install KerpoOrg/kerpo-skills"
 
 [tasks.skills-update]
@@ -24,20 +36,23 @@ description = "Update kerpo-skills to latest"
 run = "apm update KerpoOrg/kerpo-skills && apm install"
 ```
 
-**2. Add to your `mise.local.toml`** (gitignored):
+Lisää `mise.local.toml` gitignooreen.
 
-```toml
-[env]
-GITHUB_APM_PAT_KERPOORG = "<your-github-token>"
+**2. Autentikoidu (kerran):**
+
+```bash
+gh auth login        # jos ei vielä kirjautunut KerpoOrg-tilille
+mise run skills-auth # kirjoittaa tokenin mise.local.toml:iin
+mise trust mise.local.toml
 ```
 
-**3. Install:**
+**3. Asenna:**
 
 ```bash
 mise run skills-install
 ```
 
-**Update:**
+**Päivitä:**
 
 ```bash
 mise run skills-update
