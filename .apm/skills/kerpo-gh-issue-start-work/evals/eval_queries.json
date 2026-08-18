@@ -1,0 +1,11 @@
+[
+  {"query": "I'm starting work on issue #3", "should_trigger": true},
+  {"query": "let's work on this issue", "should_trigger": true},
+  {"query": "pick up issue #7", "should_trigger": true},
+  {"query": "take this issue and start working", "should_trigger": true},
+  {"query": "aloitan työskentelyn issuen #2 parissa", "should_trigger": true},
+  {"query": "assign issue #3 to me", "should_trigger": false},
+  {"query": "close issue #5", "should_trigger": false},
+  {"query": "create a new issue", "should_trigger": false},
+  {"query": "show me open issues", "should_trigger": false}
+]

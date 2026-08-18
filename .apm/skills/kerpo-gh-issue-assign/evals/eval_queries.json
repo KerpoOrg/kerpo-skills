@@ -1,0 +1,9 @@
+[
+  {"query": "assign issue #3 to me", "should_trigger": true},
+  {"query": "add me as assignee on this issue", "should_trigger": true},
+  {"query": "assign this issue to jounirajala", "should_trigger": true},
+  {"query": "take issue #7", "should_trigger": false},
+  {"query": "create a new issue", "should_trigger": false},
+  {"query": "close issue #3", "should_trigger": false},
+  {"query": "show open issues", "should_trigger": false}
+]

@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-gh-issue-start-work",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I'm starting work on issue #1 in KerpoOrg/kerpo-skills.",
+      "expected_output": "Agent fetches issue state, checks existing assignees, assigns @me, checks for in-progress label and adds it if present, reports issue title + assigned + label status.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Let's pick up issue #3.",
+      "expected_output": "Agent resolves repo from git remote, fetches issue #3, assigns current user, adds in-progress label if available, confirms with issue title.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Start work on issue #5 — it's already assigned to someone else.",
+      "expected_output": "Agent notices existing assignee, informs user and asks for confirmation before adding @me as additional assignee.",
+      "assertions": []
+    }
+  ]
+}

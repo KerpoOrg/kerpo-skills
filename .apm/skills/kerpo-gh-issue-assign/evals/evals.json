@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-gh-issue-assign",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Assign issue #5 to me.",
+      "expected_output": "Agent resolves repo from git remote, runs gh issue edit 5 --add-assignee @me --repo <owner/repo>, confirms assignment.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Assign issue #12 in KerpoOrg/kerpo-skills to jounirajala.",
+      "expected_output": "Agent uses the specified repo and assignee, runs gh issue edit 12 --add-assignee jounirajala --repo KerpoOrg/kerpo-skills, confirms.",
+      "assertions": []
+    }
+  ]
+}
