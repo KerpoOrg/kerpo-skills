@@ -3,3 +3,4 @@ apm_modules/
 build/
 .claude-plugin/
 .claude/settings.local.json
+mise.local.toml
