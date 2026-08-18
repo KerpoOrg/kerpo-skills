@@ -1,0 +1,5 @@
+apm_modules/
+*-workspace/
+build/
+.claude-plugin/
+.claude/settings.local.json

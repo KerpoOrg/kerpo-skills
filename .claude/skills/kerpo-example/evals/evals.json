@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-example",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Realistic user message that should activate this skill.",
+      "expected_output": "Human-readable description of what success looks like.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Another realistic prompt with different phrasing.",
+      "expected_output": "Description of expected output.",
+      "assertions": []
+    }
+  ]
+}

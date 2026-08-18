@@ -1,0 +1,13 @@
+name: kerpo-skills
+version: 0.1.0
+description: Kerpo Organization private daily skills for Claude Code and Cursor
+author: kerpo
+license: Proprietary
+dependencies:
+  apm: []
+  mcp: []
+includes: auto
+targets:
+  - claude
+  - cursor
+scripts: {}

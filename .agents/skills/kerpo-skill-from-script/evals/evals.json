@@ -1,0 +1,35 @@
+{
+  "skill_name": "kerpo-skill-from-script",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Convert this script to a skill: scripts/new-skill.sh",
+      "expected_output": "A SKILL.md created at .apm/skills/kerpo-<appropriate-name>/ that captures the scaffold logic as agent instructions, plus evals/ scaffolding.",
+      "assertions": [
+        "A new skill directory was created under .apm/skills/",
+        "The created SKILL.md has valid frontmatter with name, description, license, compatibility, metadata",
+        "The SKILL.md body contains agent-native instructions, not shell commands copied verbatim",
+        "evals/evals.json and evals/eval_queries.json were created"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Make scripts/run-evals.sh into a skill",
+      "expected_output": "The complex run-evals script is decomposed into multiple focused skills (e.g. kerpo-run-eval-case, kerpo-grade-eval, kerpo-aggregate-benchmark) with a proposed chain, not crammed into one large skill.",
+      "assertions": [
+        "Multiple skills are proposed or created, not a single monolithic skill",
+        "Each skill has a clear single responsibility",
+        "The decomposition rationale is explained"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Turn this bash one-liner into a skill: find . -name '*.md' | xargs grep -l 'TODO'",
+      "expected_output": "Agent is guided to find TODO items in markdown files — not wrap the grep command, but describe the intent as an agent action.",
+      "assertions": [
+        "The skill description uses agent-native language, not shell syntax",
+        "The skill is appropriately scoped (simple enough to be one skill)"
+      ]
+    }
+  ]
+}

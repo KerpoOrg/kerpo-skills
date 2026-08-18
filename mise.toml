@@ -1,0 +1,3 @@
+[tools]
+"github:microsoft/apm" = "0.28.0"
+jq = "latest"

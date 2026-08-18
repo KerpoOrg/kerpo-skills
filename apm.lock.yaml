@@ -1,0 +1,190 @@
+lockfile_version: '1'
+generated_at: '2026-08-18T10:13:30.179579+00:00'
+dependencies: []
+deployments:
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-example
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-example/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:227d5431e9e0075051eb64fb7e04964a91cecbdfbdec7841539a6057a1703d9d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-example/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-example/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-skill-from-script
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-skill-from-script/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:93c2bf672d29ae57a143411972d24c9ae7376039bae7f67a4b83c8ed48825984
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-skill-from-script/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:8d20c7cba5aaf707ab6892b4e8e8e8933a274254b93b3be47f09998ed5ecaeb3
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-skill-from-script/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:134da36749b375a64f2f804040e0ebf0fd03519624eecd3cea8f75f418193756
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-example
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-example/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:227d5431e9e0075051eb64fb7e04964a91cecbdfbdec7841539a6057a1703d9d
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-example/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-example/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-skill-from-script
+  runtime: null
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-skill-from-script/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:93c2bf672d29ae57a143411972d24c9ae7376039bae7f67a4b83c8ed48825984
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-skill-from-script/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:8d20c7cba5aaf707ab6892b4e8e8e8933a274254b93b3be47f09998ed5ecaeb3
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-skill-from-script/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:134da36749b375a64f2f804040e0ebf0fd03519624eecd3cea8f75f418193756
+local_deployed_files:
+- .agents/skills/kerpo-example
+- .agents/skills/kerpo-example/SKILL.md
+- .agents/skills/kerpo-example/evals/eval_queries.json
+- .agents/skills/kerpo-example/evals/evals.json
+- .agents/skills/kerpo-skill-from-script
+- .agents/skills/kerpo-skill-from-script/SKILL.md
+- .agents/skills/kerpo-skill-from-script/evals/eval_queries.json
+- .agents/skills/kerpo-skill-from-script/evals/evals.json
+- .claude/skills/kerpo-example
+- .claude/skills/kerpo-example/SKILL.md
+- .claude/skills/kerpo-example/evals/eval_queries.json
+- .claude/skills/kerpo-example/evals/evals.json
+- .claude/skills/kerpo-skill-from-script
+- .claude/skills/kerpo-skill-from-script/SKILL.md
+- .claude/skills/kerpo-skill-from-script/evals/eval_queries.json
+- .claude/skills/kerpo-skill-from-script/evals/evals.json
+local_deployed_file_hashes:
+  .agents/skills/kerpo-example/SKILL.md: sha256:227d5431e9e0075051eb64fb7e04964a91cecbdfbdec7841539a6057a1703d9d
+  .agents/skills/kerpo-example/evals/eval_queries.json: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
+  .agents/skills/kerpo-example/evals/evals.json: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
+  .agents/skills/kerpo-skill-from-script/SKILL.md: sha256:93c2bf672d29ae57a143411972d24c9ae7376039bae7f67a4b83c8ed48825984
+  .agents/skills/kerpo-skill-from-script/evals/eval_queries.json: sha256:8d20c7cba5aaf707ab6892b4e8e8e8933a274254b93b3be47f09998ed5ecaeb3
+  .agents/skills/kerpo-skill-from-script/evals/evals.json: sha256:134da36749b375a64f2f804040e0ebf0fd03519624eecd3cea8f75f418193756
+  .claude/skills/kerpo-example/SKILL.md: sha256:227d5431e9e0075051eb64fb7e04964a91cecbdfbdec7841539a6057a1703d9d
+  .claude/skills/kerpo-example/evals/eval_queries.json: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
+  .claude/skills/kerpo-example/evals/evals.json: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
+  .claude/skills/kerpo-skill-from-script/SKILL.md: sha256:93c2bf672d29ae57a143411972d24c9ae7376039bae7f67a4b83c8ed48825984
+  .claude/skills/kerpo-skill-from-script/evals/eval_queries.json: sha256:8d20c7cba5aaf707ab6892b4e8e8e8933a274254b93b3be47f09998ed5ecaeb3
+  .claude/skills/kerpo-skill-from-script/evals/evals.json: sha256:134da36749b375a64f2f804040e0ebf0fd03519624eecd3cea8f75f418193756
