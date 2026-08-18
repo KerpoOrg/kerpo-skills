@@ -1,3 +1,24 @@
 [tools]
 "github:microsoft/apm" = "0.28.0"
 jq = "latest"
+
+[tasks.auth]
+description = "Configure GITHUB_APM_PAT_KERPOORG in mise.local.toml from gh keyring"
+run = """
+TOKEN=$(gh auth token --user jounirajala 2>/dev/null)
+if [ -z "$TOKEN" ]; then
+  echo "Error: jounirajala not found in gh keyring. Run: gh auth login" >&2
+  exit 1
+fi
+printf '[env]\nGITHUB_APM_PAT_KERPOORG = "%s"\n' "$TOKEN" > mise.local.toml
+echo "mise.local.toml updated"
+"""
+
+[tasks.install]
+description = "Pack and install skills locally (claude + cursor)"
+run = "apm pack && apm install build/kerpo-skills-*"
+
+[tasks.deploy]
+description = "Pack, install, and push"
+depends = ["install"]
+run = "git add .agents/skills/ .claude/skills/ apm.lock.yaml && git commit -m 'Deploy skills' && git push"
