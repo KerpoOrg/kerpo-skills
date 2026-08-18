@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-tdd-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review this inherited test file for TDD anti-patterns — I don't trust it yet.",
+      "expected_output": "Agent checks each test for implementation-coupling and tautological assertions, reporting per-test findings with suggested fixes, without rewriting tests unprompted.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Is this assertion tautological? expect(calculateTotal(items)).toBe(items.reduce((a,b) => a+b.price, 0))",
+      "expected_output": "Agent identifies the assertion as tautological since it recomputes the expected value the same way the code does, and explains why an independent source of truth is needed instead.",
+      "assertions": []
+    }
+  ]
+}

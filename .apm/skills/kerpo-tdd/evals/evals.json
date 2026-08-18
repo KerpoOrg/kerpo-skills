@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-tdd",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to add a discount-code feature to the checkout flow. Let's build it test-first.",
+      "expected_output": "Agent confirms the seams to test before writing any code, then works in a red-green loop: one failing test, minimal implementation, repeat — not all tests written up front.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Fix the bug where negative quantities crash the cart total calculation, using TDD.",
+      "expected_output": "Agent writes a failing test reproducing the negative-quantity crash first, then the minimal fix, without bundling unrelated refactoring into the same cycle.",
+      "assertions": []
+    }
+  ]
+}

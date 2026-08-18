@@ -1,0 +1,12 @@
+[
+  {"query": "Review these tests for TDD anti-patterns.", "should_trigger": true},
+  {"query": "Is this test tautological — the assertion just recomputes what the code does?", "should_trigger": true},
+  {"query": "Audit this legacy test suite before we trust it in CI.", "should_trigger": true},
+  {"query": "Does this test mock too many internal collaborators?", "should_trigger": true},
+  {"query": "Check whether these tests are implementation-coupled.", "should_trigger": true},
+  {"query": "Let's build this feature test-first with red-green-refactor.", "should_trigger": false},
+  {"query": "Write a failing test for this new function before implementing it.", "should_trigger": false},
+  {"query": "What seams should we test for this new module?", "should_trigger": false},
+  {"query": "General code review: check this PR for style and naming issues.", "should_trigger": false},
+  {"query": "Refactor this function to be more readable.", "should_trigger": false}
+]

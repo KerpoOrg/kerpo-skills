@@ -1,0 +1,12 @@
+[
+  {"query": "Let's build this feature test-first, red-green-refactor style.", "should_trigger": true},
+  {"query": "I want integration tests for the new payment endpoint, written test-first.", "should_trigger": true},
+  {"query": "Can we do TDD for this bug fix?", "should_trigger": true},
+  {"query": "Write a failing test for this function before we implement it.", "should_trigger": true},
+  {"query": "What seams should we test for this new checkout module?", "should_trigger": true},
+  {"query": "Review these existing tests for anti-patterns like tautological assertions.", "should_trigger": false},
+  {"query": "Audit this legacy test suite before we trust it.", "should_trigger": false},
+  {"query": "Is this test mocking too much of the internals?", "should_trigger": false},
+  {"query": "Just write some unit tests for this utility function, no TDD needed.", "should_trigger": false},
+  {"query": "Refactor this class to remove duplication.", "should_trigger": false}
+]
