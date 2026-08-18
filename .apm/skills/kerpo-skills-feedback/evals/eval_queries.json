@@ -1,0 +1,14 @@
+[
+  {"query": "kerpo-skill-from-script ei toimi oikein Python-skripteillä", "should_trigger": true},
+  {"query": "haluaisin raportoida bugin kerpo-skillsiin", "should_trigger": true},
+  {"query": "voisitko ehdottaa uutta skilliä kerpo-skills-pakettiin", "should_trigger": true},
+  {"query": "lähetä palautetta kerpo-skillsistä", "should_trigger": true},
+  {"query": "tämä kerpo-skilli ei tunnista triggereitä oikein, voitko tehdä issue?", "should_trigger": true},
+  {"query": "how do I give feedback about a kerpo skill", "should_trigger": true},
+  {"query": "korjaa tämä Python-skripti", "should_trigger": false},
+  {"query": "tee uusi GitHub issue tähän repoon", "should_trigger": false},
+  {"query": "mikä on kerpo-skill-from-script ja miten se toimii", "should_trigger": false},
+  {"query": "luo GitHub issue bugista joka löytyi tästä sovelluksesta", "should_trigger": false},
+  {"query": "muunna tämä bash-skripti skilliksi", "should_trigger": false},
+  {"query": "miten asennan kerpo-skills-paketin", "should_trigger": false}
+]

@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-skills-feedback",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "kerpo-skill-from-script ei tunnistanut Python-skriptiäni oikein — se yritti ajaa sen bash-ohjeilla. Haluaisin raportoida tämän bugina.",
+      "expected_output": "Agent asks for confirmation details, drafts a bug report issue using the bug template with skill name 'kerpo-skill-from-script', shows it to the user, and creates the issue on KerpoOrg/kerpo-skills with label 'bug'. Returns the issue URL.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Olisi hyödyllistä jos kerpo-skills-paketissa olisi skilli joka auttaa kirjoittamaan git commit-viestejä Kerpo Org konventioiden mukaan. Voitko ehdottaa tätä feature requestina?",
+      "expected_output": "Agent drafts a feature request issue using the feature-request template, fills in the proposed skill and use case, shows draft to user, and creates issue with label 'feature-request'.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Miten voin antaa palautetta kerpo-skillsistä?",
+      "expected_output": "Agent explains it can create a GitHub issue on KerpoOrg/kerpo-skills and asks the user what type of feedback (bug, feature request, or general feedback) and which skill it concerns.",
+      "assertions": []
+    }
+  ]
+}
