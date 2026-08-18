@@ -2,6 +2,51 @@
 
 Kerpo Organization private APM skill package for Claude Code and Cursor. All skills use the `kerpo-` prefix.
 
+## Install in your project
+
+Requires [mise](https://mise.jdx.dev) and a GitHub token with access to KerpoOrg.
+
+**1. Add APM to your project's `mise.toml`:**
+
+```toml
+[tools]
+"github:microsoft/apm" = "0.28.0"
+
+[env]
+GITHUB_APM_PAT_KERPOORG = "{{ env.GITHUB_APM_PAT_KERPOORG }}"
+
+[tasks.skills-install]
+description = "Install or update kerpo-skills"
+run = "apm install KerpoOrg/kerpo-skills"
+
+[tasks.skills-update]
+description = "Update kerpo-skills to latest"
+run = "apm update KerpoOrg/kerpo-skills && apm install"
+```
+
+**2. Add to your `mise.local.toml`** (gitignored):
+
+```toml
+[env]
+GITHUB_APM_PAT_KERPOORG = "<your-github-token>"
+```
+
+**3. Install:**
+
+```bash
+mise run skills-install
+```
+
+**Update:**
+
+```bash
+mise run skills-update
+```
+
+Skills are installed to `.agents/skills/` (shared across Claude Code, Cursor, and other harnesses). Commit `apm.yml` and `apm.lock.yaml` — gitignore `.agents/skills/` since it is generated.
+
+---
+
 See [.claude/CLAUDE.md](.claude/CLAUDE.md) for the full development workflow.
 
 ## Quick start
@@ -20,11 +65,7 @@ apm audit --file .apm/skills/kerpo-my-skill/SKILL.md
 ./scripts/run-evals.sh kerpo-my-skill 1
 
 # Deploy locally (pack → install local bundle)
-apm pack
-apm install build/kerpo-skills-0.1.0
-
-# Or install into another project from GitHub:
-# apm install kerpo/kerpo-skills --target cursor
+mise run install
 ```
 
 ## Repo structure
@@ -52,5 +93,5 @@ dependencies:
 
 ## Git conventions
 
-Commit: `apm.yml`, `apm.lock.yaml`, `.apm/`, `.agents/skills/`  
-Ignore: `apm_modules/`, `*-workspace/`, `build/`
+Commit: `apm.yml`, `apm.lock.yaml`, `.apm/`  
+Ignore: `apm_modules/`, `*-workspace/`, `build/`, `.agents/skills/`, `.claude/skills/`
