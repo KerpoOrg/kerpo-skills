@@ -1,0 +1,22 @@
+[
+  {"query": "Check skill conflicts with the kerpo skillset", "should_trigger": true},
+  {"query": "Are my skills fighting kerpo?", "should_trigger": true},
+  {"query": "Do I have overlapping skills that clash with kerpo?", "should_trigger": true},
+  {"query": "Analyze installed skills in this session for kerpo conflicts", "should_trigger": true},
+  {"query": "What should I do about skills that conflict with kerpo?", "should_trigger": true},
+  {"query": "onko skillit ristiriidassa kerpon kanssa", "should_trigger": true},
+  {"query": "tarkista skill-konfliktit tässä sessiossa", "should_trigger": true},
+  {"query": "ovatko asennetut skillit ristiriidassa kerpo-skillsetin kanssa", "should_trigger": true},
+  {"query": "Suggest how to resolve conflicts between my other skills and kerpo", "should_trigger": true},
+  {"query": "Audit other installed skills against the kerpo set in this session", "should_trigger": true},
+  {"query": "Make this bash script into a kerpo skill", "should_trigger": false},
+  {"query": "Create a new Cursor skill for commit messages", "should_trigger": false},
+  {"query": "this kerpo skill isn't working, file a bug", "should_trigger": false},
+  {"query": "Run output-quality evals for kerpo-tdd", "should_trigger": false},
+  {"query": "What skills do I have installed?", "should_trigger": false},
+  {"query": "Let's build this feature test-first", "should_trigger": false},
+  {"query": "Show me uncommitted files", "should_trigger": false},
+  {"query": "Assign this GitHub issue to me", "should_trigger": false},
+  {"query": "Find a skill for React performance", "should_trigger": false},
+  {"query": "muunna tämä skripti skilliksi", "should_trigger": false}
+]

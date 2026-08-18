@@ -14,6 +14,10 @@ printf '[env]\nGITHUB_APM_PAT_KERPOORG = "%s"\n' "$TOKEN" > mise.local.toml
 echo "mise.local.toml updated"
 """
 
+[tasks.audit]
+description = "Fast apm audit of all skill markdown (unicode/structure, no evals)"
+run = "./scripts/audit-skills.sh"
+
 [tasks.install]
 description = "Pack and install skills locally (claude + cursor)"
 run = "rm -rf build/ && apm pack && apm install build/kerpo-skills-*"

@@ -53,7 +53,7 @@ metadata:
 
 ### 1. Rakennekelpoisuus
 ```bash
-apm audit --file .apm/skills/kerpo-<name>/SKILL.md
+mise run audit                    # kaikki skillit, nopea (ei evaleja)
 apm pack --dry-run
 ```
 

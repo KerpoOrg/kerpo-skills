@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-skill-conflicts",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Check skill conflicts with kerpo. Session skills: kerpo-tdd, kerpo-git-status, vercel-react-best-practices (React/Next.js performance), find-skills (discover installable skills), create-rule (Cursor rules). No other TDD or git-status skills.",
+      "expected_output": "Report with kerpo count and other-skills count. No Conflicts section items (or an explicit one-sentence 'no conflicts'). No conflict lists vercel-react-best-practices, find-skills, and create-rule as complementary/keep. Does not invent clashes. Does not disable anything.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Are my skills fighting kerpo? Session includes kerpo-tdd (red-green, tests through public seams, do not mock internals) and a user-installed skill `team-tdd` at ~/.agents/skills/team-tdd whose SKILL.md says to mock internals and skip the failing-test step.",
+      "expected_output": "Conflicts lists **clash** `team-tdd` vs `kerpo-tdd` with a one-sentence why (mocks internals / skips red-green). Do this: disable or remove `team-tdd`, or set disable-model-invocation — not a Cursor built-in rule. Does not auto-disable. Prefers kerpo.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "onko skillit ristiriidassa kerpon kanssa. Session includes kerpo-skill-from-script (convert a script into APM skills in the kerpo-skills repo) and Cursor built-in create-skill at ~/.cursor/skills-cursor/create-skill (general Cursor skill authoring).",
+      "expected_output": "Treats this as partial overlap (trigger or domain), not clash. Keep + boundary: create-skill = general Cursor authoring; kerpo-skill-from-script = script-to-APM in this repo. Does not tell the user to uninstall a Cursor built-in. Does not auto-edit anything.",
+      "assertions": []
+    }
+  ]
+}

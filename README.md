@@ -70,8 +70,8 @@ See [.claude/CLAUDE.md](.claude/CLAUDE.md) for the full development workflow.
 # Create a new skill
 ./scripts/new-skill.sh kerpo-my-skill
 
-# Validate structure
-apm audit --file .apm/skills/kerpo-my-skill/SKILL.md
+# Validate all skills (unicode/structure, no evals)
+mise run audit
 
 # Test trigger accuracy (after filling eval_queries.json)
 ./scripts/test-triggers.sh kerpo-my-skill
