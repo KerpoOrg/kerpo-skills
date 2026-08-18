@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-skill-eval-benchmark",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build benchmark.json from kerpo-example-workspace/iteration-1",
+      "expected_output": "benchmark.json with with_skill and without_skill means and deltas.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Summarize this eval iteration: did the skill help, and at what token cost?",
+      "expected_output": "Numeric summary plus a short interpretation of delta.pass_rate and delta.tokens.",
+      "assertions": []
+    }
+  ]
+}

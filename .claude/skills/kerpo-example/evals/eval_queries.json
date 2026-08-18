@@ -1,4 +1,0 @@
-[
-  {"query": "Message that should trigger this skill", "should_trigger": true},
-  {"query": "Message with same topic but different intent — should NOT trigger", "should_trigger": false}
-]

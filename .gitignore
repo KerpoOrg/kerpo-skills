@@ -3,4 +3,6 @@ apm_modules/
 build/
 .claude-plugin/
 .claude/settings.local.json
+.claude/skills/
+.agents/skills/
 mise.local.toml

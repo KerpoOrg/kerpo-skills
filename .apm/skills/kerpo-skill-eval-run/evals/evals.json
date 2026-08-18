@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-skill-eval-run",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run eval case 1 for kerpo-example with_skill and without_skill into iteration 1",
+      "expected_output": "response.txt and timing.json exist under both with_skill and without_skill.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Execute this single eval prompt twice, once with the skill path and once without",
+      "expected_output": "Two timed runs; skill loaded only on the first pass.",
+      "assertions": []
+    }
+  ]
+}

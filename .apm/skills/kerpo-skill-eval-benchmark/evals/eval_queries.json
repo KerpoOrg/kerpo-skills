@@ -1,0 +1,6 @@
+[
+  {"query": "Summarize this eval iteration into benchmark.json", "should_trigger": true},
+  {"query": "What's the with_skill vs without_skill delta for this run?", "should_trigger": true},
+  {"query": "Grade assertion 2 for this eval", "should_trigger": false},
+  {"query": "Run the eval prompts now", "should_trigger": false}
+]

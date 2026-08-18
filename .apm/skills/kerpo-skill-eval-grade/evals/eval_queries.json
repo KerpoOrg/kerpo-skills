@@ -1,0 +1,6 @@
+[
+  {"query": "Grade this eval response against the assertions", "should_trigger": true},
+  {"query": "Write grading.json for the with_skill output", "should_trigger": true},
+  {"query": "Run evals for kerpo-example", "should_trigger": false},
+  {"query": "Summarize benchmark.json", "should_trigger": false}
+]

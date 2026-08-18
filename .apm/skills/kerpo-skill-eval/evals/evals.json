@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-skill-eval",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Run output quality evals for kerpo-example iteration 1",
+      "expected_output": "Full iteration workspace with per-eval with/without outputs, grades, and benchmark.json.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Aja run-evals.sh kerpo-skill-from-script 1",
+      "expected_output": "Same iteration as the script, via kerpo-skill-eval-run → kerpo-skill-eval-grade → kerpo-skill-eval-benchmark.",
+      "assertions": []
+    }
+  ]
+}

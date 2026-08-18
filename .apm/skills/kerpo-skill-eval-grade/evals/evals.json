@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-skill-eval-grade",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Grade the with_skill response for eval-1 against its assertions",
+      "expected_output": "grading.json with assertion_results and a pass_rate summary.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Assertions are empty — grade this eval output anyway",
+      "expected_output": "grading.json with pass_rate null, not a 0% fail.",
+      "assertions": []
+    }
+  ]
+}

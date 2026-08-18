@@ -1,0 +1,6 @@
+[
+  {"query": "Run this one eval case with and without the skill", "should_trigger": true},
+  {"query": "Execute a single with_skill vs without_skill eval prompt", "should_trigger": true},
+  {"query": "Run the whole eval suite for kerpo-example", "should_trigger": false},
+  {"query": "Grade the assertions in grading.json", "should_trigger": false}
+]

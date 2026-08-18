@@ -1,0 +1,8 @@
+[
+  {"query": "Run evals for kerpo-example", "should_trigger": true},
+  {"query": "Aja output quality evals kerpo-skill-from-script iteraatio 1", "should_trigger": true},
+  {"query": "./scripts/run-evals.sh kerpo-foo 2", "should_trigger": true},
+  {"query": "Test whether the description triggers this skill", "should_trigger": false},
+  {"query": "Grade this one eval response", "should_trigger": false},
+  {"query": "Convert scripts/run-evals.sh into a skill", "should_trigger": false}
+]
