@@ -44,8 +44,8 @@ boundaries — each skill should be a coherent unit of work (like a well-scoped 
 
 | Type | Pattern | Example |
 |---|---|---|
-| Standalone feature | `kerpo-<feature>` | `kerpo-eval` |
-| Sub-skill | `kerpo-<feature>-<sub>` | `kerpo-eval-run`, `kerpo-eval-grade` |
+| Standalone feature | `kerpo-<feature>` | `kerpo-skill-eval` |
+| Sub-skill | `kerpo-<feature>-<sub>` | `kerpo-skill-eval-run`, `kerpo-skill-eval-grade` |
 
 Rule: ask "is this sub-skill meaningful without its parent?" If no → use parent namespace.
 If unsure, ask the user before proposing names.
