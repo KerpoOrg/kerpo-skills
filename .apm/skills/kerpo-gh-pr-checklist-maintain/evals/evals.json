@@ -1,0 +1,21 @@
+{
+  "skill_name": "kerpo-gh-pr-checklist-maintain",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Please update PR #123 checklist checkboxes based on the latest commits and CI results.",
+      "expected_output": "Agent gates to GitHub-only, fetches PR #123 body + checklist region, updates marker-bounded checkbox lines using evidence heuristics (required checks/tests/docs/linking/code changes), preserves any already-[x] items, and writes the updated PR body back via gh pr edit. It reports which boxes were checked and why."
+    },
+    {
+      "id": 2,
+      "prompt": "Sync the checklist for this PR description (PR #77) so none of the boxes are left unchecked when work is done.",
+      "expected_output": "Agent finds/creates the marker-bounded checklist region, applies never-uncheck, checks eligible items from evidence, avoids guessing when evidence is ambiguous, and confirms the resulting PR body checklist state."
+    },
+    {
+      "id": 3,
+      "prompt": "Update the Jira issue checklist for ticket ABC-12 based on Jira progress.",
+      "expected_output": "Agent does not activate in Jira-only context; it treats this as a near-miss and asks for the GitHub PR/URL to update (does not modify Jira or other systems)."
+    }
+  ]
+}
+

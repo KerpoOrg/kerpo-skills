@@ -233,6 +233,36 @@ deployments:
   content_hash: sha256:9bf3df0c2ac3001da5429f15b999ac1b5c54e2499c0675d4e76ddc60cdaa4de0
 - kind: project-relative
   target: agents
+  value: .agents/skills/kerpo-gh-content-policy-learn/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:426e7f972a44f2e23ba3789af89d3b7c8534b347ce467694ef5837bc91e1142a
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-content-policy-learn/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:869d7624a22cc577b2bd4ddd6fcc31c821c4b2a670abcdc4297282f00b1a7c12
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-content-policy-learn/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:a6abe9e69f15ceca74072a577e69a3a72c2a0a62304245a486297b1c18d47193
+- kind: project-relative
+  target: agents
   value: .agents/skills/kerpo-gh-issue-assign/SKILL.md
   runtime: null
   scope: project
@@ -270,7 +300,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:c3a8e3d17cfaf36931d9a7e4a24809f75ffecc005dde4c0594f5b1da500821b4
+  content_hash: sha256:821bd63943f4e79080eb4f962f30d657e15f8316f14a628cc1ab05f3124a4b13
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-gh-issue-done/evals/eval_queries.json
@@ -313,6 +343,46 @@ deployments:
   content_hash: sha256:de66ed4a4ddfe67ef11734d3e5f49843302691576691a097be0ba7a2996c2bf5
 - kind: project-relative
   target: agents
+  value: .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:b32b9f468086d6d25bc60650173013a65f85ced3908553f8b54cc314ea64b2ed
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:7387b7c3e916c620598e0b77c061c7b56069490a40214284534ce27aa41ceb25
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:e8125f67f55ddda5aea4a866acd4e24958f7f08a5714d36a0ada606fa0b01c3c
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:43d497505a329857c27ae2b73f40e8585bb7ff7ae569d011a326a79823e69f57
+- kind: project-relative
+  target: agents
   value: .agents/skills/kerpo-gh-issue-start-work/SKILL.md
   runtime: null
   scope: project
@@ -341,6 +411,126 @@ deployments:
   - local-bundle
   active_owner: local-bundle
   content_hash: sha256:8cb4b2d931fde751cc51860697e5f33d5f3bc1c996b80dc5c7b28f2f1c0e0a94
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-checklist-maintain/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:cbf51ade652dc86a5090612534b1fdc9a44c02b35ebebd6bf7c9aca1e8fe3ec5
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:bec8e4715951eeb9c775aa034cecb27cc6e538017dba8740aeefc98d06dce3bd
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:13ffdaac615b6cc00903ec1c0442fdb3005378cb6af9784d240c8ed788ad1377
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-checklist-maintain/references/checklist-evidence.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:e9c86ca41fff1b0c6c73bf53a314349db2c94218dd128c995b79c48983a23516
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-implementation-notes/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:40b938bc42687ae846bacd94b526edc9a3455d77f9afea3782b48a6bb75aa893
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-implementation-notes/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:14e003590dcd4e67261b4d09d3d5bc87c85e504e6d4894e8d5e116bbdb956023
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-implementation-notes/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:ef6fd861629319b435c47675db7c94b28f1974a6515f991a17e68a6322d7e048
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-implementation-notes/references/implementation-story.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:5ce1b08df7862b58986d7511d6c3c9d7f045c389dc2779688af63519503965fe
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-issue-links/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:b121b0e6348140d1684b645d4163a7d00af17fb9b329074e6cbc3cd5f9a62b21
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-issue-links/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:dd774f4f2aef5bcb8baf0e84277a451ecdb2c93158c90f568c739567fdfef4a6
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-issue-links/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:1605df2747d2296b5ae9034c7f203e30f471f64e261e4e0304f15f67890dcb82
+- kind: project-relative
+  target: agents
+  value: .agents/skills/kerpo-gh-pr-issue-links/references/linking.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:ab72a0ef31e2228880f76d4ee5d2ae63190f125d6b65b201378692e60a11f91d
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-git-context/SKILL.md
@@ -1151,6 +1341,36 @@ deployments:
   content_hash: sha256:9bf3df0c2ac3001da5429f15b999ac1b5c54e2499c0675d4e76ddc60cdaa4de0
 - kind: project-relative
   target: claude
+  value: .claude/skills/kerpo-gh-content-policy-learn/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:426e7f972a44f2e23ba3789af89d3b7c8534b347ce467694ef5837bc91e1142a
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-content-policy-learn/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:869d7624a22cc577b2bd4ddd6fcc31c821c4b2a670abcdc4297282f00b1a7c12
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-content-policy-learn/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:a6abe9e69f15ceca74072a577e69a3a72c2a0a62304245a486297b1c18d47193
+- kind: project-relative
+  target: claude
   value: .claude/skills/kerpo-gh-issue-assign/SKILL.md
   runtime: null
   scope: project
@@ -1188,7 +1408,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:c3a8e3d17cfaf36931d9a7e4a24809f75ffecc005dde4c0594f5b1da500821b4
+  content_hash: sha256:821bd63943f4e79080eb4f962f30d657e15f8316f14a628cc1ab05f3124a4b13
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gh-issue-done/evals/eval_queries.json
@@ -1231,6 +1451,46 @@ deployments:
   content_hash: sha256:de66ed4a4ddfe67ef11734d3e5f49843302691576691a097be0ba7a2996c2bf5
 - kind: project-relative
   target: claude
+  value: .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:b32b9f468086d6d25bc60650173013a65f85ced3908553f8b54cc314ea64b2ed
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:7387b7c3e916c620598e0b77c061c7b56069490a40214284534ce27aa41ceb25
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:e8125f67f55ddda5aea4a866acd4e24958f7f08a5714d36a0ada606fa0b01c3c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:43d497505a329857c27ae2b73f40e8585bb7ff7ae569d011a326a79823e69f57
+- kind: project-relative
+  target: claude
   value: .claude/skills/kerpo-gh-issue-start-work/SKILL.md
   runtime: null
   scope: project
@@ -1259,6 +1519,126 @@ deployments:
   - local-bundle
   active_owner: local-bundle
   content_hash: sha256:8cb4b2d931fde751cc51860697e5f33d5f3bc1c996b80dc5c7b28f2f1c0e0a94
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-checklist-maintain/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:cbf51ade652dc86a5090612534b1fdc9a44c02b35ebebd6bf7c9aca1e8fe3ec5
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:bec8e4715951eeb9c775aa034cecb27cc6e538017dba8740aeefc98d06dce3bd
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:13ffdaac615b6cc00903ec1c0442fdb3005378cb6af9784d240c8ed788ad1377
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-checklist-maintain/references/checklist-evidence.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:e9c86ca41fff1b0c6c73bf53a314349db2c94218dd128c995b79c48983a23516
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-implementation-notes/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:40b938bc42687ae846bacd94b526edc9a3455d77f9afea3782b48a6bb75aa893
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-implementation-notes/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:14e003590dcd4e67261b4d09d3d5bc87c85e504e6d4894e8d5e116bbdb956023
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-implementation-notes/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:ef6fd861629319b435c47675db7c94b28f1974a6515f991a17e68a6322d7e048
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-implementation-notes/references/implementation-story.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:5ce1b08df7862b58986d7511d6c3c9d7f045c389dc2779688af63519503965fe
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-issue-links/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:b121b0e6348140d1684b645d4163a7d00af17fb9b329074e6cbc3cd5f9a62b21
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-issue-links/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:dd774f4f2aef5bcb8baf0e84277a451ecdb2c93158c90f568c739567fdfef4a6
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-issue-links/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:1605df2747d2296b5ae9034c7f203e30f471f64e261e4e0304f15f67890dcb82
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gh-pr-issue-links/references/linking.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:ab72a0ef31e2228880f76d4ee5d2ae63190f125d6b65b201378692e60a11f91d
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-git-context/SKILL.md
@@ -1862,6 +2242,9 @@ local_deployed_files:
 - .agents/skills/kerpo-example/evals/eval_queries.json
 - .agents/skills/kerpo-example/evals/evals.json
 - .agents/skills/kerpo-example/references/context.md
+- .agents/skills/kerpo-gh-content-policy-learn/SKILL.md
+- .agents/skills/kerpo-gh-content-policy-learn/evals/eval_queries.json
+- .agents/skills/kerpo-gh-content-policy-learn/evals/evals.json
 - .agents/skills/kerpo-gh-issue-assign/SKILL.md
 - .agents/skills/kerpo-gh-issue-assign/evals/eval_queries.json
 - .agents/skills/kerpo-gh-issue-assign/evals/evals.json
@@ -1870,9 +2253,25 @@ local_deployed_files:
 - .agents/skills/kerpo-gh-issue-done/evals/evals.json
 - .agents/skills/kerpo-gh-issue-done/evals/trigger-results.json
 - .agents/skills/kerpo-gh-issue-done/references/format-discovery.md
+- .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/SKILL.md
+- .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/eval_queries.json
+- .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json
+- .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md
 - .agents/skills/kerpo-gh-issue-start-work/SKILL.md
 - .agents/skills/kerpo-gh-issue-start-work/evals/eval_queries.json
 - .agents/skills/kerpo-gh-issue-start-work/evals/evals.json
+- .agents/skills/kerpo-gh-pr-checklist-maintain/SKILL.md
+- .agents/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json
+- .agents/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json
+- .agents/skills/kerpo-gh-pr-checklist-maintain/references/checklist-evidence.md
+- .agents/skills/kerpo-gh-pr-implementation-notes/SKILL.md
+- .agents/skills/kerpo-gh-pr-implementation-notes/evals/eval_queries.json
+- .agents/skills/kerpo-gh-pr-implementation-notes/evals/evals.json
+- .agents/skills/kerpo-gh-pr-implementation-notes/references/implementation-story.md
+- .agents/skills/kerpo-gh-pr-issue-links/SKILL.md
+- .agents/skills/kerpo-gh-pr-issue-links/evals/eval_queries.json
+- .agents/skills/kerpo-gh-pr-issue-links/evals/evals.json
+- .agents/skills/kerpo-gh-pr-issue-links/references/linking.md
 - .agents/skills/kerpo-git-context/SKILL.md
 - .agents/skills/kerpo-git-context/evals/eval_queries.json
 - .agents/skills/kerpo-git-context/evals/evals.json
@@ -1954,6 +2353,9 @@ local_deployed_files:
 - .claude/skills/kerpo-example/evals/eval_queries.json
 - .claude/skills/kerpo-example/evals/evals.json
 - .claude/skills/kerpo-example/references/context.md
+- .claude/skills/kerpo-gh-content-policy-learn/SKILL.md
+- .claude/skills/kerpo-gh-content-policy-learn/evals/eval_queries.json
+- .claude/skills/kerpo-gh-content-policy-learn/evals/evals.json
 - .claude/skills/kerpo-gh-issue-assign/SKILL.md
 - .claude/skills/kerpo-gh-issue-assign/evals/eval_queries.json
 - .claude/skills/kerpo-gh-issue-assign/evals/evals.json
@@ -1962,9 +2364,25 @@ local_deployed_files:
 - .claude/skills/kerpo-gh-issue-done/evals/evals.json
 - .claude/skills/kerpo-gh-issue-done/evals/trigger-results.json
 - .claude/skills/kerpo-gh-issue-done/references/format-discovery.md
+- .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/SKILL.md
+- .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/eval_queries.json
+- .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json
+- .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md
 - .claude/skills/kerpo-gh-issue-start-work/SKILL.md
 - .claude/skills/kerpo-gh-issue-start-work/evals/eval_queries.json
 - .claude/skills/kerpo-gh-issue-start-work/evals/evals.json
+- .claude/skills/kerpo-gh-pr-checklist-maintain/SKILL.md
+- .claude/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json
+- .claude/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json
+- .claude/skills/kerpo-gh-pr-checklist-maintain/references/checklist-evidence.md
+- .claude/skills/kerpo-gh-pr-implementation-notes/SKILL.md
+- .claude/skills/kerpo-gh-pr-implementation-notes/evals/eval_queries.json
+- .claude/skills/kerpo-gh-pr-implementation-notes/evals/evals.json
+- .claude/skills/kerpo-gh-pr-implementation-notes/references/implementation-story.md
+- .claude/skills/kerpo-gh-pr-issue-links/SKILL.md
+- .claude/skills/kerpo-gh-pr-issue-links/evals/eval_queries.json
+- .claude/skills/kerpo-gh-pr-issue-links/evals/evals.json
+- .claude/skills/kerpo-gh-pr-issue-links/references/linking.md
 - .claude/skills/kerpo-git-context/SKILL.md
 - .claude/skills/kerpo-git-context/evals/eval_queries.json
 - .claude/skills/kerpo-git-context/evals/evals.json
@@ -2046,17 +2464,36 @@ local_deployed_file_hashes:
   .agents/skills/kerpo-example/evals/eval_queries.json: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
   .agents/skills/kerpo-example/evals/evals.json: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
   .agents/skills/kerpo-example/references/context.md: sha256:9bf3df0c2ac3001da5429f15b999ac1b5c54e2499c0675d4e76ddc60cdaa4de0
+  .agents/skills/kerpo-gh-content-policy-learn/SKILL.md: sha256:426e7f972a44f2e23ba3789af89d3b7c8534b347ce467694ef5837bc91e1142a
+  .agents/skills/kerpo-gh-content-policy-learn/evals/eval_queries.json: sha256:869d7624a22cc577b2bd4ddd6fcc31c821c4b2a670abcdc4297282f00b1a7c12
+  .agents/skills/kerpo-gh-content-policy-learn/evals/evals.json: sha256:a6abe9e69f15ceca74072a577e69a3a72c2a0a62304245a486297b1c18d47193
   .agents/skills/kerpo-gh-issue-assign/SKILL.md: sha256:6b49d31a5fe46809cc009e3307e03fbef8fec0c9ece1258e076fbda2da523e91
   .agents/skills/kerpo-gh-issue-assign/evals/eval_queries.json: sha256:d93da9a4c3bff2ce258a3c5ef1b81bb6daca8fe4ee1383708a4ba22df767b0b2
   .agents/skills/kerpo-gh-issue-assign/evals/evals.json: sha256:eddd60d32bd222fb0542be8391f332a1a3056d462e88b1812c0ed946f907efdd
-  .agents/skills/kerpo-gh-issue-done/SKILL.md: sha256:c3a8e3d17cfaf36931d9a7e4a24809f75ffecc005dde4c0594f5b1da500821b4
+  .agents/skills/kerpo-gh-issue-done/SKILL.md: sha256:821bd63943f4e79080eb4f962f30d657e15f8316f14a628cc1ab05f3124a4b13
   .agents/skills/kerpo-gh-issue-done/evals/eval_queries.json: sha256:322fd8a53ee86d7f7af7277fad438776e578689fa93f47a72e1f2e32efa14576
   .agents/skills/kerpo-gh-issue-done/evals/evals.json: sha256:0cc77dd06b23aa07bd11dc9528e498b88d3994ac3cb5035af77a77bb5c570b2a
   .agents/skills/kerpo-gh-issue-done/evals/trigger-results.json: sha256:8773bcc09e0d5cad301ccdd236d60e6c04681df1a048880cbd8f115295a8650f
   .agents/skills/kerpo-gh-issue-done/references/format-discovery.md: sha256:de66ed4a4ddfe67ef11734d3e5f49843302691576691a097be0ba7a2996c2bf5
+  .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/SKILL.md: sha256:b32b9f468086d6d25bc60650173013a65f85ced3908553f8b54cc314ea64b2ed
+  .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/eval_queries.json: sha256:7387b7c3e916c620598e0b77c061c7b56069490a40214284534ce27aa41ceb25
+  .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json: sha256:e8125f67f55ddda5aea4a866acd4e24958f7f08a5714d36a0ada606fa0b01c3c
+  .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md: sha256:43d497505a329857c27ae2b73f40e8585bb7ff7ae569d011a326a79823e69f57
   .agents/skills/kerpo-gh-issue-start-work/SKILL.md: sha256:f565fbfd4f1f54a2689f813da2609c6b0e76c62f12f3d3dae1b7f30cb248ded7
   .agents/skills/kerpo-gh-issue-start-work/evals/eval_queries.json: sha256:4c0082b4885b7e994b0533c92aaa184720f128711ebbd9c506c40ddeab4bc4df
   .agents/skills/kerpo-gh-issue-start-work/evals/evals.json: sha256:8cb4b2d931fde751cc51860697e5f33d5f3bc1c996b80dc5c7b28f2f1c0e0a94
+  .agents/skills/kerpo-gh-pr-checklist-maintain/SKILL.md: sha256:cbf51ade652dc86a5090612534b1fdc9a44c02b35ebebd6bf7c9aca1e8fe3ec5
+  .agents/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json: sha256:bec8e4715951eeb9c775aa034cecb27cc6e538017dba8740aeefc98d06dce3bd
+  .agents/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json: sha256:13ffdaac615b6cc00903ec1c0442fdb3005378cb6af9784d240c8ed788ad1377
+  .agents/skills/kerpo-gh-pr-checklist-maintain/references/checklist-evidence.md: sha256:e9c86ca41fff1b0c6c73bf53a314349db2c94218dd128c995b79c48983a23516
+  .agents/skills/kerpo-gh-pr-implementation-notes/SKILL.md: sha256:40b938bc42687ae846bacd94b526edc9a3455d77f9afea3782b48a6bb75aa893
+  .agents/skills/kerpo-gh-pr-implementation-notes/evals/eval_queries.json: sha256:14e003590dcd4e67261b4d09d3d5bc87c85e504e6d4894e8d5e116bbdb956023
+  .agents/skills/kerpo-gh-pr-implementation-notes/evals/evals.json: sha256:ef6fd861629319b435c47675db7c94b28f1974a6515f991a17e68a6322d7e048
+  .agents/skills/kerpo-gh-pr-implementation-notes/references/implementation-story.md: sha256:5ce1b08df7862b58986d7511d6c3c9d7f045c389dc2779688af63519503965fe
+  .agents/skills/kerpo-gh-pr-issue-links/SKILL.md: sha256:b121b0e6348140d1684b645d4163a7d00af17fb9b329074e6cbc3cd5f9a62b21
+  .agents/skills/kerpo-gh-pr-issue-links/evals/eval_queries.json: sha256:dd774f4f2aef5bcb8baf0e84277a451ecdb2c93158c90f568c739567fdfef4a6
+  .agents/skills/kerpo-gh-pr-issue-links/evals/evals.json: sha256:1605df2747d2296b5ae9034c7f203e30f471f64e261e4e0304f15f67890dcb82
+  .agents/skills/kerpo-gh-pr-issue-links/references/linking.md: sha256:ab72a0ef31e2228880f76d4ee5d2ae63190f125d6b65b201378692e60a11f91d
   .agents/skills/kerpo-git-context/SKILL.md: sha256:bb932b74c8f1381d02c4864e13eaec5f8bf7abccd975c88643794b198b44baa9
   .agents/skills/kerpo-git-context/evals/eval_queries.json: sha256:e186abf218131804a4d9ae83f52db35ecff7ec2e98388d4712cd10dcfc8247de
   .agents/skills/kerpo-git-context/evals/evals.json: sha256:d1517862fb7f2041ac63ea6ed4ed0fed0d329409a44c562b94ad0aad1843158d
@@ -2136,17 +2573,36 @@ local_deployed_file_hashes:
   .claude/skills/kerpo-example/evals/eval_queries.json: sha256:8bd431aeadb8fb05a28ef1ba2f4550ddec508570611bd77549e57122cabf9879
   .claude/skills/kerpo-example/evals/evals.json: sha256:7aeefac425003d0b102ac9124aa2b7169d6198ef034f53a3d83d7518c168641d
   .claude/skills/kerpo-example/references/context.md: sha256:9bf3df0c2ac3001da5429f15b999ac1b5c54e2499c0675d4e76ddc60cdaa4de0
+  .claude/skills/kerpo-gh-content-policy-learn/SKILL.md: sha256:426e7f972a44f2e23ba3789af89d3b7c8534b347ce467694ef5837bc91e1142a
+  .claude/skills/kerpo-gh-content-policy-learn/evals/eval_queries.json: sha256:869d7624a22cc577b2bd4ddd6fcc31c821c4b2a670abcdc4297282f00b1a7c12
+  .claude/skills/kerpo-gh-content-policy-learn/evals/evals.json: sha256:a6abe9e69f15ceca74072a577e69a3a72c2a0a62304245a486297b1c18d47193
   .claude/skills/kerpo-gh-issue-assign/SKILL.md: sha256:6b49d31a5fe46809cc009e3307e03fbef8fec0c9ece1258e076fbda2da523e91
   .claude/skills/kerpo-gh-issue-assign/evals/eval_queries.json: sha256:d93da9a4c3bff2ce258a3c5ef1b81bb6daca8fe4ee1383708a4ba22df767b0b2
   .claude/skills/kerpo-gh-issue-assign/evals/evals.json: sha256:eddd60d32bd222fb0542be8391f332a1a3056d462e88b1812c0ed946f907efdd
-  .claude/skills/kerpo-gh-issue-done/SKILL.md: sha256:c3a8e3d17cfaf36931d9a7e4a24809f75ffecc005dde4c0594f5b1da500821b4
+  .claude/skills/kerpo-gh-issue-done/SKILL.md: sha256:821bd63943f4e79080eb4f962f30d657e15f8316f14a628cc1ab05f3124a4b13
   .claude/skills/kerpo-gh-issue-done/evals/eval_queries.json: sha256:322fd8a53ee86d7f7af7277fad438776e578689fa93f47a72e1f2e32efa14576
   .claude/skills/kerpo-gh-issue-done/evals/evals.json: sha256:0cc77dd06b23aa07bd11dc9528e498b88d3994ac3cb5035af77a77bb5c570b2a
   .claude/skills/kerpo-gh-issue-done/evals/trigger-results.json: sha256:8773bcc09e0d5cad301ccdd236d60e6c04681df1a048880cbd8f115295a8650f
   .claude/skills/kerpo-gh-issue-done/references/format-discovery.md: sha256:de66ed4a4ddfe67ef11734d3e5f49843302691576691a097be0ba7a2996c2bf5
+  .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/SKILL.md: sha256:b32b9f468086d6d25bc60650173013a65f85ced3908553f8b54cc314ea64b2ed
+  .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/eval_queries.json: sha256:7387b7c3e916c620598e0b77c061c7b56069490a40214284534ce27aa41ceb25
+  .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json: sha256:e8125f67f55ddda5aea4a866acd4e24958f7f08a5714d36a0ada606fa0b01c3c
+  .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md: sha256:43d497505a329857c27ae2b73f40e8585bb7ff7ae569d011a326a79823e69f57
   .claude/skills/kerpo-gh-issue-start-work/SKILL.md: sha256:f565fbfd4f1f54a2689f813da2609c6b0e76c62f12f3d3dae1b7f30cb248ded7
   .claude/skills/kerpo-gh-issue-start-work/evals/eval_queries.json: sha256:4c0082b4885b7e994b0533c92aaa184720f128711ebbd9c506c40ddeab4bc4df
   .claude/skills/kerpo-gh-issue-start-work/evals/evals.json: sha256:8cb4b2d931fde751cc51860697e5f33d5f3bc1c996b80dc5c7b28f2f1c0e0a94
+  .claude/skills/kerpo-gh-pr-checklist-maintain/SKILL.md: sha256:cbf51ade652dc86a5090612534b1fdc9a44c02b35ebebd6bf7c9aca1e8fe3ec5
+  .claude/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json: sha256:bec8e4715951eeb9c775aa034cecb27cc6e538017dba8740aeefc98d06dce3bd
+  .claude/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json: sha256:13ffdaac615b6cc00903ec1c0442fdb3005378cb6af9784d240c8ed788ad1377
+  .claude/skills/kerpo-gh-pr-checklist-maintain/references/checklist-evidence.md: sha256:e9c86ca41fff1b0c6c73bf53a314349db2c94218dd128c995b79c48983a23516
+  .claude/skills/kerpo-gh-pr-implementation-notes/SKILL.md: sha256:40b938bc42687ae846bacd94b526edc9a3455d77f9afea3782b48a6bb75aa893
+  .claude/skills/kerpo-gh-pr-implementation-notes/evals/eval_queries.json: sha256:14e003590dcd4e67261b4d09d3d5bc87c85e504e6d4894e8d5e116bbdb956023
+  .claude/skills/kerpo-gh-pr-implementation-notes/evals/evals.json: sha256:ef6fd861629319b435c47675db7c94b28f1974a6515f991a17e68a6322d7e048
+  .claude/skills/kerpo-gh-pr-implementation-notes/references/implementation-story.md: sha256:5ce1b08df7862b58986d7511d6c3c9d7f045c389dc2779688af63519503965fe
+  .claude/skills/kerpo-gh-pr-issue-links/SKILL.md: sha256:b121b0e6348140d1684b645d4163a7d00af17fb9b329074e6cbc3cd5f9a62b21
+  .claude/skills/kerpo-gh-pr-issue-links/evals/eval_queries.json: sha256:dd774f4f2aef5bcb8baf0e84277a451ecdb2c93158c90f568c739567fdfef4a6
+  .claude/skills/kerpo-gh-pr-issue-links/evals/evals.json: sha256:1605df2747d2296b5ae9034c7f203e30f471f64e261e4e0304f15f67890dcb82
+  .claude/skills/kerpo-gh-pr-issue-links/references/linking.md: sha256:ab72a0ef31e2228880f76d4ee5d2ae63190f125d6b65b201378692e60a11f91d
   .claude/skills/kerpo-git-context/SKILL.md: sha256:bb932b74c8f1381d02c4864e13eaec5f8bf7abccd975c88643794b198b44baa9
   .claude/skills/kerpo-git-context/evals/eval_queries.json: sha256:e186abf218131804a4d9ae83f52db35ecff7ec2e98388d4712cd10dcfc8247de
   .claude/skills/kerpo-git-context/evals/evals.json: sha256:d1517862fb7f2041ac63ea6ed4ed0fed0d329409a44c562b94ad0aad1843158d

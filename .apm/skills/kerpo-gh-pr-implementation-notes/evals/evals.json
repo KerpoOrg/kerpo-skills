@@ -1,0 +1,21 @@
+{
+  "skill_name": "kerpo-gh-pr-implementation-notes",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Update the implementation notes for PR #123 so it tells the fulfillment story of the original issue intent.",
+      "expected_output": "Agent gates to GitHub-only, resolves repo + PR #123, resolves linked issue(s), extracts intent from the issue body using intent-section heuristics, fetches PR evidence (title/body + changed files), then inserts/replaces only the marker-bounded `Implementation notes` region in the PR body with Original intent / Implemented / Deviations/tradeoffs. Confirms what changed and what evidence was used."
+    },
+    {
+      "id": 2,
+      "prompt": "Refresh PR #77 implementation notes after additional commits (intent should remain consistent).",
+      "expected_output": "Agent updates only the owned marker section for PR #77, preserves other PR content outside markers, and avoids inventing deviations; it ties implementation bullets to changed file paths from the PR evidence."
+    },
+    {
+      "id": 3,
+      "prompt": "Add Jira ticket acceptance notes into a Bitbucket PR description.",
+      "expected_output": "Agent does not operate outside GitHub context; it treats it as a near-miss and asks for the GitHub PR/URL to update, without editing Jira/Bitbucket."
+    }
+  ]
+}
+

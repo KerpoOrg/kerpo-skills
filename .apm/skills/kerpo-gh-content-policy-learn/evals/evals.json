@@ -1,0 +1,18 @@
+{
+  "skill_name": "kerpo-gh-content-policy-learn",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Learn PR/issue conventions from this repo and generate a content policy so other skills can follow it.",
+      "expected_output": "Agent gates to GitHub-only, samples recent merged PRs/issues/commits, synthesizes a project-level policy with PR/issue/linking/conventions sections, and writes/updates the policy marker block in tooling-appropriate locations (including .github/content-policy.md). It then confirms which files were updated and summarizes the key extracted conventions.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Generate a content policy for our Jira workflow (issues in Jira, PRs in GitHub). Use the Jira part as the source of truth.",
+      "expected_output": "Agent should not “widen” the skill into Jira-only management; it gates to GitHub-only content learning and asks which GitHub repo/PR/issue to learn from, or it limits output to GitHub-native policy content. No Jira-only policy should be produced.",
+      "assertions": []
+    }
+  ]
+}
+

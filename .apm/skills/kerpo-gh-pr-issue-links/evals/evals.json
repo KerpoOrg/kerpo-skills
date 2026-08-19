@@ -1,0 +1,24 @@
+{
+  "skill_name": "kerpo-gh-pr-issue-links",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Link this PR #123 to its issue(s), and make sure the issues mention this PR and expected closure.",
+      "expected_output": "Agent gates to GitHub-only, resolves repo + PR #123, fetches PR body, extracts linked issue numbers (computed references and explicit Closes/Fixes/Resolves patterns), updates the marker-bounded PR owned section to list issue URLs and include explicit `Closes/Fixes/Resolves #N` lines near the top, then updates each linked issue body inside its marker sections to list the PR URL and a stable closure expectation sentence. It confirms which issue numbers were updated.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "PR #55 already has some issue references; sync them and add missing explicit Closes keywords so GitHub auto-linking works.",
+      "expected_output": "Agent preserves any already correct owned marker content, adds explicit `Closes/Fixes/Resolves #<issue>` keyword lines near the top of the owned PR section when missing, de-duplicates issue URLs/entries, and updates per-issue marker sections without clobbering user content outside the markers.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Link this Bitbucket pull request PR-9 to Jira issues ABC-12.",
+      "expected_output": "Agent does not operate because the context is Bitbucket/Jira-only; it treats it as a near-miss and asks for the GitHub PR/issue to operate on (no edits).",
+      "assertions": []
+    }
+  ]
+}
+
