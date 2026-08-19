@@ -1,0 +1,13 @@
+[
+  { "query": "find duplicates for issue #123", "should_trigger": true },
+  { "query": "check issue #123 for related and conflicting issues", "should_trigger": true },
+  { "query": "update issue #123 with possible duplicates/conflicts", "should_trigger": true },
+  { "query": "analyze issue #77 for partial duplicates", "should_trigger": true },
+  { "query": "find duplicates for Jira ticket ABC-12", "should_trigger": false },
+  { "query": "check GitLab issue 99 for duplicates", "should_trigger": false },
+  { "query": "find duplicates in Bitbucket tracker issue 5", "should_trigger": false },
+  { "query": "learn issue duplication conventions from this repo (no target issue)", "should_trigger": false },
+  { "query": "list related issues for repo discussion thread", "should_trigger": false },
+  { "query": "find duplicates for PR #123 (not an issue)", "should_trigger": false }
+]
+

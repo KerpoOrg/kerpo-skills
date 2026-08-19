@@ -63,6 +63,9 @@ source defines) to what was actually done, using:
 - issue comments
 - the local checkout if it belongs to this issue
 - linked PRs, including still-open ones — evidence of work, not a merge gate
+- linked PRs’ owned `Implementation notes` marker section (if present in
+  the PR body) — prefer these as a structured “what we implemented”
+  source when inferring deviations
 
 Write deviations into the template's as-built / notes / implementation field
 **if that field exists**. If it does not, put deviations in the close comment

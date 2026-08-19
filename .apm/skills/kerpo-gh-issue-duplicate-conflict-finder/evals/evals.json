@@ -1,0 +1,21 @@
+{
+  "skill_name": "kerpo-gh-issue-duplicate-conflict-finder",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Find duplicates and related/conflicting issues for GitHub issue #123 and update the issue body with likely candidates.",
+      "expected_output": "Agent gates to GitHub-only, resolves repo + issue #123, fetches title/body/labels, selects candidate issues using labels overlap + text similarity + PR/branch context, classifies them into Possible duplicates / Partial duplicates / Related / Conflicts buckets, then updates only the owned marker section `<!-- kerpo:issue-dup-conflicts:start -->...end` in the target issue body (inserting the region if missing). It reports bucket counts and the top matches."
+    },
+    {
+      "id": 2,
+      "prompt": "Check issue ABC-12 in Jira for duplicates and conflicting tickets.",
+      "expected_output": "Agent does not operate in Jira-only context; it treats this as a near-miss and asks for a GitHub issue number/URL instead, with no Jira edits."
+    },
+    {
+      "id": 3,
+      "prompt": "Find partial duplicates for issue #77 but do not cross-link other issues.",
+      "expected_output": "Agent updates only the target issue owned marker section by default, includes only evidence-supported candidates, and does not add cross-links to candidate issues unless the user explicitly confirms."
+    }
+  ]
+}
+

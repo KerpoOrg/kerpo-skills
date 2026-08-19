@@ -1,0 +1,13 @@
+[
+  { "query": "update implementation notes in PR #123", "should_trigger": true },
+  { "query": "refresh PR implementation story for #123", "should_trigger": true },
+  { "query": "make PR #123 description explain fulfillment of issue", "should_trigger": true },
+  { "query": "add implementation notes to this PR", "should_trigger": true },
+  { "query": "update Jira ticket implementation notes in description", "should_trigger": false },
+  { "query": "write GitLab merge request implementation notes", "should_trigger": false },
+  { "query": "add implementation notes to Bitbucket PR", "should_trigger": false },
+  { "query": "explain what was implemented and deviations in PR #10", "should_trigger": true },
+  { "query": "update PR checklist instead of implementation notes", "should_trigger": false },
+  { "query": "sync linked issues section (not implementation notes)", "should_trigger": false }
+]
+
