@@ -1,0 +1,69 @@
+---
+description: GitHub PR/issue content conventions for kerpo-skills, learned from repo history
+alwaysApply: false
+---
+
+<!-- kerpo-gh-content-policy-learn:start -->
+# kerpo-skills — GitHub content policy
+
+Learned from repo history on 2026-08-19 by `kerpo-gh-content-policy-learn`,
+re-confirmed unchanged on 2026-08-23. Canonical copy lives at
+`.github/content-policy.md` — update that file first, then re-run the skill
+to resync this one.
+
+## Evidence sampled
+
+- All PRs (`gh pr list --state merged`): 1 total — a bot-generated Renovate
+  onboarding PR (#3, merged via `Merge pull request #3`). No human-authored
+  PR exists yet in this repo.
+- All issues (`gh issue list --state all`): 3 total — 2 closed (`#1`, `#2`,
+  both by @jounirajala), 1 open (`#4`, Renovate Dependency Dashboard,
+  bot-generated).
+- Commit history (`git log`): only one `Merge pull request` commit (the
+  Renovate onboarding PR above) — all other work lands via direct commits to
+  `main`, not a PR-merge workflow.
+
+**Caveat:** the PR sample size is 0 human PRs, so no real PR body/checklist
+convention exists yet to learn from.
+
+## Issue body contract (observed, from #1 and #2)
+
+Issues consistently use these headings, in this order:
+1. `## Skill` — one line naming the new/changed skill
+2. `## Problem / need` — why the gap exists, contrasted against neighboring
+   skills to justify why it isn't scope creep
+3. `## Proposed solution` — often split into **Do** / **Do not** sub-lists
+   when the risk is over-triggering or duplicating another skill's job
+4. `## Use cases` — concrete example prompts/scenarios
+5. `## Additional context` — origin story, cross-skill intent tables, naming
+   rationale
+
+No checkboxes are used in issue bodies. Issues are closed manually/directly —
+no `Closes #N` / `Fixes #N` keyword was observed in any commit message.
+
+## PR body contract (not yet established — proposed defaults)
+
+No real PR history exists to learn from. If/when `kerpo-gh-*` skills need to
+write a PR body in this repo, default to:
+- Mirror the issue heading style above (`## Problem / need` /
+  `## Proposed solution`) rather than inventing new section names.
+- Treat any checklist added by `kerpo-gh-pr-checklist-maintain` as a fresh
+  introduction, not a codified repo norm.
+
+## Linking contract
+
+Not established. If a PR is opened, prefer `Closes #N` (GitHub's most common
+auto-link keyword) unless the user specifies otherwise.
+
+## Commit message style (observed)
+
+Short imperative subject line. Release commits follow
+`Release X.Y.Z with <feature summary>.`
+
+## Safety rules
+
+- Never uncheck an already-checked checkbox in a PR/issue body.
+- Never clobber user content outside owned marker sections.
+- Do not present the "proposed defaults" above as confirmed repo convention
+  — they are placeholders until real PR history exists.
+<!-- kerpo-gh-content-policy-learn:end -->

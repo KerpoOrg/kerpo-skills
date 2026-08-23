@@ -18,6 +18,9 @@ If a session kerpo skill is missing here, still compare against it.
 | GH assign | `kerpo-gh-issue-assign` | Assign an issue |
 | GH start work | `kerpo-gh-issue-start-work` | Claim issue before work (assign + in-progress) |
 | GH closeout | `kerpo-gh-issue-done` | Formal closeout checks, then close; PR merge is not a gate |
+| GH dependency-bot PRs | `kerpo-gh-dep-bot-pr` | Renovate-first (extensible flavours): changelog + usage migration analysis; merge / fix-on-branch / migration issue |
+| GH content policy | `kerpo-gh-content-policy-learn` | Learn PR/issue conventions from GitHub repo history; generate a project content-policy doc |
+| GL content policy | `kerpo-gl-content-policy-learn` | Learn MR/issue conventions from GitLab repo history; generate a project content-policy doc (GitLab-only, not GitHub) |
 | Skill from script | `kerpo-skill-from-script` | Convert a script into APM skills in the kerpo-skills repo |
 | Skill evals | `kerpo-skill-eval`, `-run`, `-grade`, `-benchmark` | with_skill vs without_skill output-quality iteration |
 | Kerpo feedback | `kerpo-skills-feedback` | File a structured issue on KerpoOrg/kerpo-skills |
@@ -41,6 +44,9 @@ Default: prefer kerpo. Do not auto-disable.
 | Generic “which repo / worktree” helpers | `kerpo-git-context` | **domain** | Prefer kerpo |
 | Generic GitHub issue close / “mark done” | `kerpo-gh-issue-done` | **domain** or **clash** if it closes without format/as-built checks | Prefer kerpo closeout |
 | Generic “assign issue” / “start this issue” | `kerpo-gh-issue-assign`, `kerpo-gh-issue-start-work` | **domain** | Prefer kerpo |
+| Generic Dependabot/Renovate auto-merge helpers | `kerpo-gh-dep-bot-pr` | **domain** or **clash** if they merge without changelog/usage gates | Prefer kerpo (confirm + fail closed) |
+| Generic "learn repo conventions" / "generate content policy" (GitHub) | `kerpo-gh-content-policy-learn` | **domain** | Prefer kerpo; boundary is GitHub-only |
+| Generic "learn repo conventions" / "generate content policy" (GitLab) | `kerpo-gl-content-policy-learn` | **domain** | Prefer kerpo; boundary is GitLab-only |
 | Generic “create a GitHub issue” | `kerpo-skills-feedback` | **none** unless it is specifically kerpo-skills feedback | Keep; kerpo-skills-feedback is package feedback only |
 | Vercel / web-design / optimize / React best-practices | — | **none** | Keep |
 | Cursor `create-hook`, `automate`, `canvas`, `split-to-prs`, `statusline`, SDK, origin, new-repo, share | — | **none** | Keep |

@@ -1,0 +1,98 @@
+[
+  {
+    "query": "handle renovate PR #42",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "triage open Renovate dependency PRs",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "analyze migration needs for this dep bump PR",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "fix the renovate PR branch for breaking API changes",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "can we merge this dependency-bot PR after CI?",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "open a migration issue for the major framework bump PR",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "update the checklist in PR #12",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "link PR #12 to its issues",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "review this feature PR for code quality",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "merge Jira-linked Bitbucket dependency PR",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "triage GitLab dependency merge requests",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "approve Renovate items on the Dependency Dashboard without a PR",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  }
+]

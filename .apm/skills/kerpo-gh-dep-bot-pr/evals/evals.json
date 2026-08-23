@@ -1,0 +1,35 @@
+{
+  "skill_name": "kerpo-gh-dep-bot-pr",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Handle Renovate PR #42 — analyze changelogs and tell me if we can merge.",
+      "expected_output": "Agent gates to GitHub-only, detects Renovate flavour, parses packages, scrapes changelogs, scans local usage, applies safety gates and CI status, reports impact (none/small/major) and a recommended decision. Does not merge without explicit confirmation. If impact is none and CI green, recommends merge_ok and waits.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "This Renovate PR breaks our imports according to the changelog — fix it on the PR branch.",
+      "expected_output": "Agent classifies impact as small (or confirms from analysis), asks for confirmation, then checks out the PR branch, applies minimal migration fixes, commits/pushes to the bot branch, and re-checks CI. Does not open a separate human PR unless asked.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Renovate wants a major Next.js bump — what should we do?",
+      "expected_output": "Agent treats this as major_migration: summarizes changelog/migration guides and usage blast radius, recommends creating a separate GitHub issue blocking merge of the dep PR, and waits for confirmation before creating the issue. Does not merge the dep PR.",
+      "assertions": []
+    },
+    {
+      "id": 4,
+      "prompt": "Merge this dependency PR from a random contributor (not Renovate).",
+      "expected_output": "Agent refuses: not a known dep-bot flavour; fail closed. Does not merge.",
+      "assertions": []
+    },
+    {
+      "id": 5,
+      "prompt": "Triage Dependabot PR #9 the same way.",
+      "expected_output": "Agent detects Dependabot stub flavour and fail-closes to review (not fully implemented); does not claim merge_ok. Asks whether to proceed as manual review or wait for full Dependabot flavour support.",
+      "assertions": []
+    }
+  ]
+}
