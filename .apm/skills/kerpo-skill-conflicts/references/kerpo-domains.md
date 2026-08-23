@@ -26,6 +26,9 @@ If a session kerpo skill is missing here, still compare against it.
 | GH content policy | `kerpo-gh-content-policy-learn` | Learn PR/issue conventions from GitHub repo history; generate a project content-policy doc |
 | GL content policy | `kerpo-gl-content-policy-learn` | Learn MR/issue conventions from GitLab repo history; generate a project content-policy doc (GitLab-only, not GitHub) |
 | Skill from script | `kerpo-skill-from-script` | Convert a script into APM skills in the kerpo-skills repo |
+| Mise task create | `kerpo-mise-task-create` | Scaffold `.mise/tasks` (or TOML one-liner) with usage/help, bats, shellcheck |
+| Mise task validate | `kerpo-mise-task-validate` | Audit mise tasks against kerpo conventions (report-only) |
+| Mise task refactor | `kerpo-mise-task-refactor` | Migrate/rename/collapse mise tasks to conventions; add lint/test wiring |
 | Skill evals | `kerpo-skill-eval`, `-run`, `-grade`, `-benchmark` | with_skill vs without_skill output-quality iteration |
 | Kerpo feedback | `kerpo-skills-feedback` | File a structured issue on KerpoOrg/kerpo-skills |
 | Conflict check | `kerpo-skill-conflicts` | This skill — skip it on both sides of the comparison |
@@ -54,6 +57,7 @@ Default: prefer kerpo. Do not auto-disable.
 | Generic Dependabot/Renovate auto-merge helpers | `kerpo-gh-dep-bot-pr` | **domain** or **clash** if they merge without changelog/usage gates | Prefer kerpo (confirm + fail closed) |
 | Generic "learn repo conventions" / "generate content policy" (GitHub) | `kerpo-gh-content-policy-learn` | **domain** | Prefer kerpo; boundary is GitHub-only |
 | Generic "learn repo conventions" / "generate content policy" (GitLab) | `kerpo-gl-content-policy-learn` | **domain** | Prefer kerpo; boundary is GitLab-only |
+| Generic mise.toml / Makefile / task-runner helpers | `kerpo-mise-task-create`, `-validate`, `-refactor` | **domain** | Prefer kerpo (file tasks, no CLI shadow, usage+bats) |
 | Generic “create a GitHub issue” | `kerpo-skills-feedback` | **none** unless it is specifically kerpo-skills feedback | Keep; kerpo-skills-feedback is package feedback only |
 | Vercel / web-design / optimize / React best-practices | — | **none** | Keep |
 | Cursor `create-hook`, `automate`, `canvas`, `split-to-prs`, `statusline`, SDK, origin, new-repo, share | — | **none** | Keep |

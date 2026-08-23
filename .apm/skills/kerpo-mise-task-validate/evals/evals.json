@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-mise-task-validate",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Validate the mise tasks in this repo against kerpo conventions. Report only.",
+      "expected_output": "Agent inventories mise.toml and .mise/tasks, checks reserved names, one-liner threshold, usage/help, bats, shellcheck, secrets; prints errors/warns without rewriting files; may suggest refactor.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Do we have shadowed mise task names like install?",
+      "expected_output": "Agent checks task names/aliases against the reserved denylist and reports collisions as errors with rename guidance (domain + subcommand).",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Audit whether our mise file tasks have bats and pass shellcheck.",
+      "expected_output": "Agent looks for tests/mise-tasks/*.bats mapped to file tasks, runs or cites shellcheck failures, and reports missing coverage as errors.",
+      "assertions": []
+    }
+  ]
+}

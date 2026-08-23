@@ -1,0 +1,82 @@
+[
+  {
+    "query": "refactor our mise tasks to kerpo standards",
+    "should_trigger": true
+  },
+  {
+    "query": "migrate complex mise.toml tasks into .mise/tasks",
+    "should_trigger": true
+  },
+  {
+    "query": "fix the shadowed mise install task",
+    "should_trigger": true
+  },
+  {
+    "query": "collapse hyphenated mise tasks into subcommands",
+    "should_trigger": true
+  },
+  {
+    "query": "move task-private scripts out of scripts/ into .mise/tasks",
+    "should_trigger": true
+  },
+  {
+    "query": "add bats and shellcheck wiring while migrating mise tasks",
+    "should_trigger": true
+  },
+  {
+    "query": "validate mise tasks only, do not change files",
+    "should_trigger": false
+  },
+  {
+    "query": "create a brand new mise task from scratch",
+    "should_trigger": false
+  },
+  {
+    "query": "handle renovate dependency PR",
+    "should_trigger": false
+  },
+  {
+    "query": "create a git worktree",
+    "should_trigger": false
+  },
+  {
+    "query": "rewrite mise tasks with usage cmd help",
+    "should_trigger": true
+  },
+  {
+    "query": "rename uninstall mise task to skills uninstall subcommand",
+    "should_trigger": true
+  },
+  {
+    "query": "shellcheck unrelated CI script",
+    "should_trigger": false
+  },
+  {
+    "query": "convert script into APM skill",
+    "should_trigger": false
+  },
+  {
+    "query": "fix mise task quality issues found in audit",
+    "should_trigger": true
+  },
+  {
+    "query": "learn GitHub content policy from history",
+    "should_trigger": false
+  },
+  {
+    "query": "migrate TOML multiline runs to file tasks",
+    "should_trigger": true
+  },
+  {
+    "query": "only report mise task problems",
+    "should_trigger": false
+  },
+  {
+    "query": "only print mise task help docs, do not change files",
+    "should_trigger": false
+  },
+  {
+    "query": "enter existing worktree",
+    "should_trigger": false
+  }
+]

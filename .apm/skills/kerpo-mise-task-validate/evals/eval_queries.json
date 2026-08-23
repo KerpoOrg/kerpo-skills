@@ -1,0 +1,22 @@
+[
+  {"query": "validate our mise tasks", "should_trigger": true},
+  {"query": "audit mise.toml task quality", "should_trigger": true},
+  {"query": "check mise tasks for CLI name shadowing", "should_trigger": true},
+  {"query": "are our .mise/tasks compliant with kerpo conventions", "should_trigger": true},
+  {"query": "validate mise tasks missing bats or shellcheck", "should_trigger": true},
+  {"query": "check for hyphenated mise task sprawl", "should_trigger": true},
+  {"query": "create a new mise file task", "should_trigger": false},
+  {"query": "refactor mise tasks into .mise/tasks", "should_trigger": false},
+  {"query": "migrate install task to skills subcommand", "should_trigger": false},
+  {"query": "handle renovate PR", "should_trigger": false},
+  {"query": "run unit review on our tests", "should_trigger": false},
+  {"query": "mise doctor", "should_trigger": false},
+  {"query": "shellcheck a random bash script in /tmp", "should_trigger": false},
+  {"query": "audit .mise/tasks for usage help gaps", "should_trigger": true},
+  {"query": "validate secrets in mise.toml tasks", "should_trigger": true},
+  {"query": "add worktree for feature branch", "should_trigger": false},
+  {"query": "grade skill eval output", "should_trigger": false},
+  {"query": "check whether mise run install is shadowed", "should_trigger": true},
+  {"query": "write bats for a new task from scratch as create", "should_trigger": false},
+  {"query": "report-only mise task convention audit", "should_trigger": true}
+]

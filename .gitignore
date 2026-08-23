@@ -6,3 +6,6 @@ build/
 .claude/skills/
 .agents/skills/
 mise.local.toml
+
+# Linked git worktrees (kerpo default)
+/worktree/

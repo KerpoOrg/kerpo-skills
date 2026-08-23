@@ -1,0 +1,82 @@
+[
+  {
+    "query": "add a mise task for skills with auth and install subcommands",
+    "should_trigger": true
+  },
+  {
+    "query": "create a mise file task under .mise/tasks",
+    "should_trigger": true
+  },
+  {
+    "query": "scaffold a new mise run command with usage help",
+    "should_trigger": true
+  },
+  {
+    "query": "new mise task with bats and shellcheck",
+    "should_trigger": true
+  },
+  {
+    "query": "create .mise/tasks/deploy with subcommands",
+    "should_trigger": true
+  },
+  {
+    "query": "add a one-liner mise.toml task for npm test",
+    "should_trigger": true
+  },
+  {
+    "query": "write a bash script in scripts/ for local helpers",
+    "should_trigger": false
+  },
+  {
+    "query": "validate our mise tasks against conventions",
+    "should_trigger": false
+  },
+  {
+    "query": "refactor mise tasks into .mise/tasks",
+    "should_trigger": false
+  },
+  {
+    "query": "handle renovate PR #12",
+    "should_trigger": false
+  },
+  {
+    "query": "create a worktree for this feature",
+    "should_trigger": false
+  },
+  {
+    "query": "scaffold mise.toml one-liner task with usage help",
+    "should_trigger": true
+  },
+  {
+    "query": "convert this python script into a kerpo skill",
+    "should_trigger": false
+  },
+  {
+    "query": "audit unit tests for tautologies",
+    "should_trigger": false
+  },
+  {
+    "query": "mise install node@22",
+    "should_trigger": false
+  },
+  {
+    "query": "scaffold mise task ci with lint and test cmds",
+    "should_trigger": true
+  },
+  {
+    "query": "add mise task that must not be named install",
+    "should_trigger": true
+  },
+  {
+    "query": "create GitHub issue for kerpo-skills feedback",
+    "should_trigger": false
+  },
+  {
+    "query": "enter the feat worktree",
+    "should_trigger": false
+  },
+  {
+    "query": "new .mise/tasks file task with #USAGE cmd help",
+    "should_trigger": true
+  }
+]
