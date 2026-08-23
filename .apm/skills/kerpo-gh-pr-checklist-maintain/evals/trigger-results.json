@@ -1,0 +1,82 @@
+[
+  {
+    "query": "update PR #123 checklist after pushing commits",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "sync the checklist in PR #123",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "fix/check/uncheck the checklist items in this PR description",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "keep PR checklist accurate (GitHub)",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "update the checklist in GitLab merge request !77",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "sync Jira ticket checklist for ABC-12",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "update Bitbucket pull request checklist",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "make PR #12 checklist reflect tests passing",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "uncheck PR checklist items because CI failed",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "learn repo PR checklist conventions (without updating a specific PR)",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  }
+]

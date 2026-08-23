@@ -1,0 +1,66 @@
+[
+  {
+    "query": "learn PR conventions from this repo",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "generate content policy from repo history",
+    "should_trigger": true,
+    "triggers": 1,
+    "runs": 1,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "what are the PR/issue conventions in this project",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "create a policy for GitLab merge requests and issues",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "learn Jira issue template conventions",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "analyze Bitbucket pull request conventions",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "update my GitHub PR/issue checklist policy",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "learn internal documentation style from docs only",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  }
+]
