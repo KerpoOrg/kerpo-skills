@@ -15,10 +15,12 @@ setup() {
   [[ "$output" == *'cmd "test"'* ]]
 }
 
-@test "ci without subcommand fails" {
+@test "ci without subcommand prints brief usage" {
   run env -u usage_cmd -u usage_yes ./.mise/tasks/ci
   [ "$status" -ne 0 ]
-  [[ "$output" == *"missing subcommand"* ]]
+  [[ "$output" == *"Usage: mise run ci"* ]]
+  [[ "$output" == *"lint"* ]]
+  [[ "$output" == *"test"* ]]
 }
 
 @test "ci lint passes shellcheck" {

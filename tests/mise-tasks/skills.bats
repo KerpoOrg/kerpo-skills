@@ -16,10 +16,15 @@ setup() {
   [[ "$output" == *'cmd "audit"'* ]]
 }
 
-@test "skills without subcommand fails" {
+@test "skills without subcommand prints brief usage" {
   run env -u usage_cmd -u usage_yes ./.mise/tasks/skills
   [ "$status" -ne 0 ]
-  [[ "$output" == *"missing subcommand"* ]]
+  [[ "$output" == *"Usage: mise run skills"* ]]
+  [[ "$output" == *"auth"* ]]
+  [[ "$output" == *"audit"* ]]
+  [[ "$output" == *"install"* ]]
+  [[ "$output" == *"uninstall"* ]]
+  [[ "$output" == *"deploy"* ]]
 }
 
 @test "skills uninstall without --yes fails" {

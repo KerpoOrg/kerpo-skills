@@ -18,7 +18,18 @@ cd "$ROOT"
 
 cmd="${usage_cmd:-}"
 if [[ -z "$cmd" ]]; then
-  echo "Error: missing subcommand. Run: mise run skills --help" >&2
+  cat >&2 <<'EOF'
+Usage: mise run skills -- <subcommand> [flags]
+
+Subcommands:
+  auth [-u|--user <user>]   Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh
+  audit                       Fast apm audit of skill markdown (no evals)
+  install                     Pack and install skills locally (claude + cursor)
+  uninstall -y|--yes          Remove deployed skills from .agents/.claude (destructive)
+  deploy -y|--yes             Pack, install, then git add/commit/push (mutating)
+
+Run `mise run skills --help` for full usage.
+EOF
   exit 1
 fi
 

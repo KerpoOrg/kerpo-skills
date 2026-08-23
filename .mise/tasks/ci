@@ -10,7 +10,15 @@ cd "$ROOT"
 
 cmd="${usage_cmd:-}"
 if [[ -z "$cmd" ]]; then
-  echo "Error: missing subcommand. Run: mise run ci --help" >&2
+  cat >&2 <<'EOF'
+Usage: mise run ci -- <subcommand>
+
+Subcommands:
+  lint   Run shellcheck on .mise/tasks scripts
+  test   Run bats tests under tests/mise-tasks
+
+Run `mise run ci --help` for full usage.
+EOF
   exit 1
 fi
 
