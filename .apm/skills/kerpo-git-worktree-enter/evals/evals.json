@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-git-worktree-enter",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Switch the agent into worktree/feat-login and start coding there.",
+      "expected_output": "Agent resolves the worktree path, calls move_agent_to_root with the absolute path before edits, verifies branch/status, reports confirmation.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Work in the linked worktree for branch feat/payments.",
+      "expected_output": "Agent lists worktrees, selects the matching path, moves agent root, verifies HEAD, does not create or remove a worktree.",
+      "assertions": []
+    }
+  ]
+}

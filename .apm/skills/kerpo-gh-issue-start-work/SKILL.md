@@ -3,20 +3,22 @@ name: kerpo-gh-issue-start-work
 description: >-
   Use when the user is about to start working on a GitHub issue. Apply when the
   user says "I'm starting work on issue #N", "let's work on this issue", "pick
-  up issue #N", or "take this issue". Ensures the issue is assigned to the
-  current user before work begins. Does not activate for creating new issues,
-  reviewing issues, or closing issues — formal closeout is
-  kerpo-gh-issue-done.
+  up issue #N", or "take this issue". Claims the issue (assign + in-progress),
+  then follows project worktree policy: create/enter a worktree when required,
+  or ask the developer if unclear. Does not activate for creating issues,
+  assigning without starting work (kerpo-gh-issue-assign), closing issues
+  (kerpo-gh-issue-done), or human-only worktree cleanup
+  (kerpo-git-worktree-clean).
 license: Proprietary
 compatibility: Designed for Claude Code and Cursor
 metadata:
   author: kerpo
-  version: "1.0"
+  version: "1.1"
 ---
 # kerpo-gh-issue-start-work
 
-Ensures a GitHub issue is properly claimed before work begins: assigns it to
-the current user and adds an `in-progress` label if available.
+Claims a GitHub issue before work begins, then optionally sets up a branch /
+worktree per **project conventions**. Never runs worktree cleanup.
 
 ## Instructions
 
@@ -56,18 +58,39 @@ gh issue edit <number> --add-label "in-progress" --repo <owner/repo>
 
 If no such label exists, skip silently — do not create labels without asking.
 
-### Step 5 — Confirm
+### Step 5 — Worktree / branch policy
+
+Discover start-work policy using
+[references/conventions.md](references/conventions.md)
+(layout, pinned primary, “start work → worktree?”).
+
+| Policy | Action |
+|---|---|
+| **Require worktree** | Compose `kerpo-git-worktree-add` (create branch if missing) then `kerpo-git-worktree-enter` |
+| **Root checkout OK** | Stop after claim unless the user also asked for a branch → then `kerpo-git-branch-create` |
+| **Unclear** | **Ask the developer**: worktree, branch on current checkout, or claim-only? Wait for the answer before creating anything |
+
+Branch/worktree naming: prefer project convention; else derive a short slug from
+the issue title/number.
+
+Do **not** invoke `kerpo-git-worktree-clean` here. You may note that the human
+can ask to clean up the worktree later when finished.
+
+### Step 6 — Confirm
 
 Report:
 - Issue title and number
-- Assigned to @<you>
+- Assigned to @\<you\>
 - Label added (or skipped)
+- Checkout outcome: worktree path + branch, branch-only, claim-only, or waiting on ask
 
-Example: "Issue #1 'Fix login bug' — assigned to @jounirajala, labeled in-progress."
+Example: "Issue #1 'Fix login bug' — assigned to @jounirajala, labeled
+in-progress. Worktree `worktree/fix-login` on `fix/login` (policy: require worktree)."
 
 ## Gotchas
 
 - Always check existing assignees first — overwriting someone else's assignment is disruptive
 - `in-progress` label may not exist in every repo — skip gracefully if missing
-- This skill does not create a git branch; if the user also needs a branch, suggest `git checkout -b <branch-name>` separately
+- When policy is unclear, ask — do not guess worktree vs root
+- Cleanup is human-triggered only (`kerpo-git-worktree-clean`)
 - Verify the active `gh` account with `gh auth status` if the repo is org-scoped

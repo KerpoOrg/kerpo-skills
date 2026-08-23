@@ -1,0 +1,10 @@
+[
+  {"query": "create a worktree for this feature", "should_trigger": true},
+  {"query": "add a worktree for feat/login", "should_trigger": true},
+  {"query": "isolate this on a worktree", "should_trigger": true},
+  {"query": "new worktree for branch fix/crash", "should_trigger": true},
+  {"query": "create a branch only, no worktree", "should_trigger": false},
+  {"query": "work in that worktree", "should_trigger": false},
+  {"query": "remove worktree/foo", "should_trigger": false},
+  {"query": "which repo am I in", "should_trigger": false}
+]

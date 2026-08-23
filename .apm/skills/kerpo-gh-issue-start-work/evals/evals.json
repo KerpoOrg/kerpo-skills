@@ -4,13 +4,13 @@
     {
       "id": 1,
       "prompt": "I'm starting work on issue #1 in KerpoOrg/kerpo-skills.",
-      "expected_output": "Agent fetches issue state, checks existing assignees, assigns @me, checks for in-progress label and adds it if present, reports issue title + assigned + label status.",
+      "expected_output": "Agent fetches issue state, checks existing assignees, assigns @me, checks for in-progress label and adds it if present, discovers worktree start-work policy (require / root OK / ask), composes worktree-add+enter or branch-create or asks when unclear, never runs worktree cleanup, reports issue + checkout outcome.",
       "assertions": []
     },
     {
       "id": 2,
       "prompt": "Let's pick up issue #3.",
-      "expected_output": "Agent resolves repo from git remote, fetches issue #3, assigns current user, adds in-progress label if available, confirms with issue title.",
+      "expected_output": "Agent resolves repo from git remote, fetches issue #3, assigns current user, adds in-progress label if available, applies worktree/branch policy or asks if unclear, confirms with issue title and checkout outcome.",
       "assertions": []
     },
     {

@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-git-branch-create",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a branch feat/login off main — no worktree, just the branch.",
+      "expected_output": "Agent resolves checkout, checks conventions/pinned primary, creates feat/login with git switch -c from main (or refuses on pinned primary and offers worktree-add), reports path and branch.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Make me a fix/typo branch from origin/main on this checkout.",
+      "expected_output": "Agent fetches or uses origin/main as base, creates fix/typo with switch -c, does not run git worktree add.",
+      "assertions": []
+    }
+  ]
+}

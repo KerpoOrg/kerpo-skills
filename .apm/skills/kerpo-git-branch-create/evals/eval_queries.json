@@ -1,0 +1,10 @@
+[
+  {"query": "create a branch feat/auth off main", "should_trigger": true},
+  {"query": "make a fix branch without a worktree", "should_trigger": true},
+  {"query": "git switch -c feat/login", "should_trigger": true},
+  {"query": "branch off main for the typo fix", "should_trigger": true},
+  {"query": "create a worktree for this feature", "should_trigger": false},
+  {"query": "clean up the worktree", "should_trigger": false},
+  {"query": "which worktree am I in", "should_trigger": false},
+  {"query": "show me dirty files", "should_trigger": false}
+]

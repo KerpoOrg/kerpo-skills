@@ -1,0 +1,10 @@
+[
+  {"query": "clean up this worktree", "should_trigger": true},
+  {"query": "remove worktree/foo", "should_trigger": true},
+  {"query": "tear down worktrees", "should_trigger": true},
+  {"query": "prune old worktrees", "should_trigger": true},
+  {"query": "we merged the PR, finish up", "should_trigger": false},
+  {"query": "close issue #5", "should_trigger": false},
+  {"query": "create a worktree for feat/x", "should_trigger": false},
+  {"query": "start work on issue #3", "should_trigger": false}
+]

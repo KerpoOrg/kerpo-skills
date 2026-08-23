@@ -1,0 +1,10 @@
+[
+  {"query": "work in that worktree", "should_trigger": true},
+  {"query": "switch to the worktree", "should_trigger": true},
+  {"query": "enter worktree/feat-login", "should_trigger": true},
+  {"query": "start coding in the linked worktree", "should_trigger": true},
+  {"query": "create a worktree for feat/x", "should_trigger": false},
+  {"query": "clean up this worktree", "should_trigger": false},
+  {"query": "create a branch off main", "should_trigger": false},
+  {"query": "what worktree is this", "should_trigger": false}
+]

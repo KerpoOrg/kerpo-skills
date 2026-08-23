@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-git-worktree-clean",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Please remove worktree/feat-login after we merged the PR.",
+      "expected_output": "Agent treats this as human-triggered cleanup, checks dirty state, runs documented pre-destroy teardown if any, then git worktree remove, asks before deleting the local branch.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Clean up my old worktrees.",
+      "expected_output": "Agent lists candidates and confirms each path with the human before removing; does not bulk-delete reserved or ambiguous trees without confirmation.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "We just merged the PR and closed the issue — finish up.",
+      "expected_output": "Agent does NOT run worktree cleanup (not an explicit human cleanup request); may mention that the human can ask to clean worktrees later.",
+      "assertions": []
+    }
+  ]
+}

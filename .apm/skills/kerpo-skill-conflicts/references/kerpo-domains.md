@@ -15,8 +15,12 @@ If a session kerpo skill is missing here, still compare against it.
 | Coverage candidates | `kerpo-unit-find-untested-candidates` | Rank 1–3 untested public units; do not write tests |
 | Git checkout | `kerpo-git-context` | Resolve repo/worktree when checkout is ambiguous |
 | Git dirty state | `kerpo-git-status` | Uncommitted / untracked files for the resolved checkout |
+| Git branch create | `kerpo-git-branch-create` | Create a branch without a worktree |
+| Git worktree add | `kerpo-git-worktree-add` | Add linked worktree; create branch if missing |
+| Git worktree enter | `kerpo-git-worktree-enter` | Move agent root into an existing worktree |
+| Git worktree clean | `kerpo-git-worktree-clean` | Human-only remove/teardown of worktrees |
 | GH assign | `kerpo-gh-issue-assign` | Assign an issue |
-| GH start work | `kerpo-gh-issue-start-work` | Claim issue before work (assign + in-progress) |
+| GH start work | `kerpo-gh-issue-start-work` | Claim issue; compose worktree/branch per project policy (ask if unclear) |
 | GH closeout | `kerpo-gh-issue-done` | Formal closeout checks, then close; PR merge is not a gate |
 | GH dependency-bot PRs | `kerpo-gh-dep-bot-pr` | Renovate-first (extensible flavours): changelog + usage migration analysis; merge / fix-on-branch / migration issue |
 | GH content policy | `kerpo-gh-content-policy-learn` | Learn PR/issue conventions from GitHub repo history; generate a project content-policy doc |
@@ -42,6 +46,9 @@ Default: prefer kerpo. Do not auto-disable.
 | `find-skills` | — | **none** | Keep |
 | Generic git status / dirty-file helpers | `kerpo-git-status` | **domain** | Prefer kerpo (worktrees / multi-repo). Disable the other if it ignores checkout context |
 | Generic “which repo / worktree” helpers | `kerpo-git-context` | **domain** | Prefer kerpo |
+| Generic create-worktree / branch helpers | `kerpo-git-worktree-add`, `kerpo-git-branch-create`, `kerpo-git-worktree-enter` | **domain** | Prefer kerpo (convention discovery + pinned primary) |
+| Generic worktree cleanup / prune helpers | `kerpo-git-worktree-clean` | **domain** or **clash** if they auto-clean after merge | Prefer kerpo (human-only trigger) |
+| Cursor Task `best-of-n-runner` / isolated clones | `kerpo-git-worktree-*` | **none** / partial **domain** | Keep; boundary: best-of-n = eval isolation; kerpo = durable linked worktrees for multiagent product work |
 | Generic GitHub issue close / “mark done” | `kerpo-gh-issue-done` | **domain** or **clash** if it closes without format/as-built checks | Prefer kerpo closeout |
 | Generic “assign issue” / “start this issue” | `kerpo-gh-issue-assign`, `kerpo-gh-issue-start-work` | **domain** | Prefer kerpo |
 | Generic Dependabot/Renovate auto-merge helpers | `kerpo-gh-dep-bot-pr` | **domain** or **clash** if they merge without changelog/usage gates | Prefer kerpo (confirm + fail closed) |

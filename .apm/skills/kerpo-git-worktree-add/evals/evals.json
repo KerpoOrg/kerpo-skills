@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-git-worktree-add",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a worktree for a new branch feat/payments from main.",
+      "expected_output": "Agent discovers layout (or falls back to ./worktree/<slug>), runs git worktree add -b because the branch is new, keeps primary on default when required, reports absolute path and suggests enter if needed.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Add a worktree for existing branch fix/timeout — path per project conventions.",
+      "expected_output": "Agent checks the branch exists and is not checked out elsewhere, adds worktree without -b, uses discovered or fallback ./worktree path.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Make a worktree for feat/x but that branch is already checked out in another worktree.",
+      "expected_output": "Agent refuses to add a second checkout, reports the existing path, offers enter/reuse instead of force-adding.",
+      "assertions": []
+    }
+  ]
+}
