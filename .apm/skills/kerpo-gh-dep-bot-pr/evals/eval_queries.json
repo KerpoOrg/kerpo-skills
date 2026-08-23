@@ -1,0 +1,14 @@
+[
+  { "query": "handle renovate PR #42", "should_trigger": true },
+  { "query": "triage open Renovate dependency PRs", "should_trigger": true },
+  { "query": "analyze migration needs for this dep bump PR", "should_trigger": true },
+  { "query": "fix the renovate PR branch for breaking API changes", "should_trigger": true },
+  { "query": "can we merge this dependency-bot PR after CI?", "should_trigger": true },
+  { "query": "open a migration issue for the major framework bump PR", "should_trigger": true },
+  { "query": "update the checklist in PR #12", "should_trigger": false },
+  { "query": "link PR #12 to its issues", "should_trigger": false },
+  { "query": "review this feature PR for code quality", "should_trigger": false },
+  { "query": "merge Jira-linked Bitbucket dependency PR", "should_trigger": false },
+  { "query": "triage GitLab dependency merge requests", "should_trigger": false },
+  { "query": "approve Renovate items on the Dependency Dashboard without a PR", "should_trigger": false }
+]

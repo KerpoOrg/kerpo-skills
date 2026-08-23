@@ -37,25 +37,38 @@ run_eval() {
   local out_dir="$WORKSPACE/$eval_dir/$mode"
   mkdir -p "$out_dir/outputs"
 
-  local start_ms
-  start_ms=$(date +%s%3N)
+  local start_ms end_ms duration_ms
+  # Portable ms timestamp (macOS date lacks %3N)
+  start_ms=$(python3 -c 'import time; print(int(time.time()*1000))')
 
   local json_output
+  local plugin_dir=""
   if [[ "$mode" == "with_skill" ]]; then
+    # Claude CLI no longer supports --skill-path; load a one-skill plugin dir.
+    plugin_dir=$(mktemp -d "${TMPDIR:-/tmp}/kerpo-eval-skill.XXXXXX")
+    mkdir -p "$plugin_dir/.claude-plugin" "$plugin_dir/skills/$SKILL_NAME"
+    cp -R "$SKILL_DIR"/. "$plugin_dir/skills/$SKILL_NAME/"
+    printf '%s\n' '{"name":"kerpo-eval-skill","version":"0.0.0"}' \
+      > "$plugin_dir/.claude-plugin/plugin.json"
     json_output=$(claude -p "$prompt" \
-      --skill-path "$SKILL_DIR" \
+      --plugin-dir "$plugin_dir" \
       --output-format json 2>/dev/null || echo '{}')
+    rm -rf "$plugin_dir"
   else
     json_output=$(claude -p "$prompt" \
       --output-format json 2>/dev/null || echo '{}')
   fi
 
-  local end_ms
-  end_ms=$(date +%s%3N)
-  local duration_ms=$((end_ms - start_ms))
+  end_ms=$(python3 -c 'import time; print(int(time.time()*1000))')
+  duration_ms=$((end_ms - start_ms))
 
   local total_tokens
-  total_tokens=$(echo "$json_output" | jq -r '.usage.input_tokens + .usage.output_tokens // 0' 2>/dev/null || echo 0)
+  total_tokens=$(echo "$json_output" | jq -r '
+    ((.usage.input_tokens // 0)
+     + (.usage.output_tokens // 0)
+     + (.usage.cache_creation_input_tokens // 0)
+     + (.usage.cache_read_input_tokens // 0))
+  ' 2>/dev/null || echo 0)
 
   jq -n \
     --argjson total_tokens "$total_tokens" \
@@ -63,7 +76,7 @@ run_eval() {
     '{total_tokens: $total_tokens, duration_ms: $duration_ms}' \
     > "$out_dir/timing.json"
 
-  echo "$json_output" | jq -r '.content[0].text // ""' \
+  echo "$json_output" | jq -r '.result // .content[0].text // ""' \
     > "$out_dir/outputs/response.txt" 2>/dev/null || true
 
   echo "  [$mode] tokens: $total_tokens, duration: ${duration_ms}ms"
@@ -135,12 +148,12 @@ echo "Running evals for $SKILL_NAME (iteration $ITERATION)"
 echo "Workspace: $WORKSPACE"
 echo ""
 
-count=$(jq length "$EVALS_FILE")
+count=$(jq 'if type == "array" then length else (.evals | length) end' "$EVALS_FILE")
 
 for i in $(seq 0 $((count - 1))); do
-  eval_id=$(jq -r ".[$i].id" "$EVALS_FILE")
-  prompt=$(jq -r ".[$i].prompt" "$EVALS_FILE")
-  assertions=$(jq -r ".[$i].assertions // []" "$EVALS_FILE")
+  eval_id=$(jq -r 'if type == "array" then .[$i].id else .evals[$i].id end' --argjson i "$i" "$EVALS_FILE")
+  prompt=$(jq -r 'if type == "array" then .[$i].prompt else .evals[$i].prompt end' --argjson i "$i" "$EVALS_FILE")
+  assertions=$(jq -c 'if type == "array" then (.[$i].assertions // []) else (.evals[$i].assertions // []) end' --argjson i "$i" "$EVALS_FILE")
   eval_dir="eval-$(echo "$prompt" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | cut -c1-40 | sed 's/-*$//')"
 
   echo "Eval $eval_id: ${prompt:0:60}..."

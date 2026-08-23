@@ -1,18 +1,21 @@
 # kerpo-skills — GitHub content policy
 
-Learned from repo history on 2026-08-19 by `kerpo-gh-content-policy-learn`.
-Consumed by other `kerpo-gh-*` skills so they follow this repo's local
-conventions instead of generic defaults.
+Learned from repo history on 2026-08-19 by `kerpo-gh-content-policy-learn`,
+re-confirmed unchanged on 2026-08-23. Consumed by other `kerpo-gh-*` skills
+so they follow this repo's local conventions instead of generic defaults.
 
 ## Evidence sampled
 
-- All PRs (`gh pr list --state all`): 1 total — a bot-generated Renovate
-  onboarding PR (#3). No human-authored PR exists yet in this repo.
+- All PRs (`gh pr list --state merged`): 1 total — a bot-generated Renovate
+  onboarding PR (#3, merged via `Merge pull request #3` — the one exception
+  to the direct-commit pattern below). No human-authored PR exists yet in
+  this repo.
 - All issues (`gh issue list --state all`): 3 total — 2 closed
-  (`#1`, `#2`, both by @jounirajala), 1 open (Renovate Dependency Dashboard,
-  bot-generated).
-- Commit history (`git log`): no `Merge pull request` commits found — work
-  lands via direct commits to `main`, not a PR-merge workflow.
+  (`#1`, `#2`, both by @jounirajala), 1 open (`#4`, Renovate Dependency
+  Dashboard, bot-generated).
+- Commit history (`git log`): only one `Merge pull request` commit (the
+  Renovate onboarding PR above) — all other work lands via direct commits to
+  `main`, not a PR-merge workflow.
 - No `.github/PULL_REQUEST_TEMPLATE*` or `ISSUE_TEMPLATE*` files existed
   before this policy was written.
 

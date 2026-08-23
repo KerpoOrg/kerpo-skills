@@ -96,3 +96,15 @@ Gitignore: `apm_modules/`, `*-workspace/`, `build/`
 - **Shared content:** `.apm/references/` → viittaa `LOAD references/shared.md`
 - **Package deps:** `apm.yml` → `dependencies.apm: [kerpo/other@v1.0.0]`
 - **Agents:** `.apm/agents/` voi orkestroida useampaa skilliä
+
+<!-- kerpo-gh-content-policy-learn:start -->
+## GitHub content policy
+
+Full policy: `.github/content-policy.md` (learned 2026-08-19, re-confirmed
+2026-08-23). No human-authored PR exists yet in this repo — issue bodies use
+`## Skill` / `## Problem / need` / `## Proposed solution` (Do / Do not) /
+`## Use cases` / `## Additional context`; no checkboxes. PR body conventions
+are proposed defaults only until real PR history exists — mirror the issue
+heading style rather than inventing new sections, and prefer `Closes #N` for
+issue links.
+<!-- kerpo-gh-content-policy-learn:end -->
