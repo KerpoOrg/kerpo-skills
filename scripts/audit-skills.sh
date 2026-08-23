@@ -6,7 +6,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
 if ! command -v apm >/dev/null 2>&1; then
-  echo "Error: apm not on PATH. Run via: mise run audit" >&2
+  echo "Error: apm not on PATH. Run via: mise run skills -- audit" >&2
   exit 1
 fi
 

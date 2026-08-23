@@ -53,7 +53,7 @@ metadata:
 
 ### 1. Rakennekelpoisuus
 ```bash
-mise run audit                    # kaikki skillit, nopea (ei evaleja)
+mise run skills -- audit          # kaikki skillit, nopea (ei evaleja)
 apm pack --dry-run
 ```
 

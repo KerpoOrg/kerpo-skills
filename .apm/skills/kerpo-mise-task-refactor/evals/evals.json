@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-mise-task-refactor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Refactor this repo's mise tasks: move complex TOML tasks into .mise/tasks and fix shadowed install/uninstall names.",
+      "expected_output": "Agent migrates non-one-liners to file tasks, renames install/uninstall into a domain task with subcommands, adds usage help, bats, shellcheck tooling, confirms before deleting/renaming public entrypoints.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "We have skills-auth, skills-install, skills-update as separate mise tasks — collapse them.",
+      "expected_output": "Agent creates one skills file task with auth|install|update cmds and usage help, removes or redirects the hyphenated siblings, updates callers/docs, adds bats.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Fix mise task quality: add missing bats/shellcheck and pull dangerous task-only scripts out of scripts/.",
+      "expected_output": "Agent relocates task-private scripts under .mise/tasks, pins shellcheck/bats, adds tests/mise-tasks coverage and a non-colliding ci lint/test entrypoint as needed.",
+      "assertions": []
+    }
+  ]
+}

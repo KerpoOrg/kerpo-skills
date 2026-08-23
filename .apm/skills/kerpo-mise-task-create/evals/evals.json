@@ -1,0 +1,23 @@
+{
+  "skill_name": "kerpo-mise-task-create",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a mise task `skills` with subcommands auth, install, and uninstall. Follow kerpo conventions.",
+      "expected_output": "Agent refuses nothing on the name `skills`, creates `.mise/tasks/skills` with #MISE/#USAGE cmd help, chmod +x, bats under tests/mise-tasks/skills.bats, pins or notes shellcheck/bats, does not create a task named install.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Add a mise task named install that packs our apm skills.",
+      "expected_output": "Agent refuses the name install as CLI-shadowing, proposes a domain task (e.g. skills) with an install subcommand instead, and scaffolds that shape if the user agrees.",
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Add a one-liner mise.toml task that only runs `npm test`.",
+      "expected_output": "Agent keeps it in mise.toml as a one-liner with description and minimal usage for --help; does not force a file task for a single command.",
+      "assertions": []
+    }
+  ]
+}

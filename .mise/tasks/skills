@@ -1,0 +1,95 @@
+#!/usr/bin/env bash
+#MISE description="Manage kerpo-skills package: auth, audit, install, uninstall, deploy"
+#USAGE cmd "auth" help="Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh keyring" {
+#USAGE   flag "-u --user <user>" help="gh keyring username" default="jounirajala"
+#USAGE }
+#USAGE cmd "audit" help="Fast apm audit of all skill markdown (unicode/structure, no evals)"
+#USAGE cmd "install" help="Pack and install skills locally (claude + cursor)"
+#USAGE cmd "uninstall" help="Remove deployed skills from .agents/skills and .claude/skills (destructive)" {
+#USAGE   flag "-y --yes" help="Confirm destructive uninstall"
+#USAGE }
+#USAGE cmd "deploy" help="Pack, install, git add/commit/push (mutating; requires confirmation)" {
+#USAGE   flag "-y --yes" help="Confirm git commit and push"
+#USAGE }
+set -euo pipefail
+
+ROOT="${MISE_PROJECT_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+cd "$ROOT"
+
+cmd="${usage_cmd:-}"
+if [[ -z "$cmd" ]]; then
+  cat <<'EOF'
+Usage: mise run skills -- <subcommand> [flags]
+
+Subcommands:
+  auth [-u|--user <user>]   Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh
+  audit                       Fast apm audit of skill markdown (no evals)
+  install                     Pack and install skills locally (claude + cursor)
+  uninstall -y|--yes          Remove deployed skills from .agents/.claude (destructive)
+  deploy -y|--yes             Pack, install, then git add/commit/push (mutating)
+
+Run `mise run skills --help` for full usage.
+EOF
+  exit 0
+fi
+
+yes="${usage_yes:-false}"
+
+cmd_auth() {
+  local user="${usage_user:-jounirajala}"
+  local token
+  token="$(gh auth token --user "$user" 2>/dev/null || true)"
+  if [[ -z "$token" ]]; then
+    echo "Error: ${user} not found in gh keyring. Run: gh auth login" >&2
+    exit 1
+  fi
+  printf '[env]\nGITHUB_APM_PAT_KERPOORG = "%s"\n' "$token" >mise.local.toml
+  echo "mise.local.toml updated"
+  if command -v mise >/dev/null 2>&1; then
+    mise trust -y mise.local.toml >/dev/null 2>&1 || true
+  fi
+}
+
+cmd_audit() {
+  ./scripts/audit-skills.sh
+}
+
+cmd_install() {
+  rm -rf build/
+  apm pack
+  # shellcheck disable=SC2086
+  apm install build/kerpo-skills-*
+}
+
+cmd_uninstall() {
+  if [[ "$yes" != "true" ]]; then
+    echo "Error: uninstall is destructive. Re-run with --yes" >&2
+    exit 1
+  fi
+  rm -rf .agents/skills/ .claude/skills/
+  echo "Skills removed"
+}
+
+cmd_deploy() {
+  if [[ "$yes" != "true" ]]; then
+    echo "Error: deploy runs git add/commit/push. Re-run with --yes" >&2
+    exit 1
+  fi
+  cmd_install
+  git add -A
+  git commit -m 'Deploy skills'
+  git push
+}
+
+case "$cmd" in
+  auth) cmd_auth ;;
+  audit) cmd_audit ;;
+  install) cmd_install ;;
+  uninstall) cmd_uninstall ;;
+  deploy) cmd_deploy ;;
+  *)
+    echo "Error: unknown subcommand: $cmd" >&2
+    echo "Run: mise run skills --help" >&2
+    exit 1
+    ;;
+esac

@@ -71,7 +71,7 @@ See [.claude/CLAUDE.md](.claude/CLAUDE.md) for the full development workflow.
 ./scripts/new-skill.sh kerpo-my-skill
 
 # Validate all skills (unicode/structure, no evals)
-mise run audit
+mise run skills -- audit
 
 # Test trigger accuracy (after filling eval_queries.json)
 ./scripts/test-triggers.sh kerpo-my-skill
@@ -80,7 +80,11 @@ mise run audit
 ./scripts/run-evals.sh kerpo-my-skill 1
 
 # Deploy locally (pack → install local bundle)
-mise run install
+mise run skills -- install
+
+# Lint/test mise file tasks
+mise run ci -- lint
+mise run ci -- test
 ```
 
 ## Repo structure
