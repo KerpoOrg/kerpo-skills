@@ -10,7 +10,7 @@ cd "$ROOT"
 
 cmd="${usage_cmd:-}"
 if [[ -z "$cmd" ]]; then
-  cat >&2 <<'EOF'
+  cat <<'EOF'
 Usage: mise run ci -- <subcommand>
 
 Subcommands:
@@ -19,7 +19,7 @@ Subcommands:
 
 Run `mise run ci --help` for full usage.
 EOF
-  exit 1
+  exit 0
 fi
 
 cmd_lint() {

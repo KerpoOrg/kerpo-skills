@@ -18,7 +18,7 @@ setup() {
 
 @test "skills without subcommand prints brief usage" {
   run env -u usage_cmd -u usage_yes ./.mise/tasks/skills
-  [ "$status" -ne 0 ]
+  [ "$status" -eq 0 ]
   [[ "$output" == *"Usage: mise run skills"* ]]
   [[ "$output" == *"auth"* ]]
   [[ "$output" == *"audit"* ]]

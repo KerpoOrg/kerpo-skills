@@ -17,7 +17,7 @@ setup() {
 
 @test "ci without subcommand prints brief usage" {
   run env -u usage_cmd -u usage_yes ./.mise/tasks/ci
-  [ "$status" -ne 0 ]
+  [ "$status" -eq 0 ]
   [[ "$output" == *"Usage: mise run ci"* ]]
   [[ "$output" == *"lint"* ]]
   [[ "$output" == *"test"* ]]

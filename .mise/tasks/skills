@@ -18,7 +18,7 @@ cd "$ROOT"
 
 cmd="${usage_cmd:-}"
 if [[ -z "$cmd" ]]; then
-  cat >&2 <<'EOF'
+  cat <<'EOF'
 Usage: mise run skills -- <subcommand> [flags]
 
 Subcommands:
@@ -30,7 +30,7 @@ Subcommands:
 
 Run `mise run skills --help` for full usage.
 EOF
-  exit 1
+  exit 0
 fi
 
 yes="${usage_yes:-false}"
