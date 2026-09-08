@@ -1,0 +1,11 @@
+# Governance policy for kerpo skills
+# Enforces what sources, scopes, and primitives are allowed
+governance:
+  allowed_sources:
+    - "github.com/kerpo/kerpo-skills"
+    - "github.com/kerpo/kerpo-skills.git"
+  allowed_primes: []
+  max_version_age_days: 90
+  require_lockfile: true
+  require_conformance: true
+  audit_mode: "warn"
