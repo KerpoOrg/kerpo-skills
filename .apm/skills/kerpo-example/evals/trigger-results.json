@@ -3,7 +3,7 @@
     "query": "Message that should trigger this skill",
     "should_trigger": true,
     "triggers": 0,
-    "runs": 3,
+    "runs": 1,
     "trigger_rate": 0,
     "status": "FAIL"
   },
@@ -11,7 +11,7 @@
     "query": "Message with same topic but different intent — should NOT trigger",
     "should_trigger": false,
     "triggers": 0,
-    "runs": 3,
+    "runs": 1,
     "trigger_rate": 0,
     "status": "PASS"
   }
