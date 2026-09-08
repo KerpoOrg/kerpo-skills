@@ -51,11 +51,13 @@ run_eval() {
     printf '%s\n' '{"name":"kerpo-eval-skill","version":"0.0.0"}' \
       > "$plugin_dir/.claude-plugin/plugin.json"
     json_output=$(claude -p "$prompt" \
+      --model haiku \
       --plugin-dir "$plugin_dir" \
       --output-format json 2>/dev/null || echo '{}')
     rm -rf "$plugin_dir"
   else
     json_output=$(claude -p "$prompt" \
+      --model haiku \
       --output-format json 2>/dev/null || echo '{}')
   fi
 

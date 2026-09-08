@@ -1,0 +1,23 @@
+{
+  "name": "kerpo-skills",
+  "version": "1.0.0",
+  "description": "Kerpo skills for AI agent development",
+  "license": "Proprietary",
+  "supports": [
+    "copilot",
+    "claude",
+    "cursor",
+    "opencode",
+    "codex",
+    "gemini",
+    "windsurf",
+    "kiro"
+  ],
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "requires": [
+    "python>=3.10"
+  ]
+}
