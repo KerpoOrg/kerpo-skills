@@ -1,5 +1,5 @@
 [tools]
-"github:microsoft/apm" = "0.28.0"
+"github:microsoft/apm" = "0.29.0"
 jq = "latest"
 shellcheck = "latest"
 bats = "latest"
