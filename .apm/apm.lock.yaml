@@ -1,0 +1,105 @@
+# APM lockfile - pins resolved dependency tree for reproducibility
+name: kerpo-skills
+version: 1.0.0
+locked: true
+resolved:
+  kerpo-example:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-example
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-content-policy-learn:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-content-policy-learn
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-dep-bot-pr:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-dep-bot-pr
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-issue-assign:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-issue-assign
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-issue-done:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-issue-done
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-issue-duplicate-conflict-finder:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-issue-duplicate-conflict-finder
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-issue-start-work:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-issue-start-work
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-pr-checklist-maintain:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-pr-checklist-maintain
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-pr-implementation-notes:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-pr-implementation-notes
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gh-pr-issue-links:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gh-pr-issue-links
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-git-branch-create:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-git-branch-create
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-git-context:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-git-context
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-git-status:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-git-status
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-git-worktree-add:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-git-worktree-add
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-git-worktree-clean:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-git-worktree-clean
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-git-worktree-enter:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-git-worktree-enter
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-gl-content-policy-learn:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-gl-content-policy-learn
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-mise-task-create:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-mise-task-create
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-mise-task-refactor:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-mise-task-refactor
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-mise-task-validate:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-mise-task-validate
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-skill-conflicts:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-skill-conflicts
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-skills-feedback:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-skills-feedback
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-tdd:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-tdd
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-unit-find-untested-candidates:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-unit-find-untested-candidates
+    version: 1.0.0
+    integrity: sha256:placeholder-hash
+  kerpo-unit-review:
+    source: file:///Users/jouni/kerpo/kerpo-skills/.apm/skills/kerpo-unit-review
+    version: 1.0.0
+    integrity: sha256:placeholder-hash

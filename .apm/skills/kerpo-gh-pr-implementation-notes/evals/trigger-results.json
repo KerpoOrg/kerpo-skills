@@ -1,0 +1,82 @@
+[
+  {
+    "query": "update implementation notes in PR #123",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "refresh PR implementation story for #123",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "make PR #123 description explain fulfillment of issue",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "add implementation notes to this PR",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "update Jira ticket implementation notes in description",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "write GitLab merge request implementation notes",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "add implementation notes to Bitbucket PR",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "explain what was implemented and deviations in PR #10",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "update PR checklist instead of implementation notes",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "sync linked issues section (not implementation notes)",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  }
+]

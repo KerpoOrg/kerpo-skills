@@ -1,0 +1,82 @@
+[
+  {
+    "query": "link PR #123 to its issue(s) and update issue bodies",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "update PR issue links for PR #123",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "ensure issues mention this PR and expected closure",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "keep GitHub PR↔issue linkage consistent",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  },
+  {
+    "query": "link this GitLab merge request to issues",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "link Bitbucket pull request to Jira tickets",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "update Jira issue links to PRs",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "fix/check/uncheck the checklist in PR #12",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "add implementation notes to PR #12",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "link this PR to issue #77 using closes",
+    "should_trigger": true,
+    "triggers": 0,
+    "runs": 1,
+    "trigger_rate": 0,
+    "status": "FAIL"
+  }
+]

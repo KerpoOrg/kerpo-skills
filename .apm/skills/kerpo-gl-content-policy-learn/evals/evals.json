@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-gl-content-policy-learn",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a policy for GitLab merge requests and issues in this repo, learned from repo history.",
+      "expected_output": "Agent gates to GitLab-only, samples recent merged MRs/issues/commits via glab, synthesizes a project-level policy with MR/issue/linking/conventions sections, and writes/updates the policy marker block in tooling-appropriate locations (including .gitlab/content-policy.md). It then confirms which files were updated and summarizes the key extracted conventions.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Generate a content policy for our Jira workflow (issues in Jira, MRs in GitLab). Use the Jira part as the source of truth.",
+      "expected_output": "Agent should not \"widen\" the skill into Jira-only management; it gates to GitLab-only content learning and asks which GitLab repo/MR/issue to learn from, or it limits output to GitLab-native policy content. No Jira-only policy should be produced.",
+      "assertions": []
+    }
+  ]
+}

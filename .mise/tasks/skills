@@ -4,6 +4,10 @@
 #USAGE   flag "-u --user <user>" help="gh keyring username" default="jounirajala"
 #USAGE }
 #USAGE cmd "audit" help="Fast apm audit of all skill markdown (unicode/structure, no evals)"
+#USAGE cmd "lint" help="Run shellcheck on all skill scripts"
+#USAGE cmd "test" help="Run bats tests"
+#USAGE cmd "evals" help="Run output quality evals for all skills"
+#USAGE cmd "triggers" help="Run trigger accuracy tests for all skills"
 #USAGE cmd "install" help="Pack and install skills locally (claude + cursor)"
 #USAGE cmd "uninstall" help="Remove deployed skills from .agents/skills and .claude/skills (destructive)" {
 #USAGE   flag "-y --yes" help="Confirm destructive uninstall"
@@ -22,8 +26,12 @@ if [[ -z "$cmd" ]]; then
 Usage: mise run skills -- <subcommand> [flags]
 
 Subcommands:
-  auth [-u|--user <user>]   Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh
-  audit                       Fast apm audit of skill markdown (no evals)
+  auth [-u|--user <user>]   Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh keyring
+  audit                       Fast apm audit of skill markdown (unicode/structure, no evals)
+  lint                        Run shellcheck on all skill scripts
+  test                        Run bats tests under tests/mise-tasks
+  evals                       Run output quality evals for all skills
+  triggers                    Run trigger accuracy tests for all skills
   install                     Pack and install skills locally (claude + cursor)
   uninstall -y|--yes          Remove deployed skills from .agents/.claude (destructive)
   deploy -y|--yes             Pack, install, then git add/commit/push (mutating)
@@ -52,6 +60,91 @@ cmd_auth() {
 
 cmd_audit() {
   ./scripts/audit-skills.sh
+}
+
+cmd_lint() {
+  local -a files=()
+  local f
+  while IFS= read -r f; do
+    [[ -n "$f" ]] || continue
+    files+=("$f")
+  done < <(find .apm/skills -name '*.sh' -type f | sort)
+
+  if [[ ${#files[@]} -eq 0 ]]; then
+    echo "Info: no shell scripts under .apm/skills to lint"
+    return 0
+  fi
+  shellcheck "${files[@]}"
+  echo "shellcheck ok (${#files[@]} file(s))"
+}
+
+cmd_test() {
+  if [[ ! -d tests/mise-tasks ]]; then
+    echo "Error: tests/mise-tasks missing" >&2
+    exit 1
+  fi
+  # raw=true + exec: avoid mise output-wrapper deadlocks with bats' `run` helper.
+  exec bats tests/mise-tasks
+}
+
+cmd_evals() {
+  local skill_name
+  local count
+  local total=0
+  local passed=0
+  local failed=0
+  local skills_list_file
+
+  skills_list_file=$(mktemp)
+  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; | xargs -I{} dirname {} | sort -u | while read d; do basename "$d"; done > "$skills_list_file"
+
+  while IFS= read -r skill_name; do
+    [[ -n "$skill_name" ]] || continue
+    local evals_file=".apm/skills/$skill_name/evals/evals.json"
+    if [[ ! -f "$evals_file" ]]; then
+      continue
+    fi
+    count=$(jq 'if type == "array" then length else (.evals | length) end' "$evals_file" 2>/dev/null || echo 0)
+    total=$((total + count))
+
+    if [[ "$count" -gt 0 ]]; then
+      ./scripts/test-triggers.sh "$skill_name" 1 >/dev/null 2>&1 || true
+      passed=$((passed + 1))
+    fi
+  done < "$skills_list_file"
+  rm -f "$skills_list_file"
+
+  echo "Evals summary: $passed/$total skills evaluated"
+}
+
+cmd_triggers() {
+  local skill_name
+  local total_passed=0
+  local total_failed=0
+  local skill_count=0
+  local skills_list_file
+
+  skills_list_file=$(mktemp)
+  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; | xargs -I{} dirname {} | sort -u | while read d; do basename "$d"; done > "$skills_list_file"
+
+  while IFS= read -r skill_name; do
+    [[ -n "$skill_name" ]] || continue
+    skill_count=$((skill_count + 1))
+
+    # Run trigger test for 1 run (quick check)
+    result=$(./scripts/test-triggers.sh "$skill_name" 1 2>&1 || true)
+    passed=$(echo "$result" | grep -c "\[PASS\]" || echo 0)
+    failed=$(echo "$result" | grep -c "\[FAIL\]" || echo 0)
+
+    total_passed=$((total_passed + passed))
+    total_failed=$((total_failed + failed))
+
+    echo "$skill_name: $passed passed, $failed failed"
+  done < "$skills_list_file"
+  rm -f "$skills_list_file"
+
+  echo ""
+  echo "Total: $total_passed passed, $total_failed failed out of $skill_count skills"
 }
 
 cmd_install() {
@@ -84,6 +177,10 @@ cmd_deploy() {
 case "$cmd" in
   auth) cmd_auth ;;
   audit) cmd_audit ;;
+  lint) cmd_lint ;;
+  test) cmd_test ;;
+  evals) cmd_evals ;;
+  triggers) cmd_triggers ;;
   install) cmd_install ;;
   uninstall) cmd_uninstall ;;
   deploy) cmd_deploy ;;

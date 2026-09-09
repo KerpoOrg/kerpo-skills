@@ -1,0 +1,42 @@
+[
+  {
+    "query": "create a policy for GitLab merge requests and issues",
+    "should_trigger": true
+  },
+  {
+    "query": "learn MR conventions from this repo",
+    "should_trigger": true
+  },
+  {
+    "query": "generate a content policy from our GitLab history",
+    "should_trigger": true
+  },
+  {
+    "query": "what are the merge request/issue conventions in this GitLab project",
+    "should_trigger": true
+  },
+  {
+    "query": "update our GitLab MR/issue checklist policy",
+    "should_trigger": true
+  },
+  {
+    "query": "learn PR conventions from this repo",
+    "should_trigger": false
+  },
+  {
+    "query": "generate content policy from GitHub repo history",
+    "should_trigger": false
+  },
+  {
+    "query": "learn Jira issue template conventions",
+    "should_trigger": false
+  },
+  {
+    "query": "analyze Bitbucket pull request conventions",
+    "should_trigger": false
+  },
+  {
+    "query": "learn internal documentation style from docs only",
+    "should_trigger": false
+  }
+]
