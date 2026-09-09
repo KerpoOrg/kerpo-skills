@@ -26,8 +26,8 @@ if [[ -z "$cmd" ]]; then
 Usage: mise run skills -- <subcommand> [flags]
 
 Subcommands:
-  auth [-u|--user <user>]   Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh
-  audit                       Fast apm audit of skill markdown (no evals)
+  auth [-u|--user <user>]   Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh keyring
+  audit                       Fast apm audit of skill markdown (unicode/structure, no evals)
   lint                        Run shellcheck on all skill scripts
   test                        Run bats tests under tests/mise-tasks
   evals                       Run output quality evals for all skills
@@ -96,7 +96,7 @@ cmd_evals() {
   local skills_list_file
 
   skills_list_file=$(mktemp)
-  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; | xargs -I{} dirname {} | sort -u | while read d; do basename "$d"; done > "$skills_list_file"
+  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; -print0 | xargs -0 -I{} dirname {} | sort -u | while IFS= read -r d; do basename "$d"; done > "$skills_list_file"
 
   while IFS= read -r skill_name; do
     [[ -n "$skill_name" ]] || continue
@@ -125,7 +125,7 @@ cmd_triggers() {
   local skills_list_file
 
   skills_list_file=$(mktemp)
-  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; | xargs -I{} dirname {} | sort -u | while read d; do basename "$d"; done > "$skills_list_file"
+  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; -print0 | xargs -0 -I{} dirname {} | sort -u | while IFS= read -r d; do basename "$d"; done > "$skills_list_file"
 
   while IFS= read -r skill_name; do
     [[ -n "$skill_name" ]] || continue
