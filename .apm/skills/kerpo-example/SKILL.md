@@ -4,8 +4,8 @@ description: >-
   Use when the user asks for X. Apply when Y situation occurs. Include
   relevant keywords users might say, even if they don't explicitly name
   this skill. Does not activate for [near-miss situation].
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

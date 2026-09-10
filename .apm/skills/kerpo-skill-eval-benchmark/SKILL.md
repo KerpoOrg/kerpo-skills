@@ -6,8 +6,8 @@ description: >-
   Apply after all cases in the iteration workspace have grading.json and
   timing.json. Does not activate for running evals, grading a single case, or
   trigger-query testing.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

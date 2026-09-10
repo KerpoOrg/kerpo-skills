@@ -9,8 +9,8 @@ description: >-
   tests test-first or running a red-green cycle — that's kerpo-tdd. Does not
   activate for finding untested working units or retrospective coverage —
   that's kerpo-unit-find-untested-candidates.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

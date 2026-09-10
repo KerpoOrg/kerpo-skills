@@ -4,8 +4,8 @@ description: >-
   Use when analyzing a GitHub issue to find likely duplicates, partial duplicates,
   related issues, and potential conflicts, then link candidates inside an
   owned marker section of the target issue body.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

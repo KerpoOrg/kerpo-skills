@@ -8,8 +8,8 @@ description: >-
   creating worktrees (kerpo-git-worktree-add), creating branches only
   (kerpo-git-branch-create), human-only cleanup (kerpo-git-worktree-clean), or
   merely asking which worktree you are in (kerpo-git-context).
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

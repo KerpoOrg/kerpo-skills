@@ -12,8 +12,8 @@ description: >-
   non-GitHub bots (Jira/GitLab/Bitbucket), Dependency Dashboard-only checkbox
   clicks without a PR, or generic feature/code review unrelated to dependency
   updates.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

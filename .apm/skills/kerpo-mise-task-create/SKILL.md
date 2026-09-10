@@ -10,8 +10,8 @@ description: >-
   (kerpo-mise-task-validate), rewriting/migrating task layout
   (kerpo-mise-task-refactor), or generic shell-script authoring unrelated to
   mise.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

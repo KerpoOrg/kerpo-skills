@@ -7,8 +7,8 @@ description: >-
   Handles linked worktrees and multi-repo workspaces correctly by first resolving
   which checkout is relevant. Does not activate for git log, git diff of specific
   commits, branch management, or non-git file listing.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

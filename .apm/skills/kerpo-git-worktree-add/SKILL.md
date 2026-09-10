@@ -8,8 +8,8 @@ description: >-
   create (kerpo-git-branch-create), entering/moving the agent into a worktree
   (kerpo-git-worktree-enter), human-triggered cleanup (kerpo-git-worktree-clean),
   or resolving which worktree you are in (kerpo-git-context).
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

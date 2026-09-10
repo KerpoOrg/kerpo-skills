@@ -1,8 +1,8 @@
 {
   "name": "kerpo-skills",
-  "version": "1.0.0",
-  "description": "Kerpo skills for AI agent development",
-  "license": "Proprietary",
+  "version": "1.7.0",
+  "description": "Jouni's daily skills for Claude Code, Cursor, and OpenCode",
+  "license": "MIT",
   "supports": [
     "copilot",
     "claude",

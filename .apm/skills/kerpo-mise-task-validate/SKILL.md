@@ -8,8 +8,8 @@ description: >-
   "check our mise task quality", or "are our mise tasks compliant". Does not
   activate for creating a new task (kerpo-mise-task-create), applying fixes
   (kerpo-mise-task-refactor), or generic shellcheck of unrelated scripts.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

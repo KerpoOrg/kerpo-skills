@@ -4,8 +4,8 @@ description: >-
   Use when updating GitHub PR and issue bodies so linked issues are kept in sync:
   the PR links to its issues (including explicit Closes/Fixes/Resolves text for
   GitHub auto-linking), and each issue links back to the PR plus a closure plan.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

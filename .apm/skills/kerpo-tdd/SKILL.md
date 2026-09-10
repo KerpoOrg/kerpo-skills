@@ -9,8 +9,8 @@ description: >-
   work — that's kerpo-unit-review. Does not activate for finding untested
   working units or retrospective gap-fill — that's
   kerpo-unit-find-untested-candidates.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.1"

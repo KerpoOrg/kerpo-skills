@@ -9,8 +9,8 @@ description: >-
   and suggests how to resolve them. Does not activate for creating a new skill,
   converting a script into a skill, reporting a kerpo bug, running evals, or
   listing skills with no conflict-check intent.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

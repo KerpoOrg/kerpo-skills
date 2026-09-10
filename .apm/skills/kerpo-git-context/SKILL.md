@@ -8,8 +8,8 @@ description: >-
   user asks "which repo am I in", "what branch is this", or "find the right
   worktree". Does not activate for simple single-repo git operations where the
   working directory is unambiguous.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

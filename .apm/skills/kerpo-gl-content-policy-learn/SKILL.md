@@ -8,8 +8,8 @@ description: >-
   content policy from GitLab history", or "create a policy for GitLab merge
   requests and issues". Does not activate for GitHub PRs/issues (that's
   kerpo-gh-content-policy-learn), or Jira/Bitbucket/Bamboo workflows.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

@@ -8,8 +8,8 @@ description: >-
   structured GitHub issue on KerpoOrg/kerpo-skills. Does not activate for general
   GitHub issue creation, fixing code in the current project, or feedback about
   tools unrelated to kerpo-skills.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

@@ -7,8 +7,8 @@ description: >-
   entering worktrees (kerpo-git-worktree-add / kerpo-git-worktree-enter),
   cleaning worktrees (human-only kerpo-git-worktree-clean), dirty-file listing
   (kerpo-git-status), or claiming a GitHub issue (kerpo-gh-issue-start-work).
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"
