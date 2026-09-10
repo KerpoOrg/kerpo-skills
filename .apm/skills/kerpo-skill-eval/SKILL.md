@@ -8,8 +8,8 @@ description: >-
   test-triggers), converting a script into a skill, or creating a new skill
   scaffold. Sub-steps belong to kerpo-skill-eval-run, kerpo-skill-eval-grade, and
   kerpo-skill-eval-benchmark.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

@@ -4,8 +4,8 @@ description: >-
   Use when the user wants to learn a project’s PR/issue/comment content
   conventions from repo history (GitHub only), and generate a project-level
   content-policy document that other skills can follow.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

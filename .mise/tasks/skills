@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-#MISE description="Manage kerpo-skills package: auth, audit, install, uninstall, deploy"
-#USAGE cmd "auth" help="Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh keyring" {
-#USAGE   flag "-u --user <user>" help="gh keyring username" default="jounirajala"
-#USAGE }
+#MISE description="Manage kerpo-skills package: audit, install, uninstall, deploy"
 #USAGE cmd "audit" help="Fast apm audit of all skill markdown (unicode/structure, no evals)"
 #USAGE cmd "lint" help="Run shellcheck on all skill scripts"
 #USAGE cmd "test" help="Run bats tests"
 #USAGE cmd "evals" help="Run output quality evals for all skills"
 #USAGE cmd "triggers" help="Run trigger accuracy tests for all skills"
-#USAGE cmd "install" help="Pack and install skills locally (claude + cursor)"
-#USAGE cmd "uninstall" help="Remove deployed skills from .agents/skills and .claude/skills (destructive)" {
+#USAGE cmd "install" help="Pack and install skills locally (claude + cursor + opencode)" {
+#USAGE   flag "-g --global" help="Install to user scope (~/.claude, ~/.agents, ~/.config/opencode) instead of this project"
+#USAGE }
+#USAGE cmd "uninstall" help="Remove deployed kerpo-* skills (destructive)" {
 #USAGE   flag "-y --yes" help="Confirm destructive uninstall"
+#USAGE   flag "-g --global" help="Remove from user scope instead of this project"
 #USAGE }
 #USAGE cmd "deploy" help="Pack, install, git add/commit/push (mutating; requires confirmation)" {
 #USAGE   flag "-y --yes" help="Confirm git commit and push"
@@ -26,14 +26,13 @@ if [[ -z "$cmd" ]]; then
 Usage: mise run skills -- <subcommand> [flags]
 
 Subcommands:
-  auth [-u|--user <user>]   Write GITHUB_APM_PAT_KERPOORG into mise.local.toml from gh keyring
   audit                       Fast apm audit of skill markdown (unicode/structure, no evals)
   lint                        Run shellcheck on all skill scripts
   test                        Run bats tests under tests/mise-tasks
   evals                       Run output quality evals for all skills
   triggers                    Run trigger accuracy tests for all skills
-  install                     Pack and install skills locally (claude + cursor)
-  uninstall -y|--yes          Remove deployed skills from .agents/.claude (destructive)
+  install [-g|--global]       Pack and install skills (project or user scope)
+  uninstall -y|--yes [-g]     Remove deployed kerpo-* skills (destructive)
   deploy -y|--yes             Pack, install, then git add/commit/push (mutating)
 
 Run `mise run skills --help` for full usage.
@@ -42,21 +41,7 @@ EOF
 fi
 
 yes="${usage_yes:-false}"
-
-cmd_auth() {
-  local user="${usage_user:-jounirajala}"
-  local token
-  token="$(gh auth token --user "$user" 2>/dev/null || true)"
-  if [[ -z "$token" ]]; then
-    echo "Error: ${user} not found in gh keyring. Run: gh auth login" >&2
-    exit 1
-  fi
-  printf '[env]\nGITHUB_APM_PAT_KERPOORG = "%s"\n' "$token" >mise.local.toml
-  echo "mise.local.toml updated"
-  if command -v mise >/dev/null 2>&1; then
-    mise trust -y mise.local.toml >/dev/null 2>&1 || true
-  fi
-}
+global="${usage_global:-false}"
 
 cmd_audit() {
   ./scripts/audit-skills.sh
@@ -151,7 +136,11 @@ cmd_install() {
   rm -rf build/
   apm pack
   # shellcheck disable=SC2086
-  apm install build/kerpo-skills-*
+  if [[ "$global" == "true" ]]; then
+    apm install -g build/kerpo-skills-*
+  else
+    apm install build/kerpo-skills-*
+  fi
 }
 
 cmd_uninstall() {
@@ -159,8 +148,21 @@ cmd_uninstall() {
     echo "Error: uninstall is destructive. Re-run with --yes" >&2
     exit 1
   fi
-  rm -rf .agents/skills/ .claude/skills/
-  echo "Skills removed"
+  local -a dirs=()
+  if [[ "$global" == "true" ]]; then
+    dirs=("$HOME/.claude/skills"/kerpo-* "$HOME/.agents/skills"/kerpo-* "$HOME/.config/opencode/skills"/kerpo-*)
+  else
+    dirs=(".agents/skills"/kerpo-* ".claude/skills"/kerpo-* ".opencode/skills"/kerpo-*)
+  fi
+  local removed=0
+  local d
+  for d in "${dirs[@]}"; do
+    if [[ -e "$d" ]]; then
+      rm -rf "$d"
+      removed=$((removed + 1))
+    fi
+  done
+  echo "Removed $removed kerpo-* skill(s) from $([[ "$global" == "true" ]] && echo "user scope" || echo "this project")"
 }
 
 cmd_deploy() {
@@ -175,7 +177,6 @@ cmd_deploy() {
 }
 
 case "$cmd" in
-  auth) cmd_auth ;;
   audit) cmd_audit ;;
   lint) cmd_lint ;;
   test) cmd_test ;;

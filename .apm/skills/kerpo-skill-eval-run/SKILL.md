@@ -6,8 +6,8 @@ description: >-
   step of kerpo-skill-eval, or when the user wants one with_skill vs without_skill
   baseline. Does not activate for grading assertions, writing benchmark.json,
   trigger-query testing, or running the full eval suite (that is kerpo-skill-eval).
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

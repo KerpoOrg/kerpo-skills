@@ -1,8 +1,8 @@
 name: kerpo-skills
-version: 1.6.0
-description: Kerpo Organization private daily skills for Claude Code and Cursor
+version: 1.7.0
+description: Jouni's daily skills for Claude Code, Cursor, and OpenCode
 author: kerpo
-license: Proprietary
+license: MIT
 dependencies:
   apm: []
   mcp: []
@@ -10,4 +10,5 @@ includes: auto
 targets:
   - claude
   - cursor
+  - opencode
 scripts: {}

@@ -28,8 +28,8 @@ name: $SKILL_NAME
 description: >-
   Use when the user... Apply when... Describe what this skill does and when
   to activate it. Include keywords users might say. Max 1024 characters.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

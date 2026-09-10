@@ -5,8 +5,8 @@ description: >-
   Apply after with_skill or without_skill output exists and you need grading.json.
   Does not activate for running the eval prompt, aggregating benchmark.json, or
   trigger-accuracy testing.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

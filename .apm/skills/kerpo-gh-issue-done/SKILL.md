@@ -11,8 +11,8 @@ description: >-
   kerpo-gh-issue-start-work. Does not activate for assigning — that's
   kerpo-gh-issue-assign. Does not activate for merging or reviewing PRs, or
   a bare "close issue" without closeout checks.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

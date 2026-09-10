@@ -10,8 +10,8 @@ description: >-
   hyphenated mise tasks into subcommands". Does not activate for create-only
   scaffolding (kerpo-mise-task-create) or report-only audit
   (kerpo-mise-task-validate) unless the user also asked to fix.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

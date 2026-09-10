@@ -7,8 +7,8 @@ description: >-
   project pre-destroy teardown (stop dev servers, stack rm, etc.) before
   git worktree remove. Does not activate on PR merge, issue close, handoff,
   agent task completion, or prompts from other skills — never auto-run cleanup.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

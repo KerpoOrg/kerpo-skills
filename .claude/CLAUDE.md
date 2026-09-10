@@ -1,27 +1,27 @@
 # kerpo-skills
 
-Kerpo Organization yksityinen APM-skilli-paketti Claude Codelle ja Cursorille. Kaikki skillit käyttävät `kerpo-`-etuliitettä.
+Public APM skill package for Claude Code, Cursor, and OpenCode. All skills use the `kerpo-` prefix.
 
-## Repon rakenne
+## Repo structure
 
 ```
 .apm/skills/kerpo-<name>/
-├── SKILL.md                    # vaadittu
-├── references/                 # pitkä sisältö (ladataan viittauksella)
-├── scripts/                    # suoritettava koodi
-├── assets/                     # templateit, resurssit
+├── SKILL.md                    # required
+├── references/                 # long content (loaded by reference)
+├── scripts/                    # executable code
+├── assets/                     # templates, resources
 └── evals/
     ├── evals.json              # output quality test cases
     └── eval_queries.json       # trigger testing queries
 ```
 
-## Uuden skillin luominen
+## Creating a new skill
 
 ```bash
 ./scripts/new-skill.sh kerpo-<name>
 ```
 
-Tämä luo oikean hakemistorakenteen ja pohja-SKILL.md:n.
+This creates the correct directory structure and a SKILL.md skeleton.
 
 ## SKILL.md frontmatter
 
@@ -29,73 +29,77 @@ Tämä luo oikean hakemistorakenteen ja pohja-SKILL.md:n.
 ---
 name: kerpo-<name>
 description: >-
-  Use when the user... Apply when... (max 1024 merkkiä)
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+  Use when the user... Apply when... (max 1024 characters)
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"
 ---
 ```
 
-**Description-kirjoitusohjeet:**
-- Aloita "Use when" tai "Apply when"
-- Intent ensin, tekniset yksityiskohdat viimeisenä
-- Mainitse eksplisiittisesti near-miss-tapaukset joita ei pidä laukaista
-- Testaa trigger-tarkkuus ennen deployaamista
+**Description writing guidelines:**
+- Start with "Use when" or "Apply when"
+- Intent first, technical details last
+- Explicitly mention near-miss cases that should NOT trigger
+- Test trigger accuracy before deploying
 
-**Progressive disclosure — pidä SKILL.md lean:**
-- Agentit lataavat `name` + `description` aina (~100 tokenia)
-- `SKILL.md` body ladataan vain aktivoituessa (<5000 tokenia)
-- `references/`, `scripts/`, `assets/` ladataan vain tarvittaessa → viittaa niihin eksplisiittisesti
+**Progressive disclosure — keep SKILL.md lean:**
+- Agents load `name` + `description` always (~100 tokens)
+- `SKILL.md` body is loaded only when activated (<5000 tokens)
+- `references/`, `scripts/`, `assets/` are loaded only when needed → reference them explicitly
 
-## Testaus
+## Testing
 
-### 1. Rakennekelpoisuus
+### 1. Structural validity
 ```bash
-mise run skills -- audit          # kaikki skillit, nopea (ei evaleja)
+mise run skills -- audit          # all skills, fast (no evals)
 apm pack --dry-run
 ```
 
-### 2. Trigger-testaus (description)
+### 2. Trigger testing (description)
 ```bash
 ./scripts/test-triggers.sh kerpo-<name>
-# Lisää ~20 queryä evals/eval_queries.json: 50% should-trigger, 50% should-not
-# Should-not -tapaukset: near-missit (sama aihe, eri tarkoitus)
+# Add ~20 queries to evals/eval_queries.json: 50% should-trigger, 50% should-not
+# Should-not cases: near-misses (same topic, different intent)
 ```
 
 ### 3. Output quality evals
 ```bash
 ./scripts/run-evals.sh kerpo-<name> 1
-# Ajaa evals/evals.json test caset with_skill ja without_skill -baseline
-# Tulokset: kerpo-<name>-workspace/iteration-1/
+# Runs evals/evals.json test cases with_skill and without_skill baseline
+# Results: kerpo-<name>-workspace/iteration-1/
 ```
 
-**Iteraatiosilmukka:**
-1. Aja evals → katso tulokset ja timing (tokenit, aika)
-2. Lisää assertiot `evals.json`:ään vasta kun näet ensimmäiset outputit
-3. Anna eval-signaalit + SKILL.md Claudelle → pyydä parannusehdotuksia
-4. Aja uusi iteraatio → vertaa benchmark.json deltaa
-5. Lopeta kun parannus pysähtyy
+**Iteration loop:**
+1. Run evals → inspect results and timing (tokens, time)
+2. Add assertions to `evals.json` only after seeing the first outputs
+3. Give eval signals + SKILL.md to Claude → ask for improvement suggestions
+4. Run a new iteration → compare benchmark.json delta
+5. Stop when improvement plateaus
 
 ## Deploy
 
 ```bash
-apm pack                              # luo build/kerpo-skills-x.y.z/
-apm install build/kerpo-skills-x.y.z # deployaa .agents/skills/
+apm pack                              # creates build/kerpo-skills-x.y.z/
+apm install build/kerpo-skills-x.y.z # deploys to this project (project scope)
+mise run skills -- install --global  # deploys to user scope (~/.claude, ~/.agents, ~/.config/opencode)
 ```
 
-Cursor ja muut harnesses lukevat `.agents/skills/` (jaettu polku).  
-`apm install` ilman argumenttia asentaa vain ulkoiset `dependencies.apm`-riippuvuudet.
+Targets: `claude`, `cursor`, `opencode` (declared in `apm.yml`). Cursor and
+OpenCode read `.agents/skills/` (converged path); Claude reads
+`.claude/skills/`; at user scope OpenCode reads `~/.config/opencode/skills/`.  
+`apm install` without an argument installs only external `dependencies.apm`
+dependencies.
 
-Committaa: `apm.yml`, `apm.lock.yaml`, `.apm/`, `.agents/skills/`  
+Commit: `apm.yml`, `apm.lock.yaml`, `.apm/`  
 Gitignore: `apm_modules/`, `*-workspace/`, `build/`
 
-## Skillit keskenään
+## Skills interacting with each other
 
-- **Shared content:** `.apm/references/` → viittaa `LOAD references/shared.md`
+- **Shared content:** `.apm/references/` → reference with `LOAD references/shared.md`
 - **Package deps:** `apm.yml` → `dependencies.apm: [kerpo/other@v1.0.0]`
-- **Agents:** `.apm/agents/` voi orkestroida useampaa skilliä
+- **Agents:** `.apm/agents/` can orchestrate multiple skills
 
 <!-- kerpo-gh-content-policy-learn:start -->
 ## GitHub content policy

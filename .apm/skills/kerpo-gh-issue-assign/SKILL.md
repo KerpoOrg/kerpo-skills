@@ -7,8 +7,8 @@ description: >-
   assignee is specified. Does not activate for creating issues, closing issues
   (that's kerpo-gh-issue-done), or general GitHub project management unrelated
   to assignment.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

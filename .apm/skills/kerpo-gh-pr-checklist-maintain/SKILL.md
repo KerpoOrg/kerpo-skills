@@ -4,8 +4,8 @@ description: >-
   Use when updating/syncing a GitHub PR description so the generated checklist
   checkboxes stay accurate over time (including after pushing commits) and are
   never left unchecked when PR evidence indicates completion.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"

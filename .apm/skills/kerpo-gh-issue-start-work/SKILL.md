@@ -9,8 +9,8 @@ description: >-
   assigning without starting work (kerpo-gh-issue-assign), closing issues
   (kerpo-gh-issue-done), or human-only worktree cleanup
   (kerpo-git-worktree-clean).
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.1"

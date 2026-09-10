@@ -4,8 +4,8 @@ description: >-
   Use when updating a GitHub PR description so it tells a clear “fulfillment story”:
   the original issue intent (business need) and what was implemented, plus any
   deviations/tradeoffs. Updates only the marker-owned section in the PR body.
-license: Proprietary
-compatibility: Designed for Claude Code and Cursor
+license: MIT
+compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
   version: "1.0"
