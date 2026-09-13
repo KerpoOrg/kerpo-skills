@@ -22,5 +22,6 @@ jobs:
       - uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
       - run: mise trust
       - run: mise run skills -- audit
+      - run: mise run skills -- lint
       - run: mise run ci -- lint
       - run: mise run ci -- test

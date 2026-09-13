@@ -59,22 +59,25 @@ apm pack --dry-run
 
 ### 2. Trigger testing (description)
 ```bash
-./scripts/test-triggers.sh kerpo-<name>
+./scripts/test-triggers.sh kerpo-<name>   # free OpenCode model
 # Add ~20 queries to evals/eval_queries.json: 50% should-trigger, 50% should-not
 # Should-not cases: near-misses (same topic, different intent)
 ```
 
 ### 3. Output quality evals
 ```bash
-./scripts/run-evals.sh kerpo-<name> 1
+./scripts/run-evals.sh kerpo-<name> 1   # free OpenCode model
 # Runs evals/evals.json test cases with_skill and without_skill baseline
 # Results: kerpo-<name>-workspace/iteration-1/
 ```
 
+Evals use free OpenCode Zen models (`mise` pins `opencode`; run
+`opencode auth login` once). See [docs/evals.md](../docs/evals.md).
+
 **Iteration loop:**
 1. Run evals → inspect results and timing (tokens, time)
 2. Add assertions to `evals.json` only after seeing the first outputs
-3. Give eval signals + SKILL.md to Claude → ask for improvement suggestions
+3. Give eval signals + SKILL.md to the agent → ask for improvement suggestions
 4. Run a new iteration → compare benchmark.json delta
 5. Stop when improvement plateaus
 
