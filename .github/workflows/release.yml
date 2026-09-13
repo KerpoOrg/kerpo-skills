@@ -1,0 +1,52 @@
+name: Release
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish (e.g. v1.8.0); must already exist
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Pack and publish
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+      - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - name: Audit skills
+        run: mise run skills -- audit
+      - name: Verify tag matches apm.yml version
+        run: |
+          set -euo pipefail
+          version=$(awk '$1 == "version:" { print $2 }' apm.yml)
+          if [ "v${version}" != "${RELEASE_TAG}" ]; then
+            echo "apm.yml version v${version} does not match tag ${RELEASE_TAG}" >&2
+            exit 1
+          fi
+      - name: Pack APM bundle
+        run: apm pack
+      - name: Archive bundle
+        run: tar -czf "kerpo-skills-${RELEASE_TAG}.tar.gz" -C build "kerpo-skills-${RELEASE_TAG#v}"
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${RELEASE_TAG}" "kerpo-skills-${RELEASE_TAG}.tar.gz" \
+            --title "${RELEASE_TAG}" \
+            --generate-notes \
+            --verify-tag
