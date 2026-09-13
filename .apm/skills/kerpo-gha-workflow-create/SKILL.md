@@ -75,7 +75,8 @@ everything consistently.
   read/write-all.
 - `github.workflow` is the display `name:`, not a stable id. Renaming a
   workflow breaks `workflow_run` triggers and default concurrency groups.
-  Use `github.workflow_id`.
+  There is no `github.workflow_id` context property; `github.workflow_ref`
+  includes the workflow path if you need a path-based key.
 - `merge_group` must be on every required workflow, not just one.
 - Do not commit secrets; document required secrets/OIDC trust instead.
 - This skill creates workflows. It does not audit (`kerpo-gha-workflow-validate`)

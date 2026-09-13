@@ -16,7 +16,9 @@ The de-facto standard, written down. One cross-cutting rule:
 - `run-name:` is for dynamic per-run titles (e.g. include the PR number).
 - Warning: `github.workflow` equals `name:`. Renaming the workflow **breaks**
   `workflow_run` triggers and default concurrency groups that referenced the
-  old name. Use `github.workflow_id` (stable) in concurrency groups.
+  old name. Rebuild any concurrency group or `workflow_run` reference when you
+  rename. `workflow_id` is not an expression context property; use
+  `github.workflow_ref` if you need a path-based key.
 
 ## Jobs
 
@@ -50,7 +52,9 @@ The de-facto standard, written down. One cross-cutting rule:
 
 - Groups are repository-scoped and case-insensitive.
 - Use fixed semantic names for deploy queues: `production-deploy`.
-- Reference `github.workflow_id`, not `github.workflow`, in default groups.
+- Default groups use `github.workflow` (the display name) plus the ref.
+  `github.workflow` is not a stable id, so renaming a workflow changes its
+  group key.
 
 ## Secrets, vars, env
 

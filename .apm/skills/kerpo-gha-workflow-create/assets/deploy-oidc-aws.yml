@@ -15,7 +15,8 @@ permissions:
 concurrency:
   group: production-deploy
   cancel-in-progress: false
-  queue: max
+  # For serialized deploys with more than one pending run, add `queue: max`
+  # (GitHub Actions, GA May 2026; older actionlint may not know the key).
 
 jobs:
   deploy:

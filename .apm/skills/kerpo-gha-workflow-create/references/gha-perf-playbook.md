@@ -9,7 +9,7 @@ timings from real runs, not intuition.
 
   ```yaml
   concurrency:
-    group: ${{ github.workflow_id }}-${{ github.head_ref || github.ref }}
+    group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}
     cancel-in-progress: true
   ```
 
@@ -22,8 +22,11 @@ timings from real runs, not intuition.
     queue: max   # up to 100 FIFO; incompatible with cancel-in-progress
   ```
 
-- Use `github.workflow_id`, not `github.workflow` (the latter is the display
-  name and changes on rename).
+- Build groups from `github.workflow` (the display name) plus the ref.
+  Warning: `github.workflow` equals the `name:`, so renaming the workflow
+  changes the group key and breaks `workflow_run` triggers that referenced the
+  old name. There is no `github.workflow_id` context property (`workflow_id`
+  exists only as a numeric field on the REST run object).
 
 ## Timeouts
 
