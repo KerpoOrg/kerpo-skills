@@ -55,8 +55,8 @@ deliberately and verify with real run timings.
    - `actions/checkout` v4 -> v5 and `upload-artifact` v4 uniqueness: give
      every upload a unique name.
    - Add `run-name:` for dynamic per-run titles.
-   - Rename-safe concurrency: use `github.workflow_id`, not
-     `github.workflow`.
+   - Concurrency groups: rebuild them after a rename, since `github.workflow`
+     is the display name and no `workflow_id` context property exists.
 5. If a merge queue is in use, add `merge_group` to every required workflow.
 6. For org-wide rollout of shared workflows: publish semver tags plus a
    floating major, run a canary tag first, migrate callers over a 4-8 week
