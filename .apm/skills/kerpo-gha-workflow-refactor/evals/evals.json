@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-gha-workflow-refactor",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Our CI takes 40 minutes. Speed it up.",
+      "expected_output": "Asks for/reads real timings, then applies the perf playbook: concurrency cancel-in-progress, per-job timeout-minutes, lockfile-keyed caches, splitting fast lint from slow integration, and matrix tuning. Reports before/after and avoids larger runners unless measured.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "We repeat the same 60-line setup in 5 workflows. Deduplicate it.",
+      "expected_output": "Applies the extraction ladder: extracts a local composite action (or reusable workflow if jobs are duplicated), updates all callers, and deletes the duplicated predecessor rather than stacking both shapes. Explains why the chosen rung is minimal.",
+      "assertions": []
+    }
+  ]
+}

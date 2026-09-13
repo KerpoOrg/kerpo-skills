@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-gha-workflow-create",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add CI for this Node repo: lint, typecheck, test, build.",
+      "expected_output": "Creates .github/workflows/ci.yml with a kebab-case id, default-deny top-level permissions, SHA-pinned checkout/setup-node, a concurrency group with cancel-in-progress, timeout-minutes on the job, lockfile-keyed npm cache, and lint/typecheck/test/build steps. Uses the minimal scale tier (rung 1).",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Set up a deploy workflow to production with OIDC to AWS.",
+      "expected_output": "Creates a deploy workflow with permissions id-token: write, a SHA-pinned aws-actions/configure-aws-credentials using a role ARN, an environment: production, a fixed semantic deploy concurrency group (no cancel), timeout-minutes, and no long-lived AWS keys.",
+      "assertions": []
+    }
+  ]
+}

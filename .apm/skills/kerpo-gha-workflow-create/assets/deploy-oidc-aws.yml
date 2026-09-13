@@ -1,0 +1,32 @@
+# Deploy to AWS with OIDC starter (kerpo baseline). Keep the SHA pins.
+# No long-lived AWS keys: the role is assumed via the GitHub OIDC token. Scope
+# the role's trust policy to this workflow's `job_workflow_ref` and the
+# environment.
+name: Deploy
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+  queue: max
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment: production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: aws-actions/configure-aws-credentials@e3dd6a429d7300a6a4c196c26e071d42e0343502 # v4.0.2
+        with:
+          role-to-assume: arn:aws:iam::123456789012:role/github-actions-my-repo-production
+          aws-region: eu-north-1
+      - run: aws sts get-caller-identity
+      - run: ./scripts/deploy.sh

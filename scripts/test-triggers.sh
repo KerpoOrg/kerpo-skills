@@ -29,7 +29,7 @@ fi
 
 check_triggered() {
   local query="$1"
-  claude -p "$query" --model haiku --output-format json 2>/dev/null \
+  claude -p "$query" --model haiku --output-format stream-json --verbose 2>/dev/null \
     | jq -s -e --arg skill "$SKILL_NAME" \
       'any(.[]; .type == "assistant" and (.message.content[]? | .type == "tool_use" and .name == "Skill" and .input.skill == $skill))' \
       > /dev/null 2>&1

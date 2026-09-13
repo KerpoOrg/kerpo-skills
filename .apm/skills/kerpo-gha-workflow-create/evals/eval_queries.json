@@ -1,0 +1,22 @@
+[
+  {"query": "add CI for this node repo: lint, typecheck, test, build", "should_trigger": true},
+  {"query": "create a GitHub Actions workflow", "should_trigger": true},
+  {"query": "set up GitHub Actions for the project", "should_trigger": true},
+  {"query": "add a deploy pipeline to production with OIDC to AWS", "should_trigger": true},
+  {"query": "scaffold a Docker build-and-push pipeline", "should_trigger": true},
+  {"query": "add a workflow that runs pytest on pull requests", "should_trigger": true},
+  {"query": "set up CI for a Go module", "should_trigger": true},
+  {"query": "add a terraform plan workflow", "should_trigger": true},
+  {"query": "we need a lint/test/build pipeline for this repo", "should_trigger": true},
+  {"query": "create a release workflow that publishes build artifacts", "should_trigger": true},
+  {"query": "CI is slow, speed it up", "should_trigger": false},
+  {"query": "deduplicate the setup across our workflows", "should_trigger": false},
+  {"query": "audit our workflows against best practices", "should_trigger": false},
+  {"query": "are our GitHub Actions secure", "should_trigger": false},
+  {"query": "create a shared composite action for the org", "should_trigger": false},
+  {"query": "version our reusable workflows", "should_trigger": false},
+  {"query": "handle this Renovate dependency PR", "should_trigger": false},
+  {"query": "add a mise task for running ci", "should_trigger": false},
+  {"query": "set up a GitLab CI pipeline", "should_trigger": false},
+  {"query": "what is GitHub Actions", "should_trigger": false}
+]
