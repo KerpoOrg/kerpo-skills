@@ -1,0 +1,22 @@
+[
+  {"query": "create a shared composite action for the org", "should_trigger": true},
+  {"query": "version our actions", "should_trigger": true},
+  {"query": "set up the release pipeline for our shared workflows", "should_trigger": true},
+  {"query": "publish a reusable workflow", "should_trigger": true},
+  {"query": "deprecate this action", "should_trigger": true},
+  {"query": "set up release-please for our action repo", "should_trigger": true},
+  {"query": "how do we test a workflow_call across repos before tagging v1", "should_trigger": true},
+  {"query": "maintain a floating major tag for our action", "should_trigger": true},
+  {"query": "marketplace vs central org repo for our shared action", "should_trigger": true},
+  {"query": "track consumers of our shared action", "should_trigger": true},
+  {"query": "add CI to my repo", "should_trigger": false},
+  {"query": "extract a reusable workflow from our existing ci", "should_trigger": false},
+  {"query": "audit our workflows", "should_trigger": false},
+  {"query": "CI is slow, speed it up", "should_trigger": false},
+  {"query": "set up GitHub Actions", "should_trigger": false},
+  {"query": "version the npm package", "should_trigger": false},
+  {"query": "publish a docker image", "should_trigger": false},
+  {"query": "handle the renovate PR", "should_trigger": false},
+  {"query": "review this pull request", "should_trigger": false},
+  {"query": "add a mise task", "should_trigger": false}
+]

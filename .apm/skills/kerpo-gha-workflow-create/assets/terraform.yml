@@ -1,0 +1,27 @@
+# Terraform plan starter (kerpo baseline). Keep the SHA pins.
+# Plan on PRs; add an apply job gated by an environment with required
+# reviewers. Authenticate with OIDC (see deploy-oidc-aws.yml), not static keys.
+name: Terraform plan
+on:
+  pull_request:
+    paths: ["**/*.tf", "**/*.tfvars"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: terraform-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: hashicorp/setup-terraform@97f030cf6dc0b4f5e0da352c7bca9cca34579800 # v3.1.0
+      - run: terraform fmt -check -recursive
+      - run: terraform init -input=false
+      - run: terraform validate
+      - run: terraform plan -input=false -no-color
+        # Configure OIDC/credentials before this step.

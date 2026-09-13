@@ -1,0 +1,33 @@
+# Node/npm CI starter (kerpo baseline).
+# Third-party actions are pinned to full commit SHAs. Keep the pins; let
+# Dependabot (`package-ecosystem: github-actions`) or Renovate
+# (`helpers:pinGitHubActionDigestsToSemver`) refresh them.
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow_id }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@0a44ba7841725637a19e28fa30b79a866c81b0a6 # v4.0.4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build

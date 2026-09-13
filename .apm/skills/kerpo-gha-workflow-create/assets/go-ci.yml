@@ -1,0 +1,28 @@
+# Go CI starter (kerpo baseline). Keep the SHA pins.
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow_id }}-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-go@0a12ed9d6a96ab950c8f026ed9f722fe0da7ef32 # v5.0.2
+        with:
+          go-version-file: go.mod
+          cache: true
+      - run: go vet ./...
+      - run: go test ./...
+      - run: go build ./...

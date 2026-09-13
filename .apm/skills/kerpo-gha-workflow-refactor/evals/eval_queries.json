@@ -1,0 +1,22 @@
+[
+  {"query": "CI is slow, speed it up", "should_trigger": true},
+  {"query": "deduplicate the setup across our workflows", "should_trigger": true},
+  {"query": "extract a reusable workflow from our ci", "should_trigger": true},
+  {"query": "migrate our deploy from static AWS keys to OIDC", "should_trigger": true},
+  {"query": "our ci takes 40 minutes", "should_trigger": true},
+  {"query": "pin all third-party actions to SHAs across the org", "should_trigger": true},
+  {"query": "our merge queue is stuck", "should_trigger": true},
+  {"query": "reduce our GitHub Actions minutes", "should_trigger": true},
+  {"query": "add caching to our workflows", "should_trigger": true},
+  {"query": "consolidate five nearly identical workflows", "should_trigger": true},
+  {"query": "add CI to this repo from scratch", "should_trigger": false},
+  {"query": "audit our workflows for security issues", "should_trigger": false},
+  {"query": "create a shared action for the org", "should_trigger": false},
+  {"query": "review this pull request", "should_trigger": false},
+  {"query": "handle the renovate PR", "should_trigger": false},
+  {"query": "set up GitHub Actions for a new project", "should_trigger": false},
+  {"query": "are our workflows secure", "should_trigger": false},
+  {"query": "publish our reusable workflow for consumers", "should_trigger": false},
+  {"query": "add a mise task", "should_trigger": false},
+  {"query": "why did this CI run fail", "should_trigger": false}
+]

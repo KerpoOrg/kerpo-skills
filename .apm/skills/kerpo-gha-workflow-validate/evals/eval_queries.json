@@ -1,0 +1,22 @@
+[
+  {"query": "audit our workflows against best practices", "should_trigger": true},
+  {"query": "are our GitHub Actions secure", "should_trigger": true},
+  {"query": "run actionlint and zizmor over .github/workflows", "should_trigger": true},
+  {"query": "check CI quality", "should_trigger": true},
+  {"query": "validate github workflows", "should_trigger": true},
+  {"query": "review our workflow files for template injection", "should_trigger": true},
+  {"query": "do our workflows use default-deny permissions", "should_trigger": true},
+  {"query": "check for unpinned third-party actions", "should_trigger": true},
+  {"query": "are our timeouts and concurrency configured", "should_trigger": true},
+  {"query": "report GitHub Actions best-practice violations", "should_trigger": true},
+  {"query": "fix our workflows", "should_trigger": false},
+  {"query": "add a CI workflow", "should_trigger": false},
+  {"query": "create a shared composite action", "should_trigger": false},
+  {"query": "CI is slow, speed it up", "should_trigger": false},
+  {"query": "version our actions", "should_trigger": false},
+  {"query": "handle the renovate PR", "should_trigger": false},
+  {"query": "review this pull request", "should_trigger": false},
+  {"query": "set up GitHub Actions", "should_trigger": false},
+  {"query": "migrate our deploy to OIDC", "should_trigger": false},
+  {"query": "add a mise task", "should_trigger": false}
+]

@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-gha-workflow-validate",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit our .github/workflows for security issues.",
+      "expected_output": "Runs actionlint and zizmor when available, walks the security checklist (permissions, SHA pinning, template injection, pull_request_target, OIDC, secrets), and reports findings as errors then warns with file/line/reason. Makes no file edits and offers kerpo-gha-workflow-refactor for fixes.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Are our GitHub Actions secure?",
+      "expected_output": "Produces a report-only audit grounded in the kerpo security baseline, distinguishes true errors from hardening warns, and notes that a clean actionlint does not imply security. Does not modify workflows.",
+      "assertions": []
+    }
+  ]
+}

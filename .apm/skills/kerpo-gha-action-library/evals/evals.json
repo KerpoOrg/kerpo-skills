@@ -1,0 +1,17 @@
+{
+  "skill_name": "kerpo-gha-action-library",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create our first shared composite action for the org.",
+      "expected_output": "Scaffolds .github/actions/<name>/action.yml with a kebab-case directory and name, mandatory description, kebab-case inputs/outputs, and shell: on every run step. Adds a same-repo consumer workflow (uses: ./) to test it, and picks a distribution topology.",
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Set up versioning and release automation for our reusable workflows.",
+      "expected_output": "Wires release-please or semantic-release to produce vX.Y.Z tags plus a force-pushed floating major, documents the workflow_call contract and compatibility rules, and describes testing before tagging via a consumer repo. Notes that GITHUB_TOKEN-created tags do not retrigger workflows.",
+      "assertions": []
+    }
+  ]
+}
