@@ -66,8 +66,8 @@ apm install KerpoOrg/kerpo-skills --skill kerpo-tdd --skill kerpo-git-context
 
 ## Development (maintainer)
 
-Requires [mise](https://mise.jdx.dev). Tools (apm, jq, shellcheck, bats) are
-pinned in `mise.toml` and installed automatically.
+Requires [mise](https://mise.jdx.dev). Tools (apm, jq, shellcheck, bats,
+opencode) are pinned in `mise.toml` and installed automatically.
 
 ```bash
 # Create a new skill
@@ -76,10 +76,10 @@ pinned in `mise.toml` and installed automatically.
 # Validate all skills (unicode/structure, no evals)
 mise run skills -- audit
 
-# Test trigger accuracy (after filling eval_queries.json)
+# Test trigger accuracy on a free OpenCode model (after filling eval_queries.json)
 ./scripts/test-triggers.sh kerpo-my-skill
 
-# Run output quality evals (after filling evals.json)
+# Run output quality evals on a free OpenCode model (after filling evals.json)
 ./scripts/run-evals.sh kerpo-my-skill 1
 
 # Deploy locally to this repo (pack → install project scope)
@@ -112,6 +112,10 @@ mise run ci -- test
 ```
 
 See [.claude/CLAUDE.md](.claude/CLAUDE.md) for the full development workflow.
+
+Evals run against free OpenCode Zen models (`opencode auth login` once); see
+[docs/evals.md](docs/evals.md). The `skills-evals.yml` workflow runs them nightly
+and on demand.
 
 ## Adding a dependency on another APM package
 

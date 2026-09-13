@@ -3,8 +3,8 @@
 #USAGE cmd "audit" help="Fast apm audit of all skill markdown (unicode/structure, no evals)"
 #USAGE cmd "lint" help="Run shellcheck on all skill scripts"
 #USAGE cmd "test" help="Run bats tests"
-#USAGE cmd "evals" help="Run output quality evals for all skills"
-#USAGE cmd "triggers" help="Run trigger accuracy tests for all skills"
+#USAGE cmd "evals" help="Run output quality evals for all skills (needs opencode CLI)"
+#USAGE cmd "triggers" help="Run trigger accuracy tests for all skills (needs opencode CLI)"
 #USAGE cmd "install" help="Pack and install skills locally (claude + cursor + opencode)" {
 #USAGE   flag "-g --global" help="Install to user scope (~/.claude, ~/.agents, ~/.config/opencode) instead of this project"
 #USAGE }
@@ -29,8 +29,8 @@ Subcommands:
   audit                       Fast apm audit of skill markdown (unicode/structure, no evals)
   lint                        Run shellcheck on all skill scripts
   test                        Run bats tests under tests/mise-tasks
-  evals                       Run output quality evals for all skills
-  triggers                    Run trigger accuracy tests for all skills
+  evals                       Run output quality evals for all skills (needs opencode CLI)
+  triggers                    Run trigger accuracy tests for all skills (needs opencode CLI)
   install [-g|--global]       Pack and install skills (project or user scope)
   uninstall -y|--yes [-g]     Remove deployed kerpo-* skills (destructive)
   deploy -y|--yes             Pack, install, then git add/commit/push (mutating)
@@ -53,10 +53,10 @@ cmd_lint() {
   while IFS= read -r f; do
     [[ -n "$f" ]] || continue
     files+=("$f")
-  done < <(find .apm/skills -name '*.sh' -type f | sort)
+  done < <(find scripts .mise/tasks -type f \( -name '*.sh' -o -path './.mise/tasks/*' ! -name '*.*' \) ! -name '.*' | sort)
 
   if [[ ${#files[@]} -eq 0 ]]; then
-    echo "Info: no shell scripts under .apm/skills to lint"
+    echo "Info: no shell scripts to lint" >&2
     return 0
   fi
   shellcheck "${files[@]}"
@@ -76,30 +76,21 @@ cmd_evals() {
   local skill_name
   local count
   local total=0
-  local passed=0
-  local failed=0
-  local skills_list_file
-
-  skills_list_file=$(mktemp)
-  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; -print0 | xargs -0 -I{} dirname {} | sort -u | while IFS= read -r d; do basename "$d"; done > "$skills_list_file"
+  local evaluated=0
 
   while IFS= read -r skill_name; do
     [[ -n "$skill_name" ]] || continue
     local evals_file=".apm/skills/$skill_name/evals/evals.json"
-    if [[ ! -f "$evals_file" ]]; then
-      continue
-    fi
+    [[ -f "$evals_file" ]] || continue
     count=$(jq 'if type == "array" then length else (.evals | length) end' "$evals_file" 2>/dev/null || echo 0)
     total=$((total + count))
-
     if [[ "$count" -gt 0 ]]; then
-      ./scripts/test-triggers.sh "$skill_name" 1 >/dev/null 2>&1 || true
-      passed=$((passed + 1))
+      ./scripts/run-evals.sh "$skill_name"
+      evaluated=$((evaluated + 1))
     fi
-  done < "$skills_list_file"
-  rm -f "$skills_list_file"
+  done < <(list_skills)
 
-  echo "Evals summary: $passed/$total skills evaluated"
+  echo "Evals summary: $evaluated skill(s) evaluated, $total eval case(s)"
 }
 
 cmd_triggers() {
@@ -107,29 +98,34 @@ cmd_triggers() {
   local total_passed=0
   local total_failed=0
   local skill_count=0
-  local skills_list_file
-
-  skills_list_file=$(mktemp)
-  find .apm/skills -name 'evals.json' -path '*/kerpo-*' -exec dirname {} \; -print0 | xargs -0 -I{} dirname {} | sort -u | while IFS= read -r d; do basename "$d"; done > "$skills_list_file"
 
   while IFS= read -r skill_name; do
     [[ -n "$skill_name" ]] || continue
     skill_count=$((skill_count + 1))
 
-    # Run trigger test for 1 run (quick check)
+    local result passed failed
     result=$(./scripts/test-triggers.sh "$skill_name" 1 2>&1 || true)
-    passed=$(echo "$result" | grep -c "\[PASS\]" || echo 0)
-    failed=$(echo "$result" | grep -c "\[FAIL\]" || echo 0)
+    passed=$(echo "$result" | grep -c '\[PASS\]' || true)
+    failed=$(echo "$result" | grep -c '\[FAIL\]' || true)
 
     total_passed=$((total_passed + passed))
     total_failed=$((total_failed + failed))
 
     echo "$skill_name: $passed passed, $failed failed"
-  done < "$skills_list_file"
-  rm -f "$skills_list_file"
+  done < <(list_skills)
 
   echo ""
   echo "Total: $total_passed passed, $total_failed failed out of $skill_count skills"
+
+  if [[ "$total_failed" -gt 0 ]]; then
+    exit 1
+  fi
+}
+
+list_skills() {
+  find .apm/skills -name 'evals.json' | while IFS= read -r f; do
+    dirname "$(dirname "$(dirname "$f")")" | xargs basename
+  done | sort -u
 }
 
 cmd_install() {
