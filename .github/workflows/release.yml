@@ -28,6 +28,7 @@ jobs:
         with:
           fetch-depth: 0
       - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - run: mise trust
       - name: Audit skills
         run: mise run skills -- audit
       - name: Verify tag matches apm.yml version

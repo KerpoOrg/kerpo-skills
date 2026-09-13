@@ -20,6 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: jdx/mise-action@5228313ee0372e111a38da051671ca30fc5a96db # v3
+      - run: mise trust
       - run: mise run skills -- audit
       - run: mise run ci -- lint
       - run: mise run ci -- test
