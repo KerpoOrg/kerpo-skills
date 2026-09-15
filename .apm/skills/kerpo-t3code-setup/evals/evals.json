@@ -1,0 +1,35 @@
+{
+  "skill_name": "kerpo-t3code-setup",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Set up this repo for t3code.",
+      "expected_output": "Runs gh auth status; if multiple logins, asks the user which account this repo uses; pins it with git config t3code.ghAccount; installs .t3code/ensure-gh-identity.sh; creates/merges t3.json with a runOnWorktreeCreate identity script; runs the guard and reports state; reminds to commit t3.json and .t3code/.",
+      "assertions": [
+        "Asks the user which GitHub account to use when gh has multiple logins, instead of guessing",
+        "Persists the choice with git config t3code.ghAccount, not a committed file",
+        "Installs .t3code/ensure-gh-identity.sh from the skill template and makes it executable",
+        "Creates or merges t3.json without dropping existing fields or scripts",
+        "Reports idempotency: what was new, unchanged, or repaired"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I get 'studiokanslia does not have the correct permissions to execute CreatePullRequest' when T3 creates a PR, but commits and pushes work.",
+      "expected_output": "Recognizes the multi-account identity trap signature, runs kerpo-t3code-setup: asks/pins the correct account, installs or repairs the guard, verifies gh's active account matches the pin.",
+      "assertions": [
+        "Explains that git push uses SSH keys while gh pr create uses gh's active account token",
+        "Pins the correct account per repo and verifies with the guard check"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I have only one GitHub login in gh — just finish the t3 setup for this repo.",
+      "expected_output": "Pins the single account without asking, installs the guard, wires t3.json, verifies, and notes the pin so the user can object.",
+      "assertions": [
+        "Does not ask a redundant account question when there is exactly one login",
+        "Still records git config t3code.ghAccount so future drift is detectable"
+      ]
+    }
+  ]
+}

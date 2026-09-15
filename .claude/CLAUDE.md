@@ -115,3 +115,20 @@ are proposed defaults only until real PR history exists — mirror the issue
 heading style rather than inventing new sections, and prefer `Closes #N` for
 issue links.
 <!-- kerpo-gh-content-policy-learn:end -->
+
+## GitHub identity convention
+
+All GitHub API work in this repo (issues, PRs, `gh pr create`) must run as
+**jounirajala** — the only identity with push/create-PR rights here. If
+another account (e.g. studiokanslia) is gh's active login, commits and pushes
+still succeed via SSH, but `gh pr create` fails with a permissions error.
+
+- Verify: `mise run gh-identity -- check` (or `./scripts/ensure-gh-identity.sh`)
+- Fix: `mise run gh-identity -- switch --yes` (global active-account switch)
+- T3 Code runs the guard automatically on worktree create via `t3.json`
+- The pinned account lives in `git config t3code.ghAccount` (common
+  `.git/config`, shared by all worktrees); manage the per-repo identity with
+  the `kerpo-t3code-setup` skill instead of hardcoding logins
+
+Check the identity before creating PRs or managing issues, and never switch
+the active account away from the pinned account while working in this repo.
