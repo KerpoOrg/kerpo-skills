@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+#MISE description="GitHub identity guard for this repo: verify or fix gh's active account (kerpo-t3code-setup)"
+#USAGE cmd "check" help="Verify gh's active account matches the repo's pinned account (t3code.ghAccount)"
+#USAGE cmd "switch" help="Switch gh's active account to the repo's pinned account (mutating, global)" {
+#USAGE   flag "-y --yes" help="Confirm the global active-account switch"
+#USAGE }
+set -euo pipefail
+
+ROOT="${MISE_PROJECT_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)}"
+cd "$ROOT"
+
+cmd="${usage_cmd:-}"
+yes="${usage_yes:-false}"
+
+case "$cmd" in
+  check)
+    ./scripts/ensure-gh-identity.sh
+    ;;
+  switch)
+    if [[ "$yes" != "true" ]]; then
+      echo "Error: switching gh's active account is a global change. Re-run with --yes" >&2
+      exit 1
+    fi
+    ./scripts/ensure-gh-identity.sh --fix
+    ;;
+  *)
+    echo "Usage: mise run gh-identity -- <subcommand> [flags]
+
+Subcommands:
+  check          Verify gh's active account matches this repo's pinned account
+  switch -y      Switch gh's active account to the pinned account (global change)
+
+Pin: git config t3code.ghAccount <login> (set up by kerpo-t3code-setup)
+Run \`mise run gh-identity --help\` for full usage." >&2
+    exit 1
+    ;;
+esac

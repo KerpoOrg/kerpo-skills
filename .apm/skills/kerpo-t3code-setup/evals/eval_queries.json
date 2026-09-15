@@ -1,0 +1,17 @@
+[
+  {"query": "set up this repo for t3code", "should_trigger": true},
+  {"query": "initialize t3 code for this project", "should_trigger": true},
+  {"query": "t3 setup", "should_trigger": true},
+  {"query": "which github account should this repo use for PRs", "should_trigger": true},
+  {"query": "gh pr create fails with permissions error on this repo", "should_trigger": true},
+  {"query": "add the gh identity guard to this repo", "should_trigger": true},
+  {"query": "re-run the t3 setup, it should be idempotent", "should_trigger": true},
+  {"query": "I have two github logins in gh, ask me which one for this repo", "should_trigger": true},
+  {"query": "report a bug in T3 Code itself", "should_trigger": false},
+  {"query": "clean up git worktrees", "should_trigger": false},
+  {"query": "create a worktree for this issue", "should_trigger": false},
+  {"query": "assign issue #12 to me", "should_trigger": false},
+  {"query": "write a robot framework test case", "should_trigger": false},
+  {"query": "my gh token expired, refresh auth", "should_trigger": false},
+  {"query": "review this pull request description", "should_trigger": false}
+]

@@ -13,7 +13,7 @@ license: MIT
 compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
-  version: "1.1"
+  version: "1.2"
 ---
 # kerpo-gh-issue-start-work
 
@@ -60,7 +60,16 @@ If no such label exists, skip silently — do not create labels without asking.
 
 ### Step 5 — Worktree / branch policy
 
-Discover start-work policy using
+**First — session-managed worktree check.** Follow
+[references/conventions.md](references/conventions.md)
+(“Session-managed worktrees”). If the session is already rooted in a linked
+worktree (e.g. T3 Code auto-created `~/.t3/worktrees/...`) or
+`KERPO_WORKTREE_MANAGEMENT=off` is set, **skip the table below**: claim only,
+use the session's existing worktree/branch as-is, and report the skip (e.g.
+"Session worktree managed by T3 Code — using `<path>` on `<branch>`"). Do not
+create or enter another worktree, and do not rename the harness's branch.
+
+Otherwise, discover start-work policy using
 [references/conventions.md](references/conventions.md)
 (layout, pinned primary, “start work → worktree?”).
 
@@ -87,10 +96,18 @@ Report:
 Example: "Issue #1 'Fix login bug' — assigned to @jounirajala, labeled
 in-progress. Worktree `worktree/fix-login` on `fix/login` (policy: require worktree)."
 
+Example with a session-managed worktree: "Issue #1 'Fix login bug' — assigned
+to @jounirajala, labeled in-progress. Session worktree managed by T3 Code —
+using `~/.t3/worktrees/myrepo/a1b2c3d4` on `t3code/fix-login-bug` (worktree
+create/enter skipped)."
+
 ## Gotchas
 
 - Always check existing assignees first — overwriting someone else's assignment is disruptive
 - `in-progress` label may not exist in every repo — skip gracefully if missing
 - When policy is unclear, ask — do not guess worktree vs root
+- Session rooted in a linked worktree (e.g. T3 Code) → never add/enter another
+  worktree; work on the session's tree and say so
+- `KERPO_WORKTREE_MANAGEMENT=off` → always claim-only; honor it and report it
 - Cleanup is human-triggered only (`kerpo-git-worktree-clean`)
 - Verify the active `gh` account with `gh auth status` if the repo is org-scoped

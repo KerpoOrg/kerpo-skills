@@ -1,0 +1,122 @@
+[
+  {
+    "query": "set up this repo for t3code",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "initialize t3 code for this project",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "t3 setup",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "which github account should this repo use for PRs",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "gh pr create fails with permissions error on this repo",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "add the gh identity guard to this repo",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "re-run the t3 setup, it should be idempotent",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "I have two github logins in gh, ask me which one for this repo",
+    "should_trigger": true,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "PASS"
+  },
+  {
+    "query": "report a bug in T3 Code itself",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 3,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "clean up git worktrees",
+    "should_trigger": false,
+    "triggers": 2,
+    "runs": 3,
+    "trigger_rate": 0.66,
+    "status": "FAIL"
+  },
+  {
+    "query": "create a worktree for this issue",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 3,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "assign issue #12 to me",
+    "should_trigger": false,
+    "triggers": 1,
+    "runs": 3,
+    "trigger_rate": 0.33,
+    "status": "FAIL"
+  },
+  {
+    "query": "write a robot framework test case",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 3,
+    "trigger_rate": 0,
+    "status": "PASS"
+  },
+  {
+    "query": "my gh token expired, refresh auth",
+    "should_trigger": false,
+    "triggers": 3,
+    "runs": 3,
+    "trigger_rate": 1.00,
+    "status": "FAIL"
+  },
+  {
+    "query": "review this pull request description",
+    "should_trigger": false,
+    "triggers": 0,
+    "runs": 3,
+    "trigger_rate": 0,
+    "status": "PASS"
+  }
+]

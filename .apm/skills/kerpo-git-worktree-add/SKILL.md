@@ -12,7 +12,7 @@ license: MIT
 compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
-  version: "1.0"
+  version: "1.1"
 ---
 # kerpo-git-worktree-add
 
@@ -27,6 +27,14 @@ with the worktree (`git worktree add -b`).
    main worktree — not an arbitrary linked tree unless the user said so).
 2. Read [references/conventions.md](references/conventions.md): layout, naming,
    base ref, pinned primary, reserved names.
+
+**Skip guard first.** If the session itself is already rooted in a linked
+worktree (`git rev-parse --show-toplevel` ≠ common-dir root) or
+`KERPO_WORKTREE_MANAGEMENT=off` is set, do **not** create anything — that is
+the session-managed worktree rule (see conventions.md). Work on the session's
+tree and report: "Session worktree managed by T3 Code — skipping worktree
+create, using `<path>` on `<branch>`". Ask only if the user explicitly insists
+on a separate worktree in that harness.
 
 ### Step 2 — Decide path, branch, base
 
@@ -70,6 +78,8 @@ compose with `kerpo-git-worktree-enter` after add succeeds.
 ## Gotchas
 
 - Primary checkout should remain on the default branch when conventions say so
+- Session already rooted in a linked worktree (e.g. T3 Code) or
+  `KERPO_WORKTREE_MANAGEMENT=off` → skip the create and say so
 - Never `git worktree remove` here
 - `git -C` against the primary for `worktree add`; verify with
   `git -C <new-path> branch --show-current`
