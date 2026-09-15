@@ -12,7 +12,7 @@ license: MIT
 compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
-  version: "1.0"
+  version: "1.1"
 ---
 # kerpo-git-worktree-enter
 
@@ -29,6 +29,17 @@ target that checkout.
 
 If the worktree does not exist and the user clearly wanted create+enter, compose
 `kerpo-git-worktree-add` first, then continue here.
+
+**Session-managed worktree check.** Follow
+[references/conventions.md](references/conventions.md)
+(“Session-managed worktrees”). If the session is already rooted in a linked
+worktree (e.g. T3 Code, which roots each session in
+`~/.t3/worktrees/<repo-slug>/<id>` on a `t3code/<slug>` branch) or
+`KERPO_WORKTREE_MANAGEMENT=off` is set, **stop here**: the session cannot
+re-root into another worktree without being restarted. Tell the user what
+happened — e.g. "Session worktree managed by T3 Code — enter requires a new
+session; staying in `<path>` on `<branch>`" — and, when the user really wants
+another tree, let them restart there rather than composing add.
 
 ### Step 2 — Move agent root (Cursor)
 
@@ -64,5 +75,8 @@ or propose those steps. Do not invent stack/env commands when undocumented.
 
 - Enter does not create branches or worktrees (except via explicit compose with add)
 - Enter must never remove or clean worktrees
+- Session already rooted in a linked worktree (e.g. T3 Code) or
+  `KERPO_WORKTREE_MANAGEMENT=off` → entering another tree needs a session
+  restart; stop and say so instead of composing add
 - After moving root, prefer paths relative to the new root; still use `git -C`
   when multiple checkouts remain relevant

@@ -56,6 +56,51 @@ Used by `kerpo-gh-issue-start-work` after claiming the issue:
 - **Root OK** — docs allow or prefer working on a branch in the primary checkout
 - **Unclear** — ask the developer: worktree, branch on current checkout, or claim-only?
 
+## Session-managed worktrees (check before any policy)
+
+Some agents set up a worktree for the session **before** the prompt runs (T3
+Code auto-creates `~/.t3/worktrees/<repo-slug>/<id>` on a `t3code/<slug>`
+branch; other harnesses may do the same). The session cannot leave that
+worktree without being restarted, so adding another worktree or "entering" one
+orphans the agent. The add/enter policy is skipped whenever this applies.
+
+### Detection
+
+Check in this order:
+
+1. **Opt-out** — `KERPO_WORKTREE_MANAGEMENT=off` in the environment: force the
+   skip behavior below regardless of detection, and report that the flag was
+   honored.
+2. **In a linked worktree** — `git rev-parse --show-toplevel` and
+   `git rev-parse --path-format=absolute --git-common-dir` disagree on the repo
+   root, i.e. the session is already rooted inside a linked worktree. This is
+   the structural rule and covers any harness that auto-roots sessions.
+3. **Harness marker** (used for the report message only): T3 Code sets
+   `__CFBundleIdentifier=com.t3tools.t3code` on macOS, and its worktrees live
+   under `~/.t3/worktrees/` on every platform. Either signal identifies T3.
+
+### Skip behavior
+
+When detection (1) or (2) hits, use the **session-managed worktree** as the
+working tree — do **not** compose add/enter, even if the start-work policy says
+"require worktree":
+
+- Keep the branch the harness chose as-is (do not rename it behind the harness)
+- Branch/worktree path comes from the current session, not from conventions
+- Report explicitly, never silently: e.g. "Session worktree managed by T3 Code
+  — skipping worktree create/enter, using `<path>` on `<branch>`"
+
+If the start-work policy was "root checkout OK" this changes nothing; the only
+case skipped is the create/enter compose step.
+
+### Who checks
+
+- `kerpo-gh-issue-start-work` — before applying its Step 5 policy table
+- `kerpo-git-worktree-add` — before creating anything (refuse + report)
+- `kerpo-git-worktree-enter` — before composing add or telling the user to
+  reopen the workspace (entering a different worktree under these harnesses
+  requires a new session; warn and stop)
+
 ## Pre-destroy teardown
 
 Used only by **`kerpo-git-worktree-clean`** when a **human** asked to clean up.
