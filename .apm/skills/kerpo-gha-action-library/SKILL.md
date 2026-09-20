@@ -2,26 +2,30 @@
 name: kerpo-gha-action-library
 description: >-
   Use when building, versioning, testing, releasing, or deprecating the org's
-  own library of GitHub Actions and reusable workflows. Apply when the user
-  says "create a shared action", "version our actions", "set up the release
-  pipeline for shared workflows", "publish a reusable workflow", "deprecate
-  this action". Covers distribution topology (marketplace vs central org repo
-  vs monorepo), semver tags + floating major, release-please wiring, the
-  own-action test stack, and compatibility/deprecation policy. Does not
-  activate for consuming workflows in a single repo
-  (kerpo-gha-workflow-create/refactor) or auditing third-party workflows
-  (kerpo-gha-workflow-validate).
+  own library of GitHub Actions and reusable workflows — including shared
+  build-once, artifact-publish, change-detection, or container-build actions
+  that encode pipeline optimization. Apply when the user says "create a shared
+  action", "version our actions", "set up the release pipeline for shared
+  workflows", "publish a reusable workflow", "deprecate this action", "shared
+  build action", "reusable build-and-reuse workflow". Covers distribution
+  topology (marketplace vs central org repo vs monorepo), semver tags +
+  floating major, release-please wiring, the own-action test stack,
+  compatibility/deprecation policy, and baking in build-once / change-scoped /
+  no-DinD contracts for shared build actions. Does not activate for consuming
+  workflows in a single repo (kerpo-gha-workflow-create/refactor) or auditing
+  third-party workflows (kerpo-gha-workflow-validate).
 license: MIT
 compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
-  version: "1.0"
+  version: "1.1"
 ---
 # kerpo-gha-action-library
 
 Own the lifecycle of shared actions and reusable workflows: where they live,
 how they are versioned, how they are tested before tagging, and how they are
-deprecated.
+deprecated. Shared build/test actions must encode the optimization playbook
+so every consumer gets build-once and progressive depth by default.
 
 ## When to use
 
@@ -29,15 +33,18 @@ deprecated.
 - "Set up versioning and release automation for our reusable workflows."
 - "How do we test a `workflow_call` across repos before tagging v1?"
 - "Publish a reusable workflow" / "version our actions".
+- "Shared build action that uploads SHA-keyed artifacts for later jobs."
 - "We need to deprecate v1 of org/shared-build and give consumers a migration
   path."
 - Negative: "add CI to my repo" -> create; "are our actions secure" ->
-  validate.
+  validate; "speed up this one repo's CI" -> refactor.
 
 ## Instructions
 
 1. Read [references/gha-action-library.md](references/gha-action-library.md)
-   for the full lifecycle.
+   for the full lifecycle and
+   [references/gha-perf-playbook.md](references/gha-perf-playbook.md) when the
+   library includes build, test, or container actions.
 2. Choose distribution topology with
    [references/gha-scale-ladder.md](references/gha-scale-ladder.md): one repo
    per action for clean semver, a central `org/shared-workflows` repo for the
@@ -48,6 +55,12 @@ deprecated.
    - Reusable workflow: `on.workflow_call.{inputs,secrets,outputs}`;
      kebab-case inputs/outputs, UPPER_SNAKE secrets. Adding an optional input
      is patch/minor; removing or retyping is a major.
+   - For **build/publish** actions: inputs must accept a content/SHA key;
+     outputs must expose artifact names or image digests so callers reuse
+     instead of rebuilding. Prefer "build if miss else download" over
+     always-build.
+   - For **container** actions: build on the runner/BuildKit (no DinD);
+     support shared-base + late fan-out when multiple images are produced.
 4. Wire release automation (release-please or semantic-release) producing
    `vX.Y.Z` tags plus a force-pushed floating major `vN`. Remember
    `GITHUB_TOKEN`-created tags do not retrigger workflows; chain via
@@ -59,6 +72,8 @@ deprecated.
      `check-dist` for bundled `dist/`.
    - Reusable: `act` is smoke-only; the real contract test is a consumer repo
      calling `@main`/`@feature-branch` before tagging.
+   - Build-once actions: assert a second invocation with the same SHA is a
+     cache/artifact hit (or no-op), not a second compile.
 6. Document compatibility and a deprecation policy; find consumers via the
    Dependents graph, org code search, and the audit-log API.
 7. Apply names per
@@ -67,6 +82,7 @@ deprecated.
 ## References
 
 - [references/gha-action-library.md](references/gha-action-library.md)
+- [references/gha-perf-playbook.md](references/gha-perf-playbook.md)
 - [references/gha-scale-ladder.md](references/gha-scale-ladder.md)
 - [references/gha-naming-conventions.md](references/gha-naming-conventions.md)
 
@@ -83,5 +99,7 @@ deprecated.
   actions inside the library.
 - Dependabot does not alert on SHA-pinned actions; track drift yourself.
 - `secrets: inherit` only for same-org/enterprise callers.
+- A shared "build" action that always rebuilds defeats the library — the
+  contract is reuse by SHA/content hash.
 - This skill owns the library lifecycle, not single-repo CI
   (`kerpo-gha-workflow-create/refactor`).
