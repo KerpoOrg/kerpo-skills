@@ -79,6 +79,22 @@ publish, how to version, how to test, and how to deprecate.
 - Keep reusable workflow refs on floating tags (Renovate `matchDepTypes` for
   workflows); SHA-pin third-party actions.
 
+## Shared build / container actions
+
+When the library ships build, test orchestration, or image-build actions,
+encode [gha-perf-playbook.md](gha-perf-playbook.md) in the public contract:
+
+- **Build once per SHA**: inputs include a content/commit key; outputs expose
+  artifact names or image digests. Callers download/reuse — they do not
+  recompile for the same key.
+- **Build only what changed**: optional path/`affected` inputs; miss → build,
+  hit → no-op success.
+- **No DinD**: container actions use host BuildKit/buildx; accept pre-built
+  binaries via input paths when compilation is faster on the runner.
+- **Late fan-out**: multi-image actions pull a shared base once, build a
+  common intermediate, then produce per-service slices.
+- Contract tests must assert a second same-SHA invocation does not rebuild.
+
 ## Deprecation
 
 - Find consumers via the Dependents graph, org code search for

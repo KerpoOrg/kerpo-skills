@@ -1,41 +1,48 @@
 ---
 name: kerpo-gha-workflow-create
 description: >-
-  Use when creating a new GitHub Actions workflow (lint/test/build/deploy) for
-  a repository. Apply when the user says "add CI", "create a workflow", "set up
-  GitHub Actions", "add a deploy pipeline", or asks to scaffold a pipeline for
-  a project. Picks the minimal architecture tier that fits (inline steps ->
-  composite action -> reusable workflow -> org orchestrator), applies the
-  kerpo security baseline, and follows the naming conventions. Does not
-  activate for refactoring existing workflows (kerpo-gha-workflow-refactor),
-  report-only audits (kerpo-gha-workflow-validate), or an own action library
+  Use when creating a new GitHub Actions workflow or CI/CD pipeline
+  (lint/test/build/deploy) for a repository. Apply when the user says "add
+  CI", "create a workflow", "set up GitHub Actions", "add a deploy pipeline",
+  "scaffold a pipeline", "add GitHub Actions", "new workflow.yml", "CI for
+  this repo", "build and push Docker image", or asks for a fast/reliable
+  pipeline with build-once artifacts, change-scoped draft checks, or
+  ready-for-review depth. Picks the minimal architecture tier, applies the
+  kerpo security baseline and optimization playbook (build once per SHA,
+  build only what changed, progressive PR depth, target-branch confidence,
+  no DinD builds, late container fan-out), and follows naming conventions.
+  Does not activate for refactoring existing workflows
+  (kerpo-gha-workflow-refactor), report-only audits
+  (kerpo-gha-workflow-validate), or an own action library
   (kerpo-gha-action-library).
 license: MIT
 compatibility: Designed for Claude Code, Cursor, and OpenCode
 metadata:
   author: kerpo
-  version: "1.0"
+  version: "1.1"
 ---
 # kerpo-gha-workflow-create
 
 Author new GitHub Actions workflows to kerpo standards: choose the smallest
-architecture tier, apply the security baseline from the first line, and name
-everything consistently.
+architecture tier, apply the security baseline and optimization playbook from
+the first line, and name everything consistently.
 
 ## When to use
 
 - "Add CI for this repo: lint, typecheck, test, build."
-- "Set up GitHub Actions" / "create a workflow".
+- "Set up GitHub Actions" / "create a workflow" / "new workflow.yml".
 - "Add a deploy pipeline" (including OIDC to a cloud, gated by an
   environment).
 - "Scaffold a Docker build-and-push pipeline."
+- "Give us a fast draft-PR CI that deepens when ready for review."
 - Negative: "CI is slow, fix it" -> refactor; "review my workflows" ->
   validate; "build our own shared action" -> action-library.
 
 ## Instructions
 
 1. Detect the stack and the repo shape (root vs monorepo, package manager,
-   test command, default branch, whether a merge queue is enabled).
+   test command, default branch, merge target conventions, whether a merge
+   queue is enabled).
 2. Pick the architecture tier with
    [references/gha-scale-ladder.md](references/gha-scale-ladder.md). Start at
    rung 1; escalate only on a named pain signal. Most requests are rung 1.
@@ -45,25 +52,36 @@ everything consistently.
    cloud keys, no untrusted `${{ }}` in `run:`.
 4. Name files, jobs, steps, environments, secrets, and cache keys per
    [references/gha-naming-conventions.md](references/gha-naming-conventions.md).
-5. Add the performance defaults from
-   [references/gha-perf-playbook.md](references/gha-perf-playbook.md): a
-   `concurrency` group, `timeout-minutes` on every job, lockfile-keyed caches.
+5. Apply the full optimization playbook from
+   [references/gha-perf-playbook.md](references/gha-perf-playbook.md) — not
+   just concurrency/timeouts/caches. Bake in all five rules:
+   - **Build once per commit SHA**, store artifacts/images, reuse in later
+     jobs and workflows.
+   - **Build only what changed**; skip/reuse when inputs are unchanged.
+   - **Progressive depth**: change-focused fast path on push/draft; deeper
+     tests + integration when ready for review.
+   - **Target-branch confidence**: identify the PR merge target
+     (main/integration/other) and gate so green means integrable there.
+   - **Containers**: build outside DinD; pull shared bases once; fan out
+     late into layered slices.
 6. Start from a template in [assets/](assets) when one matches the stack
    (Node, Python, Go, Docker build+push, Terraform, OIDC deploy). The
-   templates are already SHA-pinned; keep the pins.
+   templates are already SHA-pinned; keep the pins. Shape new pipelines as
+   `build` → artifact → `test`/`deploy` unless the stack truly cannot.
 7. If the repo uses a merge queue, add `merge_group` to `on:` for every
    workflow that is a required check, or the queue stalls.
 8. Do not extract composite actions or reusable workflows until the scale
    ladder says so.
-9. Report the files created, the tier chosen and why, and any secrets/OIDC
-   setup the user must complete out of band.
+9. Report the files created, the tier chosen and why, which optimization
+   rules were applied, and any secrets/OIDC setup the user must complete out
+   of band.
 
 ## References
 
 - [references/gha-scale-ladder.md](references/gha-scale-ladder.md) - which tier
 - [references/gha-security-baseline.md](references/gha-security-baseline.md) - non-negotiables
 - [references/gha-naming-conventions.md](references/gha-naming-conventions.md) - names
-- [references/gha-perf-playbook.md](references/gha-perf-playbook.md) - speed/cost
+- [references/gha-perf-playbook.md](references/gha-perf-playbook.md) - speed/reliability
 - [assets/](assets) - per-stack starter workflows
 
 ## Gotchas
@@ -79,5 +97,7 @@ everything consistently.
   includes the workflow path if you need a path-based key.
 - `merge_group` must be on every required workflow, not just one.
 - Do not commit secrets; document required secrets/OIDC trust instead.
+- Do not compile inside DinD or rebuild the same SHA in every job "for
+  simplicity".
 - This skill creates workflows. It does not audit (`kerpo-gha-workflow-validate`)
   or own a shared action library (`kerpo-gha-action-library`).
