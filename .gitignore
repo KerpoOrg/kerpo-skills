@@ -9,3 +9,8 @@ mise.local.toml
 
 # Linked git worktrees (kerpo default)
 /worktree/
+
+# Compiled agents deploy output (apm install)
+.claude/agents/
+.cursor/agents/
+.opencode/agents/
