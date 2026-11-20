@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Lightweight apm audit of all skill markdown. No evals, no LLM scanners.
+# Lightweight apm audit of all skill and agent markdown. No evals, no LLM scanners.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -23,11 +23,11 @@ while IFS= read -r f; do
     failed="${failed}  ${f}"$'\n'
   fi
 done <<EOF
-$(find .apm/skills -name '*.md' | sort)
+$(find .apm/skills .apm/agents -name '*.md' | sort)
 EOF
 
 if [ "$count" -eq 0 ]; then
-  echo "Error: no skill markdown under .apm/skills/" >&2
+  echo "Error: no markdown under .apm/skills/ or .apm/agents/" >&2
   exit 1
 fi
 

@@ -102,7 +102,12 @@ Gitignore: `apm_modules/`, `*-workspace/`, `build/`
 
 - **Shared content:** `.apm/references/` → reference with `LOAD references/shared.md`
 - **Package deps:** `apm.yml` → `dependencies.apm: [kerpo/other@v1.0.0]`
-- **Agents:** `.apm/agents/` can orchestrate multiple skills
+- **Agents:** `.apm/agents/*.agent.md` can orchestrate multiple skills. They
+  deploy verbatim per target (`.claude/agents/`, `.cursor/agents/`,
+  `.opencode/agents/`) — no per-target transform, so avoid a `tools` field
+  (Claude wants a list, OpenCode wants a mapping; no shape fits both; use
+  `disallowedTools` for read-only agents). Agents reference skills by name
+  and skip the skill evals machinery.
 
 <!-- kerpo-gh-content-policy-learn:start -->
 ## GitHub content policy
