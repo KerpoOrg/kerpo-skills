@@ -1,5 +1,5 @@
 lockfile_version: '1'
-generated_at: '2026-09-13T09:16:21.679063+00:00'
+generated_at: '2026-11-20T10:55:46.699605+00:00'
 dependencies: []
 deployments:
 - kind: project-relative
@@ -500,7 +500,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:65d70314ed4df11b247b9cde593fd42374fcad62b878fd6f5074a1cfb7b45b04
+  content_hash: sha256:9e390ac2ecb77c9415806bd442c3db2859f1c3c32c1fd62c322d04b92b29eb36
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-gh-issue-start-work/evals/eval_queries.json
@@ -530,7 +530,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  content_hash: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-gh-pr-checklist-maintain/SKILL.md
@@ -790,7 +790,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:f018a68dd5dddd56b7b5c8c1f3599b0214db94574b3b76a04c356bef77b098a9
+  content_hash: sha256:c313b8d2f663d6e226dd8377eb3097656fbbe7c8e00bd78a6fbcb6a8ac42b036
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-git-worktree-add/evals/eval_queries.json
@@ -820,7 +820,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  content_hash: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-git-worktree-clean/SKILL.md
@@ -880,7 +880,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:aa07125d001ff76378ae7d647afaa2eb18323d8dcc754d552052893a6868ae45
+  content_hash: sha256:af6747fecca2fb5286a4280de8062dcf7d05983900ca2b99938e757e1cf3db7c
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-git-worktree-enter/evals/eval_queries.json
@@ -910,7 +910,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  content_hash: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
 - kind: project-relative
   target: agents
   value: .agents/skills/kerpo-git-worktree-enter/references/cursor-enter.md
@@ -1662,6 +1662,26 @@ deployments:
   content_hash: sha256:d4d875fd1b602c75349b2d3ab03846bbcbf22cd8f32023608ff4920cfa3307e3
 - kind: project-relative
   target: claude
+  value: .claude/agents/kerpo-skill-author.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:90f019779f7f7f8f1039e054460480af459ee839ed3c8dc95ab2eaa8b3dd9bdd
+- kind: project-relative
+  target: claude
+  value: .claude/agents/kerpo-unit-reviewer.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:eabef0472c13f87a34d2d333fb9b5c421f479a30f18643b7e386511db2e04b61
+- kind: project-relative
+  target: claude
   value: .claude/skills/kerpo-aggregate-benchmark/SKILL.md
   runtime: null
   scope: project
@@ -2168,7 +2188,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:65d70314ed4df11b247b9cde593fd42374fcad62b878fd6f5074a1cfb7b45b04
+  content_hash: sha256:9e390ac2ecb77c9415806bd442c3db2859f1c3c32c1fd62c322d04b92b29eb36
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gh-issue-start-work/evals/eval_queries.json
@@ -2198,7 +2218,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  content_hash: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gh-pr-checklist-maintain/SKILL.md
@@ -2358,7 +2378,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:2cccdf7f40fac19d066edbf9af987d6809a88705935c7490e4503b48ebcbeb2c
+  content_hash: sha256:4f981b2a86be19d455e4fe00bc62647147b6d3c171915e2a4a520b6570a57079
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-action-library/evals/eval_queries.json
@@ -2368,7 +2388,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:416f76af166ce2cd95d6913da257db712dc0d8ae227a372e9f06d2409bae8251
+  content_hash: sha256:b861c97088d33bc765225bb9dd36c1887f3ba16bd8df794dcbc3413b242dc61d
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-action-library/evals/evals.json
@@ -2388,7 +2408,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:f627f24c1e9588a98c2192c46f43801bac4c86ff3886fad0b64a7cc3a2067a8b
+  content_hash: sha256:06d8115735c49015faf06ef1552f4bd29b3d3417bcf379d932dc82c287db4713
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-action-library/references/gha-naming-conventions.md
@@ -2398,7 +2418,17 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gha-action-library/references/gha-perf-playbook.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-action-library/references/gha-scale-ladder.md
@@ -2418,7 +2448,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7f5130ebe90e17eb6231da4748c5e779458f95b94dcd43d0216d4e6be19ff4a1
+  content_hash: sha256:0c0a75cb48670b1372f36a9f0d07f31f6792b81fc229c58782e2dbd5cb6088fc
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml
@@ -2428,7 +2458,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e44d78ffeee6f13cb3b75c53fad383bb97eee3f19eea36957cd5dd7ab44f9ad9
+  content_hash: sha256:48ef2373e58e7ab26d74463c3e7ee6c72dc6510f648a9f66776ed6967ccfb0a2
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/assets/docker-build-push.yml
@@ -2438,7 +2468,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:bc0f689cea3326f9118c2a3fbc6933684db0d9bbcaadb9673799b6981502e3e9
+  content_hash: sha256:64173ff452c797508b2452a2e3f61c8a2a19a81eeb2daee2ce6bbb35375e477a
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/assets/go-ci.yml
@@ -2448,7 +2478,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:79dded0f862dcbc5db24f154c2a4189e015e23d7d7211bd6cf69839ef0b1035e
+  content_hash: sha256:59fc6a37ebb69dad6603ef4ac14e7c6d8137d34396ec04abc8927cfdff1aff78
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/assets/node-ci.yml
@@ -2458,7 +2488,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:69f80308302d3ab84c78137e33b0318360c4e4db596ef38555c392e9a0c6a322
+  content_hash: sha256:ad0ba322ab2eeae8f816d7e643f77164ae90136a7e79ce052d449373cbead109
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/assets/python-ci.yml
@@ -2468,7 +2498,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e2014e63cb142198ed8376df60ff295d1d5d031ee1a9298e97a662c2d6636eeb
+  content_hash: sha256:c8dd1f7151dea101e6fe4702b36e5c319f999a4e9299f8797ba5b9a0bfac483f
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/assets/terraform.yml
@@ -2478,7 +2508,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:355b21f9c7dfc65fa54ff651408d168a69c44ac921e207b80c65961e3d151ee0
+  content_hash: sha256:378bc5377b4460db31db0fe2cb728863e1a369f8b143f2b53676d10885ae8566
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/evals/eval_queries.json
@@ -2488,7 +2518,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:3b76cf83a59f4e580a06056348edfef18f49547bb23a007ab81745fdbce03785
+  content_hash: sha256:6568cd11565ff1b70ac903f655adc3b66d3646a860823f530d4ef53a8147f299
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/evals/evals.json
@@ -2518,7 +2548,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/references/gha-perf-playbook.md
@@ -2528,7 +2558,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-create/references/gha-scale-ladder.md
@@ -2558,7 +2588,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:afe502342c90e511a981f02f52f352b89ed645b0b36eca92be9691ec484fdf76
+  content_hash: sha256:ec19fa0f3731e1c3da38acbb0156db12243d4b5f0518a8c70810a11f667c7dd1
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-refactor/evals/eval_queries.json
@@ -2568,7 +2598,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:027066ddaad70f8acc56c9d5461f85f2eac80871790eb545227b025b2550537d
+  content_hash: sha256:dce68f89b09800adbe19a2a742b1d1fef2b645a57b637737927f48209c25a26d
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-refactor/evals/evals.json
@@ -2608,7 +2638,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-refactor/references/gha-perf-playbook.md
@@ -2618,7 +2648,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-refactor/references/gha-scale-ladder.md
@@ -2638,7 +2668,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:a43ef1c7b0395644ea245799a773c711ea2e86695e50b9f233c3880cb581b91b
+  content_hash: sha256:8412cb668e40a6a467b929523b8075af27694c92fc91efaf1e54003e631905e0
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-validate/evals/eval_queries.json
@@ -2648,7 +2678,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:35f6c3d1998167190ff5b0245a461c15cbf020cc5a16017c42253b3245833212
+  content_hash: sha256:98ffb03e14bc9301db9ec2f1bcb1ce835598f950fa4b476f5fb469b98205a7ac
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-validate/evals/evals.json
@@ -2668,7 +2698,17 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-gha-workflow-validate/references/gha-perf-playbook.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-gha-workflow-validate/references/gha-security-baseline.md
@@ -2788,7 +2828,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:f018a68dd5dddd56b7b5c8c1f3599b0214db94574b3b76a04c356bef77b098a9
+  content_hash: sha256:c313b8d2f663d6e226dd8377eb3097656fbbe7c8e00bd78a6fbcb6a8ac42b036
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-git-worktree-add/evals/eval_queries.json
@@ -2818,7 +2858,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  content_hash: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-git-worktree-clean/SKILL.md
@@ -2878,7 +2918,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:aa07125d001ff76378ae7d647afaa2eb18323d8dcc754d552052893a6868ae45
+  content_hash: sha256:af6747fecca2fb5286a4280de8062dcf7d05983900ca2b99938e757e1cf3db7c
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-git-worktree-enter/evals/eval_queries.json
@@ -2908,7 +2948,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  content_hash: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
 - kind: project-relative
   target: claude
   value: .claude/skills/kerpo-git-worktree-enter/references/cursor-enter.md
@@ -3520,6 +3560,56 @@ deployments:
   content_hash: sha256:efb1c318daa5ea6d0fb253579c3204c75b22b575bd8288a7b1df6509527fda64
 - kind: project-relative
   target: claude
+  value: .claude/skills/kerpo-t3code-setup/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:9ac7e4c9a103ada9bf9fc9820925e902a06b8811904cc8bf2bd9d094d9712b61
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-t3code-setup/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:af934fa792111db07cb719d731093beea5f0c16552894a7aef9fbafebdf160f0
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-t3code-setup/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:af61872ad972dd989accad8569382b54e2755bfa4c929f8059c2767909254550
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-t3code-setup/evals/trigger-results.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:53764d758249b5a5df52319461e73c6ec80c9a2b2cc4dd46df697df51af2ac1c
+- kind: project-relative
+  target: claude
+  value: .claude/skills/kerpo-t3code-setup/references/ensure-gh-identity.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:c8ed2734c15072f819d322840a5281e884000e36b2ef363664393c372dbcd20b
+- kind: project-relative
+  target: claude
   value: .claude/skills/kerpo-tdd/SKILL.md
   runtime: null
   scope: project
@@ -3659,6 +3749,26 @@ deployments:
   active_owner: local-bundle
   content_hash: sha256:d4d875fd1b602c75349b2d3ab03846bbcbf22cd8f32023608ff4920cfa3307e3
 - kind: project-relative
+  target: cursor
+  value: .cursor/agents/kerpo-skill-author.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:90f019779f7f7f8f1039e054460480af459ee839ed3c8dc95ab2eaa8b3dd9bdd
+- kind: project-relative
+  target: cursor
+  value: .cursor/agents/kerpo-unit-reviewer.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:eabef0472c13f87a34d2d333fb9b5c421f479a30f18643b7e386511db2e04b61
+- kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-example/evals/trigger-results.json
   runtime: null
@@ -3677,7 +3787,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:2cccdf7f40fac19d066edbf9af987d6809a88705935c7490e4503b48ebcbeb2c
+  content_hash: sha256:4f981b2a86be19d455e4fe00bc62647147b6d3c171915e2a4a520b6570a57079
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-action-library/evals/eval_queries.json
@@ -3687,7 +3797,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:416f76af166ce2cd95d6913da257db712dc0d8ae227a372e9f06d2409bae8251
+  content_hash: sha256:b861c97088d33bc765225bb9dd36c1887f3ba16bd8df794dcbc3413b242dc61d
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-action-library/evals/evals.json
@@ -3707,7 +3817,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:f627f24c1e9588a98c2192c46f43801bac4c86ff3886fad0b64a7cc3a2067a8b
+  content_hash: sha256:06d8115735c49015faf06ef1552f4bd29b3d3417bcf379d932dc82c287db4713
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-action-library/references/gha-naming-conventions.md
@@ -3717,7 +3827,17 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/kerpo-gha-action-library/references/gha-perf-playbook.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-action-library/references/gha-scale-ladder.md
@@ -3737,7 +3857,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7f5130ebe90e17eb6231da4748c5e779458f95b94dcd43d0216d4e6be19ff4a1
+  content_hash: sha256:0c0a75cb48670b1372f36a9f0d07f31f6792b81fc229c58782e2dbd5cb6088fc
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml
@@ -3747,7 +3867,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e44d78ffeee6f13cb3b75c53fad383bb97eee3f19eea36957cd5dd7ab44f9ad9
+  content_hash: sha256:48ef2373e58e7ab26d74463c3e7ee6c72dc6510f648a9f66776ed6967ccfb0a2
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/assets/docker-build-push.yml
@@ -3757,7 +3877,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:bc0f689cea3326f9118c2a3fbc6933684db0d9bbcaadb9673799b6981502e3e9
+  content_hash: sha256:64173ff452c797508b2452a2e3f61c8a2a19a81eeb2daee2ce6bbb35375e477a
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/assets/go-ci.yml
@@ -3767,7 +3887,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:79dded0f862dcbc5db24f154c2a4189e015e23d7d7211bd6cf69839ef0b1035e
+  content_hash: sha256:59fc6a37ebb69dad6603ef4ac14e7c6d8137d34396ec04abc8927cfdff1aff78
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/assets/node-ci.yml
@@ -3777,7 +3897,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:69f80308302d3ab84c78137e33b0318360c4e4db596ef38555c392e9a0c6a322
+  content_hash: sha256:ad0ba322ab2eeae8f816d7e643f77164ae90136a7e79ce052d449373cbead109
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/assets/python-ci.yml
@@ -3787,7 +3907,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:e2014e63cb142198ed8376df60ff295d1d5d031ee1a9298e97a662c2d6636eeb
+  content_hash: sha256:c8dd1f7151dea101e6fe4702b36e5c319f999a4e9299f8797ba5b9a0bfac483f
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/assets/terraform.yml
@@ -3797,7 +3917,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:355b21f9c7dfc65fa54ff651408d168a69c44ac921e207b80c65961e3d151ee0
+  content_hash: sha256:378bc5377b4460db31db0fe2cb728863e1a369f8b143f2b53676d10885ae8566
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/evals/eval_queries.json
@@ -3807,7 +3927,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:3b76cf83a59f4e580a06056348edfef18f49547bb23a007ab81745fdbce03785
+  content_hash: sha256:6568cd11565ff1b70ac903f655adc3b66d3646a860823f530d4ef53a8147f299
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/evals/evals.json
@@ -3837,7 +3957,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/references/gha-perf-playbook.md
@@ -3847,7 +3967,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-create/references/gha-scale-ladder.md
@@ -3877,7 +3997,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:afe502342c90e511a981f02f52f352b89ed645b0b36eca92be9691ec484fdf76
+  content_hash: sha256:ec19fa0f3731e1c3da38acbb0156db12243d4b5f0518a8c70810a11f667c7dd1
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-refactor/evals/eval_queries.json
@@ -3887,7 +4007,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:027066ddaad70f8acc56c9d5461f85f2eac80871790eb545227b025b2550537d
+  content_hash: sha256:dce68f89b09800adbe19a2a742b1d1fef2b645a57b637737927f48209c25a26d
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-refactor/evals/evals.json
@@ -3927,7 +4047,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-refactor/references/gha-perf-playbook.md
@@ -3937,7 +4057,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-refactor/references/gha-scale-ladder.md
@@ -3957,7 +4077,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:a43ef1c7b0395644ea245799a773c711ea2e86695e50b9f233c3880cb581b91b
+  content_hash: sha256:8412cb668e40a6a467b929523b8075af27694c92fc91efaf1e54003e631905e0
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-validate/evals/eval_queries.json
@@ -3967,7 +4087,7 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:35f6c3d1998167190ff5b0245a461c15cbf020cc5a16017c42253b3245833212
+  content_hash: sha256:98ffb03e14bc9301db9ec2f1bcb1ce835598f950fa4b476f5fb469b98205a7ac
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-validate/evals/evals.json
@@ -3987,7 +4107,17 @@ deployments:
   - .
   - local-bundle
   active_owner: local-bundle
-  content_hash: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  content_hash: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/kerpo-gha-workflow-validate/references/gha-perf-playbook.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
 - kind: project-relative
   target: legacy
   value: .agents/skills/kerpo-gha-workflow-validate/references/gha-security-baseline.md
@@ -3998,6 +4128,76 @@ deployments:
   - local-bundle
   active_owner: local-bundle
   content_hash: sha256:dddec56debc84ca43e378fe8df80147076c2f3990229c7352c2c515667ef7ad1
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/kerpo-t3code-setup/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:9ac7e4c9a103ada9bf9fc9820925e902a06b8811904cc8bf2bd9d094d9712b61
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/kerpo-t3code-setup/evals/eval_queries.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:af934fa792111db07cb719d731093beea5f0c16552894a7aef9fbafebdf160f0
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/kerpo-t3code-setup/evals/evals.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:af61872ad972dd989accad8569382b54e2755bfa4c929f8059c2767909254550
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/kerpo-t3code-setup/evals/trigger-results.json
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:53764d758249b5a5df52319461e73c6ec80c9a2b2cc4dd46df697df51af2ac1c
+- kind: project-relative
+  target: legacy
+  value: .agents/skills/kerpo-t3code-setup/references/ensure-gh-identity.sh
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:c8ed2734c15072f819d322840a5281e884000e36b2ef363664393c372dbcd20b
+- kind: project-relative
+  target: opencode
+  value: .opencode/agents/kerpo-skill-author.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:90f019779f7f7f8f1039e054460480af459ee839ed3c8dc95ab2eaa8b3dd9bdd
+- kind: project-relative
+  target: opencode
+  value: .opencode/agents/kerpo-unit-reviewer.md
+  runtime: null
+  scope: project
+  owners:
+  - .
+  - local-bundle
+  active_owner: local-bundle
+  content_hash: sha256:eabef0472c13f87a34d2d333fb9b5c421f479a30f18643b7e386511db2e04b61
 local_deployed_files:
 - .agents/skills/kerpo-aggregate-benchmark/SKILL.md
 - .agents/skills/kerpo-aggregate-benchmark/evals/eval_queries.json
@@ -4073,6 +4273,7 @@ local_deployed_files:
 - .agents/skills/kerpo-gha-action-library/evals/evals.json
 - .agents/skills/kerpo-gha-action-library/references/gha-action-library.md
 - .agents/skills/kerpo-gha-action-library/references/gha-naming-conventions.md
+- .agents/skills/kerpo-gha-action-library/references/gha-perf-playbook.md
 - .agents/skills/kerpo-gha-action-library/references/gha-scale-ladder.md
 - .agents/skills/kerpo-gha-workflow-create/SKILL.md
 - .agents/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml
@@ -4100,6 +4301,7 @@ local_deployed_files:
 - .agents/skills/kerpo-gha-workflow-validate/evals/eval_queries.json
 - .agents/skills/kerpo-gha-workflow-validate/evals/evals.json
 - .agents/skills/kerpo-gha-workflow-validate/references/gha-naming-conventions.md
+- .agents/skills/kerpo-gha-workflow-validate/references/gha-perf-playbook.md
 - .agents/skills/kerpo-gha-workflow-validate/references/gha-security-baseline.md
 - .agents/skills/kerpo-git-branch-create/SKILL.md
 - .agents/skills/kerpo-git-branch-create/evals/eval_queries.json
@@ -4185,6 +4387,11 @@ local_deployed_files:
 - .agents/skills/kerpo-skills-feedback/evals/eval_queries.json
 - .agents/skills/kerpo-skills-feedback/evals/evals.json
 - .agents/skills/kerpo-skills-feedback/references/issue-templates.md
+- .agents/skills/kerpo-t3code-setup/SKILL.md
+- .agents/skills/kerpo-t3code-setup/evals/eval_queries.json
+- .agents/skills/kerpo-t3code-setup/evals/evals.json
+- .agents/skills/kerpo-t3code-setup/evals/trigger-results.json
+- .agents/skills/kerpo-t3code-setup/references/ensure-gh-identity.sh
 - .agents/skills/kerpo-tdd/SKILL.md
 - .agents/skills/kerpo-tdd/evals/eval_queries.json
 - .agents/skills/kerpo-tdd/evals/evals.json
@@ -4199,6 +4406,8 @@ local_deployed_files:
 - .agents/skills/kerpo-unit-review/evals/evals.json
 - .agents/skills/kerpo-unit-review/references/good-tests.md
 - .agents/skills/kerpo-unit-review/references/mocking.md
+- .claude/agents/kerpo-skill-author.md
+- .claude/agents/kerpo-unit-reviewer.md
 - .claude/skills/kerpo-aggregate-benchmark/SKILL.md
 - .claude/skills/kerpo-aggregate-benchmark/evals/eval_queries.json
 - .claude/skills/kerpo-aggregate-benchmark/evals/evals.json
@@ -4273,6 +4482,7 @@ local_deployed_files:
 - .claude/skills/kerpo-gha-action-library/evals/evals.json
 - .claude/skills/kerpo-gha-action-library/references/gha-action-library.md
 - .claude/skills/kerpo-gha-action-library/references/gha-naming-conventions.md
+- .claude/skills/kerpo-gha-action-library/references/gha-perf-playbook.md
 - .claude/skills/kerpo-gha-action-library/references/gha-scale-ladder.md
 - .claude/skills/kerpo-gha-workflow-create/SKILL.md
 - .claude/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml
@@ -4300,6 +4510,7 @@ local_deployed_files:
 - .claude/skills/kerpo-gha-workflow-validate/evals/eval_queries.json
 - .claude/skills/kerpo-gha-workflow-validate/evals/evals.json
 - .claude/skills/kerpo-gha-workflow-validate/references/gha-naming-conventions.md
+- .claude/skills/kerpo-gha-workflow-validate/references/gha-perf-playbook.md
 - .claude/skills/kerpo-gha-workflow-validate/references/gha-security-baseline.md
 - .claude/skills/kerpo-git-branch-create/SKILL.md
 - .claude/skills/kerpo-git-branch-create/evals/eval_queries.json
@@ -4385,6 +4596,11 @@ local_deployed_files:
 - .claude/skills/kerpo-skills-feedback/evals/eval_queries.json
 - .claude/skills/kerpo-skills-feedback/evals/evals.json
 - .claude/skills/kerpo-skills-feedback/references/issue-templates.md
+- .claude/skills/kerpo-t3code-setup/SKILL.md
+- .claude/skills/kerpo-t3code-setup/evals/eval_queries.json
+- .claude/skills/kerpo-t3code-setup/evals/evals.json
+- .claude/skills/kerpo-t3code-setup/evals/trigger-results.json
+- .claude/skills/kerpo-t3code-setup/references/ensure-gh-identity.sh
 - .claude/skills/kerpo-tdd/SKILL.md
 - .claude/skills/kerpo-tdd/evals/eval_queries.json
 - .claude/skills/kerpo-tdd/evals/evals.json
@@ -4399,6 +4615,10 @@ local_deployed_files:
 - .claude/skills/kerpo-unit-review/evals/evals.json
 - .claude/skills/kerpo-unit-review/references/good-tests.md
 - .claude/skills/kerpo-unit-review/references/mocking.md
+- .cursor/agents/kerpo-skill-author.md
+- .cursor/agents/kerpo-unit-reviewer.md
+- .opencode/agents/kerpo-skill-author.md
+- .opencode/agents/kerpo-unit-reviewer.md
 local_deployed_file_hashes:
   .agents/skills/kerpo-aggregate-benchmark/SKILL.md: sha256:0f764e20608cbad0d222f1a7989703daf9388d0dcc863a46984f5eb4705e22a5
   .agents/skills/kerpo-aggregate-benchmark/evals/eval_queries.json: sha256:66e8c7847e5b21f5b7671115ccd6982ce66c25af80eabfe10a5ae3b7f6420104
@@ -4449,10 +4669,10 @@ local_deployed_file_hashes:
   .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json: sha256:e8125f67f55ddda5aea4a866acd4e24958f7f08a5714d36a0ada606fa0b01c3c
   .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/trigger-results.json: sha256:6aa4f903d1b941da78c0b1df2c4bec53e48b02063ae7dd5d62cb4cd36d656a8a
   .agents/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md: sha256:43d497505a329857c27ae2b73f40e8585bb7ff7ae569d011a326a79823e69f57
-  .agents/skills/kerpo-gh-issue-start-work/SKILL.md: sha256:65d70314ed4df11b247b9cde593fd42374fcad62b878fd6f5074a1cfb7b45b04
+  .agents/skills/kerpo-gh-issue-start-work/SKILL.md: sha256:9e390ac2ecb77c9415806bd442c3db2859f1c3c32c1fd62c322d04b92b29eb36
   .agents/skills/kerpo-gh-issue-start-work/evals/eval_queries.json: sha256:09791b357904cf67dea46c373c8f8a87f4dea6ac237713f3049ddb66ddc994bc
   .agents/skills/kerpo-gh-issue-start-work/evals/evals.json: sha256:379041aff3157944bf43c16c0c0c9d6620c0a3b458852e712071ae85b60df69d
-  .agents/skills/kerpo-gh-issue-start-work/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  .agents/skills/kerpo-gh-issue-start-work/references/conventions.md: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
   .agents/skills/kerpo-gh-pr-checklist-maintain/SKILL.md: sha256:65d10f34f105359265d053d19a11d8d4b0da8c3eea4ef2389294db98206c45f3
   .agents/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json: sha256:bec8e4715951eeb9c775aa034cecb27cc6e538017dba8740aeefc98d06dce3bd
   .agents/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json: sha256:13ffdaac615b6cc00903ec1c0442fdb3005378cb6af9784d240c8ed788ad1377
@@ -4468,38 +4688,40 @@ local_deployed_file_hashes:
   .agents/skills/kerpo-gh-pr-issue-links/evals/evals.json: sha256:1605df2747d2296b5ae9034c7f203e30f471f64e261e4e0304f15f67890dcb82
   .agents/skills/kerpo-gh-pr-issue-links/evals/trigger-results.json: sha256:774dc8537533579eb6724d6478deed46ed4c3ac93cd362de9ea20fd35b67f579
   .agents/skills/kerpo-gh-pr-issue-links/references/linking.md: sha256:ab72a0ef31e2228880f76d4ee5d2ae63190f125d6b65b201378692e60a11f91d
-  .agents/skills/kerpo-gha-action-library/SKILL.md: sha256:2cccdf7f40fac19d066edbf9af987d6809a88705935c7490e4503b48ebcbeb2c
-  .agents/skills/kerpo-gha-action-library/evals/eval_queries.json: sha256:416f76af166ce2cd95d6913da257db712dc0d8ae227a372e9f06d2409bae8251
+  .agents/skills/kerpo-gha-action-library/SKILL.md: sha256:4f981b2a86be19d455e4fe00bc62647147b6d3c171915e2a4a520b6570a57079
+  .agents/skills/kerpo-gha-action-library/evals/eval_queries.json: sha256:b861c97088d33bc765225bb9dd36c1887f3ba16bd8df794dcbc3413b242dc61d
   .agents/skills/kerpo-gha-action-library/evals/evals.json: sha256:d58a6b1133e38484a072775babcce72ce669c035176139a59cdad25bbf6eafa8
-  .agents/skills/kerpo-gha-action-library/references/gha-action-library.md: sha256:f627f24c1e9588a98c2192c46f43801bac4c86ff3886fad0b64a7cc3a2067a8b
-  .agents/skills/kerpo-gha-action-library/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  .agents/skills/kerpo-gha-action-library/references/gha-action-library.md: sha256:06d8115735c49015faf06ef1552f4bd29b3d3417bcf379d932dc82c287db4713
+  .agents/skills/kerpo-gha-action-library/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .agents/skills/kerpo-gha-action-library/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .agents/skills/kerpo-gha-action-library/references/gha-scale-ladder.md: sha256:4a62f37357b342ff9675f9d2c009aea197391c198a31df5d23d509ce0f1b94a0
-  .agents/skills/kerpo-gha-workflow-create/SKILL.md: sha256:7f5130ebe90e17eb6231da4748c5e779458f95b94dcd43d0216d4e6be19ff4a1
-  .agents/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml: sha256:e44d78ffeee6f13cb3b75c53fad383bb97eee3f19eea36957cd5dd7ab44f9ad9
-  .agents/skills/kerpo-gha-workflow-create/assets/docker-build-push.yml: sha256:bc0f689cea3326f9118c2a3fbc6933684db0d9bbcaadb9673799b6981502e3e9
-  .agents/skills/kerpo-gha-workflow-create/assets/go-ci.yml: sha256:79dded0f862dcbc5db24f154c2a4189e015e23d7d7211bd6cf69839ef0b1035e
-  .agents/skills/kerpo-gha-workflow-create/assets/node-ci.yml: sha256:69f80308302d3ab84c78137e33b0318360c4e4db596ef38555c392e9a0c6a322
-  .agents/skills/kerpo-gha-workflow-create/assets/python-ci.yml: sha256:e2014e63cb142198ed8376df60ff295d1d5d031ee1a9298e97a662c2d6636eeb
-  .agents/skills/kerpo-gha-workflow-create/assets/terraform.yml: sha256:355b21f9c7dfc65fa54ff651408d168a69c44ac921e207b80c65961e3d151ee0
-  .agents/skills/kerpo-gha-workflow-create/evals/eval_queries.json: sha256:3b76cf83a59f4e580a06056348edfef18f49547bb23a007ab81745fdbce03785
+  .agents/skills/kerpo-gha-workflow-create/SKILL.md: sha256:0c0a75cb48670b1372f36a9f0d07f31f6792b81fc229c58782e2dbd5cb6088fc
+  .agents/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml: sha256:48ef2373e58e7ab26d74463c3e7ee6c72dc6510f648a9f66776ed6967ccfb0a2
+  .agents/skills/kerpo-gha-workflow-create/assets/docker-build-push.yml: sha256:64173ff452c797508b2452a2e3f61c8a2a19a81eeb2daee2ce6bbb35375e477a
+  .agents/skills/kerpo-gha-workflow-create/assets/go-ci.yml: sha256:59fc6a37ebb69dad6603ef4ac14e7c6d8137d34396ec04abc8927cfdff1aff78
+  .agents/skills/kerpo-gha-workflow-create/assets/node-ci.yml: sha256:ad0ba322ab2eeae8f816d7e643f77164ae90136a7e79ce052d449373cbead109
+  .agents/skills/kerpo-gha-workflow-create/assets/python-ci.yml: sha256:c8dd1f7151dea101e6fe4702b36e5c319f999a4e9299f8797ba5b9a0bfac483f
+  .agents/skills/kerpo-gha-workflow-create/assets/terraform.yml: sha256:378bc5377b4460db31db0fe2cb728863e1a369f8b143f2b53676d10885ae8566
+  .agents/skills/kerpo-gha-workflow-create/evals/eval_queries.json: sha256:6568cd11565ff1b70ac903f655adc3b66d3646a860823f530d4ef53a8147f299
   .agents/skills/kerpo-gha-workflow-create/evals/evals.json: sha256:ee07760d05feb150ae8ec3b35f6b83810bc4641c5e3f11662c1ea4229e2cd111
   .agents/skills/kerpo-gha-workflow-create/evals/trigger-results.json: sha256:4d52ce6434b14b5917af2af7c2fd3a5eeeeca08986d5b2c1afb1d861a2b45e31
-  .agents/skills/kerpo-gha-workflow-create/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
-  .agents/skills/kerpo-gha-workflow-create/references/gha-perf-playbook.md: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  .agents/skills/kerpo-gha-workflow-create/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .agents/skills/kerpo-gha-workflow-create/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .agents/skills/kerpo-gha-workflow-create/references/gha-scale-ladder.md: sha256:4a62f37357b342ff9675f9d2c009aea197391c198a31df5d23d509ce0f1b94a0
   .agents/skills/kerpo-gha-workflow-create/references/gha-security-baseline.md: sha256:dddec56debc84ca43e378fe8df80147076c2f3990229c7352c2c515667ef7ad1
-  .agents/skills/kerpo-gha-workflow-refactor/SKILL.md: sha256:afe502342c90e511a981f02f52f352b89ed645b0b36eca92be9691ec484fdf76
-  .agents/skills/kerpo-gha-workflow-refactor/evals/eval_queries.json: sha256:027066ddaad70f8acc56c9d5461f85f2eac80871790eb545227b025b2550537d
+  .agents/skills/kerpo-gha-workflow-refactor/SKILL.md: sha256:ec19fa0f3731e1c3da38acbb0156db12243d4b5f0518a8c70810a11f667c7dd1
+  .agents/skills/kerpo-gha-workflow-refactor/evals/eval_queries.json: sha256:dce68f89b09800adbe19a2a742b1d1fef2b645a57b637737927f48209c25a26d
   .agents/skills/kerpo-gha-workflow-refactor/evals/evals.json: sha256:750eb4958460199e494dd2e6fa78aa27785508c833fab8782fcfa1047276dc32
   .agents/skills/kerpo-gha-workflow-refactor/evals/trigger-results.json: sha256:210895dd2db7916f53e405a6ef0950eb5d383e8cfcc9c63fb7504201714e8228
   .agents/skills/kerpo-gha-workflow-refactor/references/gha-multirepo-orchestration.md: sha256:2e74325c02d911ca89981e2ea7437c34b829224daf24853810172706409c6646
-  .agents/skills/kerpo-gha-workflow-refactor/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
-  .agents/skills/kerpo-gha-workflow-refactor/references/gha-perf-playbook.md: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  .agents/skills/kerpo-gha-workflow-refactor/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .agents/skills/kerpo-gha-workflow-refactor/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .agents/skills/kerpo-gha-workflow-refactor/references/gha-scale-ladder.md: sha256:4a62f37357b342ff9675f9d2c009aea197391c198a31df5d23d509ce0f1b94a0
-  .agents/skills/kerpo-gha-workflow-validate/SKILL.md: sha256:a43ef1c7b0395644ea245799a773c711ea2e86695e50b9f233c3880cb581b91b
-  .agents/skills/kerpo-gha-workflow-validate/evals/eval_queries.json: sha256:35f6c3d1998167190ff5b0245a461c15cbf020cc5a16017c42253b3245833212
+  .agents/skills/kerpo-gha-workflow-validate/SKILL.md: sha256:8412cb668e40a6a467b929523b8075af27694c92fc91efaf1e54003e631905e0
+  .agents/skills/kerpo-gha-workflow-validate/evals/eval_queries.json: sha256:98ffb03e14bc9301db9ec2f1bcb1ce835598f950fa4b476f5fb469b98205a7ac
   .agents/skills/kerpo-gha-workflow-validate/evals/evals.json: sha256:8b5a0c7d43abdad24306a882fbddec78928ef2a4df7267d84ff59fac8cece713
-  .agents/skills/kerpo-gha-workflow-validate/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  .agents/skills/kerpo-gha-workflow-validate/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .agents/skills/kerpo-gha-workflow-validate/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .agents/skills/kerpo-gha-workflow-validate/references/gha-security-baseline.md: sha256:dddec56debc84ca43e378fe8df80147076c2f3990229c7352c2c515667ef7ad1
   .agents/skills/kerpo-git-branch-create/SKILL.md: sha256:0aa215b0b0632f56765f05fd34cf69595c26dbc4f46e747a2300a9233e3eba97
   .agents/skills/kerpo-git-branch-create/evals/eval_queries.json: sha256:e5e390573345332ec62bb3ffe8a6770825f9c33aa71bbf79d710f24c0642d98f
@@ -4511,19 +4733,19 @@ local_deployed_file_hashes:
   .agents/skills/kerpo-git-status/SKILL.md: sha256:41360c409909bc5c04780b59c61e52a01337e2944c60dde10745660766ab69d4
   .agents/skills/kerpo-git-status/evals/eval_queries.json: sha256:05c8e1dc8fb1d41bc0704dc9f5d452dd748c08cb79d8a1c5051e15862f152b29
   .agents/skills/kerpo-git-status/evals/evals.json: sha256:c056c5e5adc7fb87dede55eafe767f3c672aaebb2d643a9165e0eb9c19bc052a
-  .agents/skills/kerpo-git-worktree-add/SKILL.md: sha256:f018a68dd5dddd56b7b5c8c1f3599b0214db94574b3b76a04c356bef77b098a9
+  .agents/skills/kerpo-git-worktree-add/SKILL.md: sha256:c313b8d2f663d6e226dd8377eb3097656fbbe7c8e00bd78a6fbcb6a8ac42b036
   .agents/skills/kerpo-git-worktree-add/evals/eval_queries.json: sha256:c06659625a1519d52966a78729ca7b7ee5ed86ac7cefc5f61cf6a51d390d44fe
   .agents/skills/kerpo-git-worktree-add/evals/evals.json: sha256:fdd56277ed2fd2cc9f6c254f627a9d8e30bd1ae894bb693c62a850d76f802f94
-  .agents/skills/kerpo-git-worktree-add/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  .agents/skills/kerpo-git-worktree-add/references/conventions.md: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
   .agents/skills/kerpo-git-worktree-clean/SKILL.md: sha256:4b103260fdda9d5812ddda2547c75c247037c3666284bf1d9ef1225b51f9c92f
   .agents/skills/kerpo-git-worktree-clean/evals/eval_queries.json: sha256:e83d0c1306e9b5f8cb7f3c8e00f8c118246375424dfe9f1b12ccc62297ece8a5
   .agents/skills/kerpo-git-worktree-clean/evals/evals.json: sha256:b39bcf76af2f3e46bce95821b7b467eeaed4750d350529a0b7273189868c3e33
   .agents/skills/kerpo-git-worktree-clean/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
   .agents/skills/kerpo-git-worktree-clean/references/safety.md: sha256:d2ef7e3490bf9d09420c850df656370074d3e79a5acbdab974f5328396483b46
-  .agents/skills/kerpo-git-worktree-enter/SKILL.md: sha256:aa07125d001ff76378ae7d647afaa2eb18323d8dcc754d552052893a6868ae45
+  .agents/skills/kerpo-git-worktree-enter/SKILL.md: sha256:af6747fecca2fb5286a4280de8062dcf7d05983900ca2b99938e757e1cf3db7c
   .agents/skills/kerpo-git-worktree-enter/evals/eval_queries.json: sha256:3fa35cabdce8b2b77fbcc57263e2a04723aa78ecd9164cfdb4ada117a53432fe
   .agents/skills/kerpo-git-worktree-enter/evals/evals.json: sha256:e01cb5439356e720306ca0d35e1df61a68d803f50210a603635eb9dc40ae8d06
-  .agents/skills/kerpo-git-worktree-enter/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  .agents/skills/kerpo-git-worktree-enter/references/conventions.md: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
   .agents/skills/kerpo-git-worktree-enter/references/cursor-enter.md: sha256:b1a1b52ed05f7560a725343611c1a69f3b0efffcc82542346cd7acb25c8c6c19
   .agents/skills/kerpo-gl-content-policy-learn/SKILL.md: sha256:a6e2a26c2b3f0d7fcc6ae21369ec7a6579c41cfd6bf85171c74227898ee561be
   .agents/skills/kerpo-gl-content-policy-learn/evals/eval_queries.json: sha256:e410fff54bd74d02f0e45b23c3bbd145ce7e8730d736eda3ca94ff2ce83349d4
@@ -4584,6 +4806,11 @@ local_deployed_file_hashes:
   .agents/skills/kerpo-skills-feedback/evals/eval_queries.json: sha256:4b52e48935ac4d63f1d2e3c04510a867fd2e6ec609e3af88e0393436f3b56572
   .agents/skills/kerpo-skills-feedback/evals/evals.json: sha256:15f0e654053927462d3c488b1dd8f396d6231e928b59e9646475f30ac58544ae
   .agents/skills/kerpo-skills-feedback/references/issue-templates.md: sha256:efb1c318daa5ea6d0fb253579c3204c75b22b575bd8288a7b1df6509527fda64
+  .agents/skills/kerpo-t3code-setup/SKILL.md: sha256:9ac7e4c9a103ada9bf9fc9820925e902a06b8811904cc8bf2bd9d094d9712b61
+  .agents/skills/kerpo-t3code-setup/evals/eval_queries.json: sha256:af934fa792111db07cb719d731093beea5f0c16552894a7aef9fbafebdf160f0
+  .agents/skills/kerpo-t3code-setup/evals/evals.json: sha256:af61872ad972dd989accad8569382b54e2755bfa4c929f8059c2767909254550
+  .agents/skills/kerpo-t3code-setup/evals/trigger-results.json: sha256:53764d758249b5a5df52319461e73c6ec80c9a2b2cc4dd46df697df51af2ac1c
+  .agents/skills/kerpo-t3code-setup/references/ensure-gh-identity.sh: sha256:c8ed2734c15072f819d322840a5281e884000e36b2ef363664393c372dbcd20b
   .agents/skills/kerpo-tdd/SKILL.md: sha256:c148f8276e7f2439cb6e8678ca15dd90ebf3c8916827ce7b3d1bfd9294504fb0
   .agents/skills/kerpo-tdd/evals/eval_queries.json: sha256:a6ce871a225fc16f655bbfc3b0d158faad36d25f1ad615662d476f7c1561a412
   .agents/skills/kerpo-tdd/evals/evals.json: sha256:a9b1af81ba380987db57c79ea73318907fbc67b4bc2448a239801a73b1efd7fd
@@ -4598,6 +4825,8 @@ local_deployed_file_hashes:
   .agents/skills/kerpo-unit-review/evals/evals.json: sha256:ae505837361feba055abe53e00a14c0e33f1929f2caf1ca5ed0ad624370f82d9
   .agents/skills/kerpo-unit-review/references/good-tests.md: sha256:21ce6b8519ef5c840104b71fc44aa39a9535a031d2515a76f1691cf3630ae24c
   .agents/skills/kerpo-unit-review/references/mocking.md: sha256:d4d875fd1b602c75349b2d3ab03846bbcbf22cd8f32023608ff4920cfa3307e3
+  .claude/agents/kerpo-skill-author.md: sha256:90f019779f7f7f8f1039e054460480af459ee839ed3c8dc95ab2eaa8b3dd9bdd
+  .claude/agents/kerpo-unit-reviewer.md: sha256:eabef0472c13f87a34d2d333fb9b5c421f479a30f18643b7e386511db2e04b61
   .claude/skills/kerpo-aggregate-benchmark/SKILL.md: sha256:0f764e20608cbad0d222f1a7989703daf9388d0dcc863a46984f5eb4705e22a5
   .claude/skills/kerpo-aggregate-benchmark/evals/eval_queries.json: sha256:66e8c7847e5b21f5b7671115ccd6982ce66c25af80eabfe10a5ae3b7f6420104
   .claude/skills/kerpo-aggregate-benchmark/evals/evals.json: sha256:c5d382c41a840445dc71742fa71ef6af4e60d7404f8f24b282e8e9c615e54e17
@@ -4647,10 +4876,10 @@ local_deployed_file_hashes:
   .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/evals.json: sha256:e8125f67f55ddda5aea4a866acd4e24958f7f08a5714d36a0ada606fa0b01c3c
   .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/evals/trigger-results.json: sha256:6aa4f903d1b941da78c0b1df2c4bec53e48b02063ae7dd5d62cb4cd36d656a8a
   .claude/skills/kerpo-gh-issue-duplicate-conflict-finder/references/duplicate-matching.md: sha256:43d497505a329857c27ae2b73f40e8585bb7ff7ae569d011a326a79823e69f57
-  .claude/skills/kerpo-gh-issue-start-work/SKILL.md: sha256:65d70314ed4df11b247b9cde593fd42374fcad62b878fd6f5074a1cfb7b45b04
+  .claude/skills/kerpo-gh-issue-start-work/SKILL.md: sha256:9e390ac2ecb77c9415806bd442c3db2859f1c3c32c1fd62c322d04b92b29eb36
   .claude/skills/kerpo-gh-issue-start-work/evals/eval_queries.json: sha256:09791b357904cf67dea46c373c8f8a87f4dea6ac237713f3049ddb66ddc994bc
   .claude/skills/kerpo-gh-issue-start-work/evals/evals.json: sha256:379041aff3157944bf43c16c0c0c9d6620c0a3b458852e712071ae85b60df69d
-  .claude/skills/kerpo-gh-issue-start-work/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  .claude/skills/kerpo-gh-issue-start-work/references/conventions.md: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
   .claude/skills/kerpo-gh-pr-checklist-maintain/SKILL.md: sha256:65d10f34f105359265d053d19a11d8d4b0da8c3eea4ef2389294db98206c45f3
   .claude/skills/kerpo-gh-pr-checklist-maintain/evals/eval_queries.json: sha256:bec8e4715951eeb9c775aa034cecb27cc6e538017dba8740aeefc98d06dce3bd
   .claude/skills/kerpo-gh-pr-checklist-maintain/evals/evals.json: sha256:13ffdaac615b6cc00903ec1c0442fdb3005378cb6af9784d240c8ed788ad1377
@@ -4666,38 +4895,40 @@ local_deployed_file_hashes:
   .claude/skills/kerpo-gh-pr-issue-links/evals/evals.json: sha256:1605df2747d2296b5ae9034c7f203e30f471f64e261e4e0304f15f67890dcb82
   .claude/skills/kerpo-gh-pr-issue-links/evals/trigger-results.json: sha256:774dc8537533579eb6724d6478deed46ed4c3ac93cd362de9ea20fd35b67f579
   .claude/skills/kerpo-gh-pr-issue-links/references/linking.md: sha256:ab72a0ef31e2228880f76d4ee5d2ae63190f125d6b65b201378692e60a11f91d
-  .claude/skills/kerpo-gha-action-library/SKILL.md: sha256:2cccdf7f40fac19d066edbf9af987d6809a88705935c7490e4503b48ebcbeb2c
-  .claude/skills/kerpo-gha-action-library/evals/eval_queries.json: sha256:416f76af166ce2cd95d6913da257db712dc0d8ae227a372e9f06d2409bae8251
+  .claude/skills/kerpo-gha-action-library/SKILL.md: sha256:4f981b2a86be19d455e4fe00bc62647147b6d3c171915e2a4a520b6570a57079
+  .claude/skills/kerpo-gha-action-library/evals/eval_queries.json: sha256:b861c97088d33bc765225bb9dd36c1887f3ba16bd8df794dcbc3413b242dc61d
   .claude/skills/kerpo-gha-action-library/evals/evals.json: sha256:d58a6b1133e38484a072775babcce72ce669c035176139a59cdad25bbf6eafa8
-  .claude/skills/kerpo-gha-action-library/references/gha-action-library.md: sha256:f627f24c1e9588a98c2192c46f43801bac4c86ff3886fad0b64a7cc3a2067a8b
-  .claude/skills/kerpo-gha-action-library/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  .claude/skills/kerpo-gha-action-library/references/gha-action-library.md: sha256:06d8115735c49015faf06ef1552f4bd29b3d3417bcf379d932dc82c287db4713
+  .claude/skills/kerpo-gha-action-library/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .claude/skills/kerpo-gha-action-library/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .claude/skills/kerpo-gha-action-library/references/gha-scale-ladder.md: sha256:4a62f37357b342ff9675f9d2c009aea197391c198a31df5d23d509ce0f1b94a0
-  .claude/skills/kerpo-gha-workflow-create/SKILL.md: sha256:7f5130ebe90e17eb6231da4748c5e779458f95b94dcd43d0216d4e6be19ff4a1
-  .claude/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml: sha256:e44d78ffeee6f13cb3b75c53fad383bb97eee3f19eea36957cd5dd7ab44f9ad9
-  .claude/skills/kerpo-gha-workflow-create/assets/docker-build-push.yml: sha256:bc0f689cea3326f9118c2a3fbc6933684db0d9bbcaadb9673799b6981502e3e9
-  .claude/skills/kerpo-gha-workflow-create/assets/go-ci.yml: sha256:79dded0f862dcbc5db24f154c2a4189e015e23d7d7211bd6cf69839ef0b1035e
-  .claude/skills/kerpo-gha-workflow-create/assets/node-ci.yml: sha256:69f80308302d3ab84c78137e33b0318360c4e4db596ef38555c392e9a0c6a322
-  .claude/skills/kerpo-gha-workflow-create/assets/python-ci.yml: sha256:e2014e63cb142198ed8376df60ff295d1d5d031ee1a9298e97a662c2d6636eeb
-  .claude/skills/kerpo-gha-workflow-create/assets/terraform.yml: sha256:355b21f9c7dfc65fa54ff651408d168a69c44ac921e207b80c65961e3d151ee0
-  .claude/skills/kerpo-gha-workflow-create/evals/eval_queries.json: sha256:3b76cf83a59f4e580a06056348edfef18f49547bb23a007ab81745fdbce03785
+  .claude/skills/kerpo-gha-workflow-create/SKILL.md: sha256:0c0a75cb48670b1372f36a9f0d07f31f6792b81fc229c58782e2dbd5cb6088fc
+  .claude/skills/kerpo-gha-workflow-create/assets/deploy-oidc-aws.yml: sha256:48ef2373e58e7ab26d74463c3e7ee6c72dc6510f648a9f66776ed6967ccfb0a2
+  .claude/skills/kerpo-gha-workflow-create/assets/docker-build-push.yml: sha256:64173ff452c797508b2452a2e3f61c8a2a19a81eeb2daee2ce6bbb35375e477a
+  .claude/skills/kerpo-gha-workflow-create/assets/go-ci.yml: sha256:59fc6a37ebb69dad6603ef4ac14e7c6d8137d34396ec04abc8927cfdff1aff78
+  .claude/skills/kerpo-gha-workflow-create/assets/node-ci.yml: sha256:ad0ba322ab2eeae8f816d7e643f77164ae90136a7e79ce052d449373cbead109
+  .claude/skills/kerpo-gha-workflow-create/assets/python-ci.yml: sha256:c8dd1f7151dea101e6fe4702b36e5c319f999a4e9299f8797ba5b9a0bfac483f
+  .claude/skills/kerpo-gha-workflow-create/assets/terraform.yml: sha256:378bc5377b4460db31db0fe2cb728863e1a369f8b143f2b53676d10885ae8566
+  .claude/skills/kerpo-gha-workflow-create/evals/eval_queries.json: sha256:6568cd11565ff1b70ac903f655adc3b66d3646a860823f530d4ef53a8147f299
   .claude/skills/kerpo-gha-workflow-create/evals/evals.json: sha256:ee07760d05feb150ae8ec3b35f6b83810bc4641c5e3f11662c1ea4229e2cd111
   .claude/skills/kerpo-gha-workflow-create/evals/trigger-results.json: sha256:4d52ce6434b14b5917af2af7c2fd3a5eeeeca08986d5b2c1afb1d861a2b45e31
-  .claude/skills/kerpo-gha-workflow-create/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
-  .claude/skills/kerpo-gha-workflow-create/references/gha-perf-playbook.md: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  .claude/skills/kerpo-gha-workflow-create/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .claude/skills/kerpo-gha-workflow-create/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .claude/skills/kerpo-gha-workflow-create/references/gha-scale-ladder.md: sha256:4a62f37357b342ff9675f9d2c009aea197391c198a31df5d23d509ce0f1b94a0
   .claude/skills/kerpo-gha-workflow-create/references/gha-security-baseline.md: sha256:dddec56debc84ca43e378fe8df80147076c2f3990229c7352c2c515667ef7ad1
-  .claude/skills/kerpo-gha-workflow-refactor/SKILL.md: sha256:afe502342c90e511a981f02f52f352b89ed645b0b36eca92be9691ec484fdf76
-  .claude/skills/kerpo-gha-workflow-refactor/evals/eval_queries.json: sha256:027066ddaad70f8acc56c9d5461f85f2eac80871790eb545227b025b2550537d
+  .claude/skills/kerpo-gha-workflow-refactor/SKILL.md: sha256:ec19fa0f3731e1c3da38acbb0156db12243d4b5f0518a8c70810a11f667c7dd1
+  .claude/skills/kerpo-gha-workflow-refactor/evals/eval_queries.json: sha256:dce68f89b09800adbe19a2a742b1d1fef2b645a57b637737927f48209c25a26d
   .claude/skills/kerpo-gha-workflow-refactor/evals/evals.json: sha256:750eb4958460199e494dd2e6fa78aa27785508c833fab8782fcfa1047276dc32
   .claude/skills/kerpo-gha-workflow-refactor/evals/trigger-results.json: sha256:210895dd2db7916f53e405a6ef0950eb5d383e8cfcc9c63fb7504201714e8228
   .claude/skills/kerpo-gha-workflow-refactor/references/gha-multirepo-orchestration.md: sha256:2e74325c02d911ca89981e2ea7437c34b829224daf24853810172706409c6646
-  .claude/skills/kerpo-gha-workflow-refactor/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
-  .claude/skills/kerpo-gha-workflow-refactor/references/gha-perf-playbook.md: sha256:da6bda49bf72aa56d69eac221f9a8ff3eb6c46a9c39f1ca01db3a3eb3a200a70
+  .claude/skills/kerpo-gha-workflow-refactor/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .claude/skills/kerpo-gha-workflow-refactor/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .claude/skills/kerpo-gha-workflow-refactor/references/gha-scale-ladder.md: sha256:4a62f37357b342ff9675f9d2c009aea197391c198a31df5d23d509ce0f1b94a0
-  .claude/skills/kerpo-gha-workflow-validate/SKILL.md: sha256:a43ef1c7b0395644ea245799a773c711ea2e86695e50b9f233c3880cb581b91b
-  .claude/skills/kerpo-gha-workflow-validate/evals/eval_queries.json: sha256:35f6c3d1998167190ff5b0245a461c15cbf020cc5a16017c42253b3245833212
+  .claude/skills/kerpo-gha-workflow-validate/SKILL.md: sha256:8412cb668e40a6a467b929523b8075af27694c92fc91efaf1e54003e631905e0
+  .claude/skills/kerpo-gha-workflow-validate/evals/eval_queries.json: sha256:98ffb03e14bc9301db9ec2f1bcb1ce835598f950fa4b476f5fb469b98205a7ac
   .claude/skills/kerpo-gha-workflow-validate/evals/evals.json: sha256:8b5a0c7d43abdad24306a882fbddec78928ef2a4df7267d84ff59fac8cece713
-  .claude/skills/kerpo-gha-workflow-validate/references/gha-naming-conventions.md: sha256:7d799a813fd300a471ba30a2bc34d37e72bf697e52bf87bfc806a6141c4fa241
+  .claude/skills/kerpo-gha-workflow-validate/references/gha-naming-conventions.md: sha256:6dac3fe9f02a758d2abdff9776b0f22d51fa4d83c2f9feca5c104804cc513481
+  .claude/skills/kerpo-gha-workflow-validate/references/gha-perf-playbook.md: sha256:d561818568b0feff3396969aa9d762b597303e6ffd91549da907be0e8234ec27
   .claude/skills/kerpo-gha-workflow-validate/references/gha-security-baseline.md: sha256:dddec56debc84ca43e378fe8df80147076c2f3990229c7352c2c515667ef7ad1
   .claude/skills/kerpo-git-branch-create/SKILL.md: sha256:0aa215b0b0632f56765f05fd34cf69595c26dbc4f46e747a2300a9233e3eba97
   .claude/skills/kerpo-git-branch-create/evals/eval_queries.json: sha256:e5e390573345332ec62bb3ffe8a6770825f9c33aa71bbf79d710f24c0642d98f
@@ -4709,19 +4940,19 @@ local_deployed_file_hashes:
   .claude/skills/kerpo-git-status/SKILL.md: sha256:41360c409909bc5c04780b59c61e52a01337e2944c60dde10745660766ab69d4
   .claude/skills/kerpo-git-status/evals/eval_queries.json: sha256:05c8e1dc8fb1d41bc0704dc9f5d452dd748c08cb79d8a1c5051e15862f152b29
   .claude/skills/kerpo-git-status/evals/evals.json: sha256:c056c5e5adc7fb87dede55eafe767f3c672aaebb2d643a9165e0eb9c19bc052a
-  .claude/skills/kerpo-git-worktree-add/SKILL.md: sha256:f018a68dd5dddd56b7b5c8c1f3599b0214db94574b3b76a04c356bef77b098a9
+  .claude/skills/kerpo-git-worktree-add/SKILL.md: sha256:c313b8d2f663d6e226dd8377eb3097656fbbe7c8e00bd78a6fbcb6a8ac42b036
   .claude/skills/kerpo-git-worktree-add/evals/eval_queries.json: sha256:c06659625a1519d52966a78729ca7b7ee5ed86ac7cefc5f61cf6a51d390d44fe
   .claude/skills/kerpo-git-worktree-add/evals/evals.json: sha256:fdd56277ed2fd2cc9f6c254f627a9d8e30bd1ae894bb693c62a850d76f802f94
-  .claude/skills/kerpo-git-worktree-add/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  .claude/skills/kerpo-git-worktree-add/references/conventions.md: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
   .claude/skills/kerpo-git-worktree-clean/SKILL.md: sha256:4b103260fdda9d5812ddda2547c75c247037c3666284bf1d9ef1225b51f9c92f
   .claude/skills/kerpo-git-worktree-clean/evals/eval_queries.json: sha256:e83d0c1306e9b5f8cb7f3c8e00f8c118246375424dfe9f1b12ccc62297ece8a5
   .claude/skills/kerpo-git-worktree-clean/evals/evals.json: sha256:b39bcf76af2f3e46bce95821b7b467eeaed4750d350529a0b7273189868c3e33
   .claude/skills/kerpo-git-worktree-clean/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
   .claude/skills/kerpo-git-worktree-clean/references/safety.md: sha256:d2ef7e3490bf9d09420c850df656370074d3e79a5acbdab974f5328396483b46
-  .claude/skills/kerpo-git-worktree-enter/SKILL.md: sha256:aa07125d001ff76378ae7d647afaa2eb18323d8dcc754d552052893a6868ae45
+  .claude/skills/kerpo-git-worktree-enter/SKILL.md: sha256:af6747fecca2fb5286a4280de8062dcf7d05983900ca2b99938e757e1cf3db7c
   .claude/skills/kerpo-git-worktree-enter/evals/eval_queries.json: sha256:3fa35cabdce8b2b77fbcc57263e2a04723aa78ecd9164cfdb4ada117a53432fe
   .claude/skills/kerpo-git-worktree-enter/evals/evals.json: sha256:e01cb5439356e720306ca0d35e1df61a68d803f50210a603635eb9dc40ae8d06
-  .claude/skills/kerpo-git-worktree-enter/references/conventions.md: sha256:e0a467a43b12a51091cf36a7455e329881deffbbc499c3c18189ed4294879f76
+  .claude/skills/kerpo-git-worktree-enter/references/conventions.md: sha256:d77294e4644245978f24d245d0ef607e367e12a388de43566a5d0e0e8ef87a31
   .claude/skills/kerpo-git-worktree-enter/references/cursor-enter.md: sha256:b1a1b52ed05f7560a725343611c1a69f3b0efffcc82542346cd7acb25c8c6c19
   .claude/skills/kerpo-gl-content-policy-learn/SKILL.md: sha256:a6e2a26c2b3f0d7fcc6ae21369ec7a6579c41cfd6bf85171c74227898ee561be
   .claude/skills/kerpo-gl-content-policy-learn/evals/eval_queries.json: sha256:e410fff54bd74d02f0e45b23c3bbd145ce7e8730d736eda3ca94ff2ce83349d4
@@ -4782,6 +5013,11 @@ local_deployed_file_hashes:
   .claude/skills/kerpo-skills-feedback/evals/eval_queries.json: sha256:4b52e48935ac4d63f1d2e3c04510a867fd2e6ec609e3af88e0393436f3b56572
   .claude/skills/kerpo-skills-feedback/evals/evals.json: sha256:15f0e654053927462d3c488b1dd8f396d6231e928b59e9646475f30ac58544ae
   .claude/skills/kerpo-skills-feedback/references/issue-templates.md: sha256:efb1c318daa5ea6d0fb253579c3204c75b22b575bd8288a7b1df6509527fda64
+  .claude/skills/kerpo-t3code-setup/SKILL.md: sha256:9ac7e4c9a103ada9bf9fc9820925e902a06b8811904cc8bf2bd9d094d9712b61
+  .claude/skills/kerpo-t3code-setup/evals/eval_queries.json: sha256:af934fa792111db07cb719d731093beea5f0c16552894a7aef9fbafebdf160f0
+  .claude/skills/kerpo-t3code-setup/evals/evals.json: sha256:af61872ad972dd989accad8569382b54e2755bfa4c929f8059c2767909254550
+  .claude/skills/kerpo-t3code-setup/evals/trigger-results.json: sha256:53764d758249b5a5df52319461e73c6ec80c9a2b2cc4dd46df697df51af2ac1c
+  .claude/skills/kerpo-t3code-setup/references/ensure-gh-identity.sh: sha256:c8ed2734c15072f819d322840a5281e884000e36b2ef363664393c372dbcd20b
   .claude/skills/kerpo-tdd/SKILL.md: sha256:c148f8276e7f2439cb6e8678ca15dd90ebf3c8916827ce7b3d1bfd9294504fb0
   .claude/skills/kerpo-tdd/evals/eval_queries.json: sha256:a6ce871a225fc16f655bbfc3b0d158faad36d25f1ad615662d476f7c1561a412
   .claude/skills/kerpo-tdd/evals/evals.json: sha256:a9b1af81ba380987db57c79ea73318907fbc67b4bc2448a239801a73b1efd7fd
@@ -4796,3 +5032,7 @@ local_deployed_file_hashes:
   .claude/skills/kerpo-unit-review/evals/evals.json: sha256:ae505837361feba055abe53e00a14c0e33f1929f2caf1ca5ed0ad624370f82d9
   .claude/skills/kerpo-unit-review/references/good-tests.md: sha256:21ce6b8519ef5c840104b71fc44aa39a9535a031d2515a76f1691cf3630ae24c
   .claude/skills/kerpo-unit-review/references/mocking.md: sha256:d4d875fd1b602c75349b2d3ab03846bbcbf22cd8f32023608ff4920cfa3307e3
+  .cursor/agents/kerpo-skill-author.md: sha256:90f019779f7f7f8f1039e054460480af459ee839ed3c8dc95ab2eaa8b3dd9bdd
+  .cursor/agents/kerpo-unit-reviewer.md: sha256:eabef0472c13f87a34d2d333fb9b5c421f479a30f18643b7e386511db2e04b61
+  .opencode/agents/kerpo-skill-author.md: sha256:90f019779f7f7f8f1039e054460480af459ee839ed3c8dc95ab2eaa8b3dd9bdd
+  .opencode/agents/kerpo-unit-reviewer.md: sha256:eabef0472c13f87a34d2d333fb9b5c421f479a30f18643b7e386511db2e04b61
